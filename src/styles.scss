@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-dark-primary: #292B2F;
+    --color-dark-secondary: #2E3036;
+    --color-dark-ternary: #37393F;
+
+    --color-light-primary: #EFEFEF;
+    --color-light-secondary: #F2F3F5;
+    --color-light-ternary: #FFFFFF;
+
+    --color-red: #C3331D;
+    --color-orange: #FFB500;
+    --color-green: #00BA4A;
+}
+
+@font-face {
+    font-family: "Manrope-Bold";
+    src: url("/assets/fonts/Manrope-Bold");
+}
+
+@font-face {
+    font-family: "Manrope-Regular";
+    src: url("/assets/fonts/Manrope-Regular");
+}
+
+@font-face {
+    font-family: "Manrope-Light";
+    src: url("/assets/fonts/Manrope-Light");
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Manrope-Bold";
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.17rem;
+}
+
+p {
+    font-family: "Manrope-Medium";
+    font-size: 1rem;
+}
+
+span {
+    font-family: "Manrope-Regular";
+    font-size: 0.92rem;
+}
