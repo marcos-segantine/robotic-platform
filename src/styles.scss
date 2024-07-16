@@ -16,6 +16,9 @@
     --color-red: #C3331D;
     --color-orange: #FFB500;
     --color-green: #00BA4A;
+
+    --border-radius-small: 15px;
+    --border-radius-medium: 20px;
 }
 
 @font-face {
@@ -59,4 +62,8 @@ p {
 span {
     font-family: "Manrope-Regular";
     font-size: 0.92rem;
+}
+
+main {
+    padding: 2em;
 }

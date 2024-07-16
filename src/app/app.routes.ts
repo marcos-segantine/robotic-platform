@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { AuthOptionsComponent } from './features/auth/pages/auth-options/auth-options.component';
+
+export const routes: Routes = [
+    {
+        path: "",
+        component: AuthOptionsComponent
+    }
+];

@@ -1,0 +1,51 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    width: 100%;
+    min-width: 300px;
+    height: 65%;
+    min-height: 30rem;
+}
+
+app-auth-option:has(.high-priority) {
+    width: 100%;
+    height: min-content;
+}
+
+app-auth-option:has(.low-priority) {
+    width: 100%;
+    height: min-content;
+    min-height: 5rem;
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    app-auth-option:has(.high-priority) {
+        width: calc(50% - 1em);
+        height: calc(100% - 20% - 1em);
+    }
+    
+    app-auth-option:has(.low-priority) {
+        width: calc(33% - 1em);
+        height: 20%;
+    }
+}

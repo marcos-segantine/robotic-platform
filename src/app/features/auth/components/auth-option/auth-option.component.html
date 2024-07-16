@@ -1,0 +1,14 @@
+<div class="option {{ priority.toLowerCase() }}-priority">
+    @if(priority == "High") {
+        @switch (userType) {
+            @case ("Student") {
+                <img src="/assets/images/students.svg" alt="">
+            }
+            @case ("Parents") {
+                <img src="/assets/images/parents.svg" alt="">
+            }
+        }
+    }
+
+    <h2>{{ option }}</h2>
+</div>
