@@ -1,4 +1,4 @@
-<div class="option {{ priority.toLowerCase() }}-priority">
+<a routerLink="{{ path }}" class="option {{ priority.toLowerCase() }}-priority">
     @if(priority == "High") {
         @switch (userType) {
             @case ("Student") {
@@ -11,4 +11,4 @@
     }
 
     <h2>{{ option }}</h2>
-</div>
+</a>
