@@ -1,0 +1,33 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+    height: 100vh;
+    min-height: 800px;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    max-width: 60vh;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+    
+    width: min-content;
+}
+
+@media screen and (min-width: 767px) {
+    .buttons {
+        margin: 0 auto;
+    }
+}
