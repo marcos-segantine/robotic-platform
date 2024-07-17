@@ -17,7 +17,7 @@
     --color-orange: #FFB500;
     --color-green: #00BA4A;
 
-    --border-radius-small: 15px;
+    --border-radius-small: 10px;
     --border-radius-medium: 20px;
 }
 
@@ -62,6 +62,10 @@ p {
 input {
     font-family: "Manrope-bold";
     font-size: 1.17rem;
+}
+
+button {
+    font-family: "Manrope-bold";
 }
 
 span {
