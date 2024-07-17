@@ -41,11 +41,12 @@ app-auth-option:has(.low-priority) {
 
     app-auth-option:has(.high-priority) {
         width: calc(50% - 1em);
-        height: calc(100% - 20% - 1em);
+        height: calc(100% - 10% - 1em);
     }
     
     app-auth-option:has(.low-priority) {
-        width: calc(33% - 1em);
-        height: 20%;
+        width: calc(33% - .5em);
+        height: 10%;
+        min-height: none;
     }
 }
