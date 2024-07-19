@@ -1,0 +1,47 @@
+.color-scheme {
+    position: relative;
+
+    border-radius: var(--border-radius-medium);
+
+    display: flex;
+    align-items: center;
+    gap: .8em;
+
+    padding: .5em;
+
+    img {
+        width: 1.5rem;
+    }
+}
+
+.dark {
+    background-color: var(--color-orange);
+}
+
+.light {
+    background-color: var(--color-primary);
+}
+
+.overlay {
+    transition: all .5s;
+    
+    border-radius: var(--border-radius-medium);
+
+    background-color: var(--color-black);
+
+    display: block;
+    width: 45%;
+    height: 85%;
+
+    position: absolute;
+    top: 3px;
+    bottom: 0;
+}
+
+.left {
+    left: 1.5px;
+}
+
+.right {
+    right: 1.5px;
+}
