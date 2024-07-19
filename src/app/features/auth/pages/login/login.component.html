@@ -1,12 +1,17 @@
 <main>
     <div class="container">
-        <div class="logo-side">
-            <h1>LOGO</h1>
+        <div class="flag-side">
+            <img src="/assets/images/nova-ponte-flag.png" alt="">
+            <h2>Prefeitura de Nova Ponte</h2>
         </div>
 
         <div class="auth-side">
             <app-input placeholder="RA"></app-input>
             <app-input placeholder="Senha"></app-input>
+
+            <div class="helpers">
+                <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Esqueci meu acesso</a>
+            </div>
 
             <div class="buttons">
                 <app-button text="Voltar" [buttonType]="buttonType.Secondary" />
