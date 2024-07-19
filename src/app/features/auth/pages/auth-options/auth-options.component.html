@@ -1,35 +1,7 @@
 <main>
-    <div class="container">
+  <div class="container">
+    <app-auth-option option="Sou Responsável" [userType]="userType.Parents" path="/login" />
 
-        <app-auth-option 
-            option="Sou Aluno" 
-            [priority]="options.High"
-            [userType]="userType.Student"
-            path="/login" 
-          />
-        <app-auth-option 
-            option="Sou Responsável" 
-            [priority]="options.High"
-            [userType]="userType.Parents"
-            path="/login" 
-          />
-        <app-auth-option 
-            option="Matriz" 
-            [priority]="options.Low"
-            [userType]="userType.Matrix"
-            path="/matrix-auth" 
-          />
-        <app-auth-option 
-            option="Instituto" 
-            [priority]="options.Low"
-            [userType]="userType.Institutional"
-            path="/institutional-auth" 
-          />
-        <app-auth-option 
-            option="Professor" 
-            [priority]="options.Low"
-            [userType]="userType.Professor"
-            path="/professor-auth" 
-          />
-    </div>
+    <app-auth-option option="Sou Aluno" [userType]="userType.Student" path="/login" />
+  </div>
 </main>

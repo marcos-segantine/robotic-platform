@@ -1,7 +1,3 @@
-export enum AuthOptionsEnum {
-    High = "High",
-    Low = "Low",
-}
 export enum UserType {
     Student = "Student",
     Parents = "Parents",

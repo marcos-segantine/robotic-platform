@@ -7,19 +7,12 @@
 
     width: 100%;
     min-width: 300px;
-    height: 65%;
     min-height: 30rem;
 }
 
-app-auth-option:has(.high-priority) {
+app-auth-option {
     width: 100%;
     height: min-content;
-}
-
-app-auth-option:has(.low-priority) {
-    width: 100%;
-    height: min-content;
-    min-height: 5rem;
 }
 
 @media screen and (min-width: 767px) {
@@ -30,14 +23,8 @@ app-auth-option:has(.low-priority) {
         flex-wrap: wrap;
     }
 
-    app-auth-option:has(.high-priority) {
+    app-auth-option {
         width: calc(50% - 1em);
         height: calc(100% - 10% - 1em);
-    }
-    
-    app-auth-option:has(.low-priority) {
-        width: calc(33% - .5em);
-        height: 10%;
-        min-height: none;
     }
 }
