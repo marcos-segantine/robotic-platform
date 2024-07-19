@@ -1,6 +1,6 @@
 button {
     border: none;
-    border-radius: var(var(--border-radius-small));
+    border-radius: var(--border-radius-small);
     
     padding: .5rem 1rem;
     margin: 1rem auto;
@@ -11,6 +11,15 @@ button {
     cursor: pointer;
 }
 
+.primary {
+  background-color: var(--color-orange);  
+}
+
+.secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
 button:hover {
-    filter: brightness(1);
+    filter: brightness(1.1);
 }
