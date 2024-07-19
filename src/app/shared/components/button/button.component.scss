@@ -1,6 +1,6 @@
 button {
     border: none;
-    border-radius: var(--border-radius-small);
+    border-radius: var(var(--border-radius-small));
     
     padding: .5rem 1rem;
     margin: 1rem auto;

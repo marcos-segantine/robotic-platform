@@ -1,24 +1,63 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+$color-light-primary: #EFEFEF;
+$color-light-secondary: #F2F3F5;
+$color-light-ternary: #FFFFFF;
+
+$color-dark-primary: #292B2F;
+$color-dark-secondary: #2E3036;
+$color-dark-ternary: #37393F;
 
 :root {
-    --color-dark-primary: #292B2F;
-    --color-dark-secondary: #2E3036;
-    --color-dark-ternary: #37393F;
-
-    --color-light-primary: #EFEFEF;
-    --color-light-secondary: #F2F3F5;
-    --color-light-ternary: #FFFFFF;
-
     --color-red: #C3331D;
     --color-orange: #FFB500;
     --color-green: #00BA4A;
 
     --border-radius-small: 10px;
     --border-radius-medium: 20px;
+}
+
+@mixin lighten() {
+    --bg-color: #{$color-light-primary};
+    --color-text: #000000;
+    --color-primary: #{$color-light-primary};
+    --color-secondary: #{$color-light-secondary};
+    --color-ternary: #{$color-light-ternary};
+}
+
+@mixin darken() {
+    --bg-color: #{$color-dark-primary};
+    --color-text: #FFFFFF;
+    --color-primary: #{$color-dark-primary};
+    --color-secondary: #{$color-dark-secondary};
+    --color-ternary: #{$color-dark-ternary};
+}
+
+body.light {
+    @include lighten();
+}
+
+body.dark {
+    @include darken();
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--color-text);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: var(--bg-color);
 }
 
 @font-face {
