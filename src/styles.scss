@@ -100,12 +100,12 @@ p {
 }
 
 input {
-    font-family: "Manrope-bold";
+    font-family: "Manrope-Bold";
     font-size: 1.17rem;
 }
 
 button {
-    font-family: "Manrope-bold";
+    font-family: "Manrope-Bold";
 }
 
 span {
@@ -120,4 +120,9 @@ main {
 a {
     text-decoration: none;
     color: currentColor;
+    font-family: 'Manrope-Bold';
+}
+
+li {
+    list-style: none;
 }
