@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NavigationStart, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -12,10 +12,20 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 export class FooterComponent implements OnInit {
   footerMode: "primary" | "secondary" = "primary";
 
-  ngOnInit(): void {
-    const currentPath = document.location.href.split('/').at(-1);
+  constructor(private router: Router) { }
 
-    if (currentPath === "" || currentPath === "login") this.footerMode = "primary"
-    else this.footerMode = "secondary"
+  updateFooterState() {
+    this.footerMode = 'secondary'
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        const currentPath = document.location.href.split('/').at(-1);
+
+        if (currentPath === "" || currentPath === "login") this.footerMode = "primary"
+        else this.footerMode = "secondary"
+      }
+    })
   }
 }
