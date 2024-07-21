@@ -1,3 +1,16 @@
 <aside>
-    <h1>SIDE BAR</h1>
+    <nav>
+        <ul>
+            <li>
+                <a class="{{ currentPage == 'home' ? 'active' : 'deactivate' }}">
+                    <app-home-icon fillColor="{{ currentPage == 'home' ? '#000000' : '#FFFFFF' }}" />
+                </a>
+            </li>
+            <li>
+                <a class="{{ currentPage == 'activity' ? 'active' : 'deactivate' }}">
+                    <app-activity-icon fillColor="{{ currentPage == 'activity' ? '#000000' : '#FFFFFF' }}" />
+                </a>
+            </li>
+        </ul>
+    </nav>
 </aside>

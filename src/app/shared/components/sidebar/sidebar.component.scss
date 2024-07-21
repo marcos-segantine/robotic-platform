@@ -2,6 +2,52 @@ aside {
     background-color: var(--color-dark);
 
     border-radius: var(--border-radius-small);
-    
+
     height: 100%;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2em 0;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+
+    a {
+        min-width: 32px;
+        min-height: 32px;
+
+        display: block;
+        padding: .8em;
+        margin: 0;
+    }
+
+    a > * {
+        padding: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+    }
+}
+
+svg {
+    background-color: red;
+}
+
+
+.active {
+    background-color: var(--color-orange);
+
+    border-radius: var(--border-radius-small);
 }
