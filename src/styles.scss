@@ -15,7 +15,7 @@ $header-height: 5rem;
     --color-dark: #37393F;
 
     --header-height: #{$header-height};
-    --sidebar-height: calc(100vh - #{$header-height});
+    --sidebar-height: calc(100vh - 2em - 1rem - #{$header-height});
 
     --border-radius-small: 10px;
     --border-radius-medium: 20px;
