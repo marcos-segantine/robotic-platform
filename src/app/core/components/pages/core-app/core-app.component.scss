@@ -3,6 +3,10 @@
     grid-template-columns: 10% 90%;
 }
 
+app-sidebar {
+    height: var(--sidebar-height);
+}
+
 @media screen and (max-width: 767px) {
     .container {
         grid-template-columns: 100%;

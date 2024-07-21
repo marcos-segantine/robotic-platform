@@ -1,20 +1,20 @@
-<footer>
-    @if(footerMode === "primary") {
-    <nav>
-        <ul>
-            <li>
-                <a routerLink="/professor-auth" routerLinkActive="active" ariaCurrentWhenActive="page"
-                    (click)="updateFooterState()">Professor</a>
-            </li>
-            <li>
-                <a routerLink="/institutional-auth" routerLinkActive="active" ariaCurrentWhenActive="page"
-                    (click)="updateFooterState()">Instituição</a>
-            </li>
-            <li>
-                <a routerLink="/matrix-auth" routerLinkActive="active" ariaCurrentWhenActive="page"
-                    (click)="updateFooterState()">Matriz</a>
-            </li>
-        </ul>
-    </nav>
-    }
-</footer>
+@if(footerMode === "primary") {
+    <footer>
+            <nav>
+            <ul>
+                <li>
+                    <a routerLink="/professor-auth" routerLinkActive="active" ariaCurrentWhenActive="page"
+                        (click)="updateFooterState()">Professor</a>
+                </li>
+                <li>
+                    <a routerLink="/institutional-auth" routerLinkActive="active" ariaCurrentWhenActive="page"
+                        (click)="updateFooterState()">Instituição</a>
+                </li>
+                <li>
+                    <a routerLink="/matrix-auth" routerLinkActive="active" ariaCurrentWhenActive="page"
+                        (click)="updateFooterState()">Matriz</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+}
