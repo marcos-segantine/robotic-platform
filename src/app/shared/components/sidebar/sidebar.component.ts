@@ -12,4 +12,12 @@ import { ActivityComponentIcon } from '../../../../../public/assets/icons/activi
 })
 export class SidebarComponent {
   currentPage = "home";
+  isToShowMenu = false;
+
+  showMenu() {
+    const asideRef = document.getElementsByTagName("aside")[0];
+    asideRef.classList.toggle("menu-active");
+    
+    this.isToShowMenu = !this.isToShowMenu
+  }
 }
