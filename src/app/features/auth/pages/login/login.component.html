@@ -15,7 +15,7 @@
 
             <div class="buttons">
                 <app-button text="Voltar" [buttonType]="buttonType.Secondary" />
-                <app-button text="Confirmar" [buttonType]="buttonType.Primary" />
+                <app-button text="Confirmar" [buttonType]="buttonType.Primary" (event)="login()" />
             </div>
         </div>
     </div>

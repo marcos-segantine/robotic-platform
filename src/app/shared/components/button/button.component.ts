@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { ButtonType } from '../../../features/auth/enum/button-type-enum';
 
@@ -12,6 +12,11 @@ import { ButtonType } from '../../../features/auth/enum/button-type-enum';
 export class ButtonComponent {
   @Input({ required: true }) text = "";
   @Input({ required: true }) buttonType: ButtonType = ButtonType.Primary;
+  @Output() event = new EventEmitter();
 
   buttonTypeValue = ButtonType;
+
+  emitEvent() {
+    this.event.emit()
+  }
 }
