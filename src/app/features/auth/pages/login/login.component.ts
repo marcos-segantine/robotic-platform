@@ -22,5 +22,6 @@ export class LoginComponent {
   login() {
     // after introduce back-end logic, remove this line
     this.userDataService.setUserData({ name: "Marcos", userType: "professional" });
+    this.router.navigate(['app/home'])
   }
 }
