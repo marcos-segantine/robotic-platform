@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { HomeComponentIcon } from '../../../../../public/assets/icons/home/home.component';
 import { ActivityComponentIcon } from '../../../../../public/assets/icons/activity/activity.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,6 +15,13 @@ import { ActivityComponentIcon } from '../../../../../public/assets/icons/activi
 export class SidebarComponent {
   currentPage = "home";
   isToShowMenu = false;
+
+  constructor(private location: Location) { }
+
+  route(path: "home" | "add-activity") {
+    this.location.go("app/"+ path)
+    this.currentPage = path
+  }
 
   showMenu() {
     const asideRef = document.getElementsByTagName("aside")[0];

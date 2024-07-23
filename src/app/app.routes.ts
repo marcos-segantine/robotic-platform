@@ -34,9 +34,13 @@ export const routes: Routes = [
         children:
             [
                 {
+                    path: "home",
+                    component: AddActivityComponent
+                },
+                {
                     path: "add-activity",
                     component: AddActivityComponent
-                }
+                },
             ]
     },
 ];
