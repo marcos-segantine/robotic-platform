@@ -25,6 +25,11 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     this.userData = this.userDataService.getUserData();
 
+    const fullCurrentPath = document.location.pathname.split("/")
+    if (fullCurrentPath.at(-1) !== undefined) {
+      this.currentPage = fullCurrentPath.at(-1) as string
+    }
+
     if (this.userData === null) {
       this.userData = null;
       throw new Error("USER DATA IS NULL")

@@ -1,0 +1,52 @@
+input {
+    border: none;
+    border-radius: var(--border-radius-small);
+
+    background-color: var(--color-ternary);
+
+    color: var(--color-text);
+
+    outline: none;
+
+    padding: 0.5em 1em;
+}
+
+input::placeholder {
+    font-size: 1rem;
+}
+
+.bigger {
+    width: 100%;
+    min-width: 280px;
+}
+
+.medium {
+    width: 100%;
+}
+
+.small {
+    width: 100%;
+}
+
+span {
+    margin  : 1em 0 .5em;
+ 
+    display: block;
+}
+
+@media screen and (min-width: 767px) {
+    .bigger {
+        width: 70%;
+        max-width: 900px;
+    }
+    
+    .medium {
+        width: 50%;
+        max-width: 700px;
+    }
+    
+    .small {
+        width: 35%;
+        max-width: 500px;
+    }
+}

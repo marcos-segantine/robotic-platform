@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 24px;
 
     height: var(--sidebar-height);
 }
@@ -10,10 +11,16 @@ app-sidebar {
     height: 100%;
 }
 
+.page {
+    flex-grow: 1;
+    height: 100%;
+}
+
 @media screen and (max-width: 767px) {
     .container {
         flex-direction: column;
         justify-content: flex-start;
+        
     }
 
     app-sidebar {
@@ -21,6 +28,11 @@ app-sidebar {
         
         position: relative;
     
+        width: 100%;
+    }
+
+    .page {
+        padding-top: 3.5em;
         width: 100%;
     }
 }

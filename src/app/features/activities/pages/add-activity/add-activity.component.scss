@@ -1,0 +1,112 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 2em;
+
+    min-height: 100%;
+    width: 100%;
+}
+
+.options {
+    width: 100%;
+
+    a {
+        cursor: pointer;
+    }
+    
+    div {
+        display: flex;
+        gap: 1em;
+        width: max-content;
+    
+        padding: 1em;
+        margin: 0 auto;
+
+        background-color: var(--color-ternary);
+    
+        border-radius: var(--border-radius-small);
+    }
+}
+
+.forms {
+    width: 100%;
+}
+
+.activity {
+    margin-top: 3em;
+
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    h3 {
+        width: 100%;
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: .5em;
+    justify-content: center;
+
+    margin: 3em 0;
+}
+
+.trails {
+    display: none;
+}
+
+@media screen and (min-width: 767px) {
+    .activity {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        width: 100%;
+    }
+
+    .activity>div {
+        width: 50%;
+    }
+
+    .buttons {
+        justify-content: start;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .forms {
+            width: calc(70% - 1em);
+
+            .activity {
+                width: 100%;
+            }
+        }
+
+        .trails {
+            width: calc(30% - 1em);
+        
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+
+    .activity {
+        width: 70%;
+    }
+
+    .trails {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
