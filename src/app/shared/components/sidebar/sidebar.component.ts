@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { HomeComponentIcon } from '../../../../../public/assets/icons/home/home.component';
 import { ActivityComponentIcon } from '../../../../../public/assets/icons/activity/activity.component';
+
+import { UserDataService } from '../../../core/services/user-data.service';
+import { UserDataModel } from '../../../core/models/user-data.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,21 +14,36 @@ import { ActivityComponentIcon } from '../../../../../public/assets/icons/activi
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   currentPage = "home";
   isToShowMenu = false;
 
-  constructor(private router: Router) { }
+  userData: UserDataModel | null = null
+
+  constructor(private router: Router, private userDataService: UserDataService) { }
+
+  ngOnInit(): void {
+    this.userData = this.userDataService.getUserData();
+
+    if (this.userData === null) {
+      this.userData = null;
+      throw new Error("USER DATA IS NULL")
+    }
+  }
 
   route(path: "home" | "add-activity") {
-    this.router.navigate(["app/" + path])
+    if (!this.userData?.userType) {
+      throw new Error("Can't route because user data is null")
+    }
+
+    this.router.navigate([`app/${this.userData.userType}/${path}`])
     this.currentPage = path
   }
 
   showMenu() {
     const asideRef = document.getElementsByTagName("aside")[0];
     asideRef.classList.toggle("menu-active");
-    
+
     this.isToShowMenu = !this.isToShowMenu
   }
 }
