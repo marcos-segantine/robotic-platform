@@ -36,7 +36,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  route(path: "home" | "add-activity") {
+  route(path: "home" | "activity") {
     if (!this.userData?.userType) {
       throw new Error("Can't route because user data is null")
     }
