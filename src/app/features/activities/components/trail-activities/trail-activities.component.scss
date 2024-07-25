@@ -51,10 +51,6 @@
 }
 
 @media screen and (min-width: 767px) {
-    .trail {
-        width: 100%;
-    }
-
     .statistics-indicator {
         justify-content: space-between;
         width: 100%;
@@ -73,11 +69,5 @@
 
     .statistics-indicator>* {
         width: max-content;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .trail {
-        width: 80%;
     }
 }
