@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+   
+.progress-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress-background {
+    fill: none;
+    stroke: var(--color-secondary);
+    stroke-width: 6;
+}
+
+.progress-bar {
+    fill: none;
+    stroke-width: 6;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1s;
+    stroke-dashoffset: 100;
+}
+
+.progress-value {
+    position: absolute;
+    font-size: 1.17rem;
+    font-family: Arial, sans-serif;
+}
+
+.orange {
+    color: var(--color-orange);
+    stroke: var(--color-orange);
+}
+
+.red {
+    color: var(--color-red);
+    stroke: var(--color-red);
+}
+
+.green {
+    color: var(--color-green);
+    stroke: var(--color-green);
+}

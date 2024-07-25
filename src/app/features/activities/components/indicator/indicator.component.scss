@@ -1,0 +1,42 @@
+div {
+    display: block;
+
+    width: 3rem;
+    height: 6px;
+
+    border-radius: var(--border-radius-small);
+}
+
+.contains-number {
+    cursor: pointer;
+
+    display: block;
+
+    padding: 0;
+    height: 1.2rem;
+
+    font-family: "Manrope-Bold";
+
+    text-align: center;
+    line-height: 1;
+}
+
+.red {
+    background-color: var(--color-red);
+}
+
+.green {
+    background-color: var(--color-green);
+}
+
+.orange {
+    background-color: var(--color-orange);
+}
+
+.white {
+    background-color: var(--color-white);
+}
+
+.default {
+    background-color: var(--color-primary);
+}

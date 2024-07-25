@@ -3,7 +3,9 @@ import { Routes } from '@angular/router';
 import { AuthOptionsComponent } from './features/auth/pages/auth-options/auth-options.component';
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { AddActivityComponent } from './features/activities/pages/add-activity/add-activity.component';
-import { ProfessionalDashboardComponent } from './features/dashboard/professional-dashboard/professional-dashboard.component';
+import { ProfessionalDashboardComponent } from './features/dashboard/pages/professional-dashboard/professional-dashboard.component';
+import { StudentActivityComponent } from './features/activities/pages/student-activity/student-activity.component';
+import { StudentDashboardComponent } from './features/dashboard/pages/student-dashboard/student-dashboard.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
@@ -35,11 +37,19 @@ export const routes: Routes = [
         children:
             [
                 {
+                    path: "student/home",
+                    component: StudentDashboardComponent
+                },
+                {
+                    path: "student/activity",
+                    component: StudentActivityComponent
+                },
+                {
                     path: "professional/home",
                     component: ProfessionalDashboardComponent
                 },
                 {
-                    path: "professional/add-activity",
+                    path: "professional/activity",
                     component: AddActivityComponent
                 },
             ]

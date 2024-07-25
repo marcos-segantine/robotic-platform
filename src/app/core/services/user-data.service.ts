@@ -25,5 +25,8 @@ export class UserDataService {
 
   setUserData(userData: UserDataModel) {
     this.localStorage.setItem("user-data", JSON.stringify(userData));
+    
+    const userDataUpdated = this.getUserData();
+    return userDataUpdated;
   }
 }

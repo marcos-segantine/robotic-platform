@@ -6,6 +6,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 import { ButtonType } from '../../enum/button-type-enum';
 
 import { UserDataService } from '../../../../core/services/user-data.service';
+import { UserDataModel } from '../../../../core/models/user-data.model';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,13 @@ export class LoginComponent {
 
   login() {
     // after introduce back-end logic, remove this line
-    this.userDataService.setUserData({ name: "Marcos", userType: "professional" });
-    this.router.navigate(['app/home'])
+    const userData: UserDataModel | null = this.userDataService.setUserData({ name: "Marcos", userType: "student" });
+
+    if (userData !== null) {
+      this.router.navigate([`app/${userData.userType}/home`])
+    }
+    else {
+      throw new Error("USER DATA IS NULL")
+    }
   }
 }

@@ -1,0 +1,35 @@
+.filter {
+    width: 100%;
+
+    div {
+        display: flex;
+        gap: 1em;
+
+        background-color: var(--color-ternary);
+    
+        width: max-content;
+        padding: .5em;
+        margin: 0 auto;
+
+        border-radius: var(--border-radius-small);
+    }
+
+    span {
+        display: block;
+    }
+}
+
+.trails {
+    width: 100%;
+    margin-top: 2em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+@media screen and (min-width: 767px) {
+    .filter {
+
+    }
+}
