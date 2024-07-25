@@ -37,6 +37,21 @@ $header-height: 5rem;
     --color-ternary: #{$color-dark-ternary};
 }
 
+@font-face {
+    font-family: "Manrope-Bold";
+    src: url("/assets/fonts/Manrope-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Manrope-Regular";
+    src: url("/assets/fonts/Manrope-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Manrope-Medium";
+    src: url("/assets/fonts/Manrope-Medium.ttf");
+}
+
 body.light {
     @include lighten();
 }
@@ -75,24 +90,9 @@ main {
     align-items: center;
 
     min-height: 35vh;
-    padding: 2em 1em;
+    padding: 2em 1em 0;
 
     background-color: var(--bg-color);
-}
-
-@font-face {
-    font-family: "Manrope-Bold";
-    src: url("/assets/fonts/Manrope-Bold.ttf");
-}
-
-@font-face {
-    font-family: "Manrope-Regular";
-    src: url("/assets/fonts/Manrope-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Manrope-Medium";
-    src: url("/assets/fonts/Manrope-Medium.ttf");
 }
 
 h1,
