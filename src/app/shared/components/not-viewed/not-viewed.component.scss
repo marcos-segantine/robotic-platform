@@ -1,5 +1,5 @@
 .not-viewed {
-    display:  none;
+    display: none;
 
     background-color: var(--color-ternary);
 
@@ -11,13 +11,18 @@
     padding: 1em;
 
     h3 {
-        margin-bottom: 1em;
+        margin-bottom: .5em;
     }
 
     div {
         border-radius: var(--border-radius-small);
 
+        height: calc(100% / 3 - .5em);
         padding: .5em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     div:hover {
@@ -26,6 +31,7 @@
 
     span {
         display: block;
+        font-size: var(--font-size-very-tiny);
     }
 }
 

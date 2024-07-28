@@ -12,7 +12,7 @@ input {
 }
 
 input::placeholder {
-    font-size: 1rem;
+    font-size: var(--font-size-small);
 }
 
 .bigger {

@@ -21,8 +21,9 @@
 }
 
 .label {
-    margin-top: 1em;
     display: block;
+
+    font-size: var(--font-size-very-tiny);
 }
 
 .red {
@@ -39,7 +40,9 @@
 
 @media screen and (min-width: 1024px) {
     .learning-progress {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
  
         background-color: var(--color-ternary);
 
@@ -49,6 +52,18 @@
         width: 100%;
         min-width: 300px;
         max-width: 500px;
-        height: max-content;
+        height: 100%;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            height: 75%;
+            
+            div {
+                height: max-content;
+            }
+        }
     }
 }
