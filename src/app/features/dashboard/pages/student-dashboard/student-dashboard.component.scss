@@ -1,0 +1,238 @@
+.container {
+    height: 100%;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+
+    margin: .9em 0;
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    gap: 2em;
+
+    padding: 1em;
+    width: 100%;
+
+    background-color: var(--color-ternary);
+
+    border-radius: var(--border-radius-small);
+
+    .logo {
+        display: none;
+    }
+
+    .text h1 {
+        margin-bottom: 1em;
+    }
+
+    .image {
+        display: none;
+    }
+}
+
+.chart {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 1em;
+
+    padding: 1em;
+
+    background-color: var(--color-ternary);
+
+    border-radius: var(--border-radius-small);
+
+    h2 {
+        width: 100%;
+    }
+
+    .graphic {
+        background-color: var(--color-secondary);
+
+        width: 70%;
+        height: 80%;
+    }
+
+    .descriptions {
+        width: calc(30% - 1em);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .description {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            .value-indicator {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 50px;
+                height: 50px;
+
+                border-radius: var(--border-radius-large);
+            }
+        }
+
+        .orange {
+            color: var(--color-orange);
+            background-color: var(--color-orange-opacity);
+        }
+
+        .red {
+            color: var(--color-red);
+            background-color: var(--color-red-opacity);
+        }
+
+        .green {
+            color: var(--color-green);
+            background-color: var(--color-green-opacity);
+        }
+    }
+}
+
+.trial {
+    border-radius: var(--border-radius-small);
+
+    background-color: var(--color-ternary);
+
+    padding: 1em;
+    width: 100%;
+
+    .info {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .image {
+        width: 75px;
+        height: 75px;
+
+        background-color: var(--color-secondary);
+    }
+}
+
+.trial:hover {
+    background-color: var(--color-secondary);
+}
+
+.indicators {
+    margin-top: 1em;
+
+    .bar {
+        display: block;
+        
+        width: 100%;
+        height: 5px;
+        margin: .3em 0 1em;
+
+        border-radius: var(--border-radius-small);
+
+        background-color: var(--color-secondary);
+
+        overflow: hidden;
+    }
+
+    .progress {
+        display: block;
+
+        height: 5px;
+    }
+
+    .orange {
+        background-color: var(--color-orange);
+    }
+
+    .red {
+        background-color: var(--color-red);
+    }
+
+    .green {
+        background-color: var(--color-green);
+    }
+}
+
+.line-3 {
+    flex-direction: column;
+    align-items: center;
+    gap: .9em;
+}
+
+@media screen and (min-width: 767px) {
+    .line-1 {
+        gap: 1em;
+
+        height: calc(25% - .6em);
+    }
+
+    .line-2 {
+        height: calc(45% - .6em);
+    }
+
+    .line-3 {
+        height: calc(25% - .6em);
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .greeting {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .logo {
+            display: block;
+
+            width: 30%;
+            max-width: 150px;
+            height: 150px;
+
+            background-color: var(--color-secondary);
+        }
+
+        .text {
+            flex-grow: 1;
+            width: 70%;
+        }
+    }
+
+    .trial {
+        width: calc(50% - .45em);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .greeting {
+
+        .image {
+            display: block;
+
+            width: 45%;
+            height: 100%;
+
+            background-color: var(--color-secondary);
+        }
+    }
+
+    .line-3 {
+        gap: 0;
+    }
+
+    .trial {
+
+        width: calc((100% - 2em) / 3);
+    }
+}

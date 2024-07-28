@@ -1,10 +1,13 @@
 .not-viewed {
+    display:  none;
+
     background-color: var(--color-ternary);
 
     border-radius: var(--border-radius-small);
 
     width: 100%;
-    height: max-content;
+    max-width: 400px;
+    height: 100%;
     padding: 1em;
 
     h3 {
@@ -14,7 +17,7 @@
     div {
         border-radius: var(--border-radius-small);
 
-        padding: 1em;
+        padding: .5em;
     }
 
     div:hover {
@@ -22,6 +25,12 @@
     }
 
     span {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .not-viewed {
         display: block;
     }
 }

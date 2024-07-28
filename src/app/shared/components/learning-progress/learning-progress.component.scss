@@ -1,3 +1,7 @@
+.learning-progress {
+    display: none;
+}
+
 .bar {
     display: block;
     width: 100%;
@@ -35,12 +39,16 @@
 
 @media screen and (min-width: 1024px) {
     .learning-progress {
+        display: block;
+ 
         background-color: var(--color-ternary);
 
         border-radius: var(--border-radius-small);
         padding: 1em;
 
         width: 100%;
+        min-width: 300px;
+        max-width: 500px;
         height: max-content;
     }
 }

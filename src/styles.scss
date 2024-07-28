@@ -11,6 +11,9 @@ $header-height: 5rem;
     --color-red: #C3331D;
     --color-orange: #FFB500;
     --color-green: #00BA4A;
+    --color-red-opacity: rgba(195, 51, 29, .5);
+    --color-orange-opacity: rgba(255, 181, 0, .5);
+    --color-green-opacity: rgba(0, 186, 74, .5);
     --color-black: #292B2F;
     --color-dark: #37393F;
 
@@ -19,6 +22,7 @@ $header-height: 5rem;
 
     --border-radius-small: 10px;
     --border-radius-medium: 20px;
+    --border-radius-large: 50%;
 }
 
 @mixin lighten() {
