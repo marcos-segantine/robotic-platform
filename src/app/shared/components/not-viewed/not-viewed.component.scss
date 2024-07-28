@@ -1,0 +1,27 @@
+.not-viewed {
+    background-color: var(--color-ternary);
+
+    border-radius: var(--border-radius-small);
+
+    width: 100%;
+    height: max-content;
+    padding: 1em;
+
+    h3 {
+        margin-bottom: 1em;
+    }
+
+    div {
+        border-radius: var(--border-radius-small);
+
+        padding: 1em;
+    }
+
+    div:hover {
+        background-color: var(--color-secondary);
+    }
+
+    span {
+        display: block;
+    }
+}
