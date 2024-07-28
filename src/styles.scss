@@ -30,6 +30,10 @@ $header-height: 5rem;
     --font-size-medium: 1.10em;
     --font-size-large: 1.5em;
     --font-size-very-large: 2em;
+
+    --font-family-bold: "Manrope-Bold";
+    --font-family-bold: "Manrope-Regular";
+    --font-family-bold: "Manrope-Medium";
 }
 
 @mixin lighten() {

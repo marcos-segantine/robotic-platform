@@ -17,7 +17,7 @@
     div {
         border-radius: var(--border-radius-small);
 
-        height: calc(100% / 3 - .5em);
+        height: calc(100% / 3.5);
         padding: .5em;
 
         display: flex;
@@ -35,8 +35,14 @@
     }
 }
 
+div span:last-of-type {
+    font-weight: bold;
+}
+
 @media screen and (min-width: 1024px) {
     .not-viewed {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }

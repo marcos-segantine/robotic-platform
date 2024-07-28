@@ -1,5 +1,10 @@
 .container {
-    height: 100%;
+    min-height: 100%;
+}
+
+app-learning-progress,
+app-not-viewed {
+    display: none;
 }
 
 .line-1,
@@ -41,10 +46,11 @@
 
 .chart {
     display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    gap: 1em;
+    flex-direction: column;
+    align-self: center;
+    gap: 2em;
 
+    width: 100%;
     padding: 1em;
 
     background-color: var(--color-ternary);
@@ -58,16 +64,17 @@
     .graphic {
         background-color: var(--color-secondary);
 
-        width: 70%;
-        height: 80%;
+        width: 100%;
+        height: 15rem;
     }
 
     .descriptions {
-        width: calc(30% - 1em);
+        width: 100%;
 
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1.5em 0;
 
         .description {
             display: flex;
@@ -83,6 +90,15 @@
                 height: 50px;
 
                 border-radius: var(--border-radius-large);
+            }
+
+            .value-indicator,
+            h4 {
+                font-size: var(--font-size-tiny);
+            }
+
+            span {
+                font-size: var(--font-size-very-tiny);
             }
         }
 
@@ -134,7 +150,7 @@
 
     .bar {
         display: block;
-        
+
         width: 100%;
         height: 5px;
         margin: .3em 0 1em;
@@ -172,23 +188,6 @@
 }
 
 @media screen and (min-width: 767px) {
-    .line-1 {
-        gap: 1em;
-
-        height: calc(25% - .6em);
-    }
-
-    .line-2 {
-        height: calc(45% - .6em);
-    }
-
-    .line-3 {
-        height: calc(25% - .6em);
-        
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
     .greeting {
         flex-direction: row;
         justify-content: space-between;
@@ -209,14 +208,44 @@
         }
     }
 
-    .trial {
-        width: calc(50% - .45em);
+    .descriptions {
+        justify-content: space-between;
+
+        .description {
+            width: 50%;
+
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    app-learning-progress,
+    app-not-viewed {
+        display: block;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .greeting {
+    .line-1 {
+        gap: 1em;
 
+        height: calc(25% - .6em);
+    }
+
+    .line-2 {
+        height: calc(45% - .6em);
+    }
+
+    .line-3 {
+        height: calc(25% - .6em);
+
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .greeting {
         .image {
             display: block;
 
@@ -227,12 +256,39 @@
         }
     }
 
-    .line-3 {
-        gap: 0;
-    }
-
     .trial {
-
         width: calc((100% - 2em) / 3);
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .chart {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+
+        .graphic {
+            width: 70%;
+        }
+
+        .descriptions {
+            width: 30%;
+
+            .description {
+                width: 100%;
+
+                justify-content: center;
+
+                .value-indicator,
+                h4 {
+                    font-size: var(--font-size-small);
+                }
+
+                span {
+                    font-size: var(--font-size-tiny);
+                }
+            }
+        }
     }
 }
