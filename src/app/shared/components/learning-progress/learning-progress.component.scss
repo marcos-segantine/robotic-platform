@@ -1,0 +1,46 @@
+.bar {
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin-top: .5em;
+
+    border-radius: var(--border-radius-medium);
+
+    overflow: hidden;
+
+    background-color: var(--color-secondary);
+}
+
+.progress {
+    display: block;
+    height: 5px;
+}
+
+.label {
+    margin-top: 1em;
+    display: block;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
+}
+
+@media screen and (min-width: 1024px) {
+    .learning-progress {
+        background-color: var(--color-ternary);
+
+        border-radius: var(--border-radius-small);
+        padding: 1em;
+
+        width: 100%;
+        height: max-content;
+    }
+}
