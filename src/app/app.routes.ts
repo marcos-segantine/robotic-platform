@@ -6,6 +6,7 @@ import { AddActivityComponent } from './features/activities/pages/add-activity/a
 import { ProfessionalDashboardComponent } from './features/dashboard/pages/professional-dashboard/professional-dashboard.component';
 import { StudentActivityComponent } from './features/activities/pages/student-activity/student-activity.component';
 import { StudentDashboardComponent } from './features/dashboard/pages/student-dashboard/student-dashboard.component';
+import { StudentLessonsComponent } from './features/activities/pages/student-lessons/student-lessons.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
@@ -43,6 +44,10 @@ export const routes: Routes = [
                 {
                     path: "student/activity",
                     component: StudentActivityComponent
+                },
+                {
+                    path: "student/activity/lessons",
+                    component: StudentLessonsComponent
                 },
                 {
                     path: "professional/home",

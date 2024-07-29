@@ -12,6 +12,7 @@ import { ButtonType } from '../../../features/auth/enum/button-type-enum';
 export class ButtonComponent {
   @Input({ required: true }) text = "";
   @Input({ required: true }) buttonType: ButtonType = ButtonType.Primary;
+  @Input() width = "";
   @Output() event = new EventEmitter();
 
   buttonTypeValue = ButtonType;

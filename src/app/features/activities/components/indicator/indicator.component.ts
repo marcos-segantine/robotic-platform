@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-indicator',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './indicator.component.html',
   styleUrl: './indicator.component.scss'
 })

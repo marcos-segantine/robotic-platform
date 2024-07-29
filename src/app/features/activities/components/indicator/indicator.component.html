@@ -1,6 +1,6 @@
 @if(number !== '0') {
-    <div class="{{ color }} contains-number">{{ number }}</div>
+    <div class="{{ color }} contains-number" routerLink="lessons">{{ number }}</div>
 }
 @else {
-    <div class="{{ color }}"></div>
+    <div class="{{ color }}" routerLink="lessons"></div>
 }
