@@ -1,5 +1,9 @@
 .container {
     min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 app-learning-progress,
@@ -13,8 +17,6 @@ app-not-viewed {
     display: flex;
     justify-content: space-between;
     gap: 1em;
-
-    margin: .9em 0;
 }
 
 .greeting {
@@ -51,6 +53,7 @@ app-not-viewed {
     gap: 2em;
 
     width: 100%;
+    height: 100%;
     padding: 1em;
 
     background-color: var(--color-ternary);
@@ -228,18 +231,20 @@ app-not-viewed {
 }
 
 @media screen and (min-width: 1200px) {
+    .container {
+        height: 100%;
+    }
+
     .line-1 {
         gap: 1em;
-
-        height: calc(25% - .6em);
     }
 
     .line-2 {
-        height: calc(45% - .6em);
+        flex-grow: 1;
     }
 
     .line-3 {
-        height: calc(25% - .6em);
+        height: 25%;
 
         flex-direction: row;
         flex-wrap: wrap;
