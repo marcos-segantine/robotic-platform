@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
+
+import { ButtonType } from '../../../auth/enum/button-type-enum';
+
+@Component({
+  selector: 'app-student-quiz',
+  standalone: true,
+  imports: [ButtonComponent],
+  templateUrl: './student-quiz.component.html',
+  styleUrl: './student-quiz.component.scss'
+})
+export class StudentQuizComponent {
+  buttonType = ButtonType
+}

@@ -8,6 +8,7 @@ import { StudentActivityComponent } from './features/activities/pages/student-ac
 import { StudentDashboardComponent } from './features/dashboard/pages/student-dashboard/student-dashboard.component';
 import { StudentLessonsComponent } from './features/activities/pages/student-lessons/student-lessons.component';
 import { StudentLessonComponent } from './features/activities/pages/student-lesson/student-lesson.component';
+import { StudentQuizComponent } from './features/activities/pages/student-quiz/student-quiz.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
@@ -53,6 +54,10 @@ export const routes: Routes = [
                 {
                     path: "student/activity/lessons/lesson",
                     component: StudentLessonComponent
+                },
+                {
+                    path: "student/activity/lessons/lesson/quiz",
+                    component: StudentQuizComponent
                 },
                 {
                     path: "professional/home",

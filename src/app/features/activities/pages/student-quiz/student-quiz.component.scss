@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5em;
+
+    // padding-top: 10em;
+}
+
+.question {
+    width: 100%;
+    padding: 4em 0;
+
+    display: flex;
+
+    position: relative;
+
+    p {
+        font-size: var(--font-size-large);
+        font-family: var(--font-family-bold);
+    }
+
+    .timer {
+        height: max-content;
+        padding: .5em 1em;
+
+        font-family: var(--font-family-bold);
+
+        border-radius: var(--border-radius-small);
+
+        position: absolute;
+        top: 0;
+        right: 5%;
+    }
+
+    .orange {
+        background-color: var(--color-orange-opacity);
+    }
+
+    .green {
+        background-color: var(--color-green-opacity);
+    }
+
+    .red {
+        background-color: var(--color-red-opacity);
+    }
+}
+
+.alternatives {
+    display: flex;
+    flex-direction: column;
+    gap: 2em 0;
+}
+
+.alternative {
+    font-family: var(--font-family-bold);
+    font-size: var(--font-size-medium);
+
+    padding: 1em;
+
+    border-radius: var(--border-radius-small);
+
+    cursor: pointer;
+}
+
+.alternative:hover {
+    background-color: var(--color-secondary);
+
+}
+
+@media screen and (min-width: 767px) {
+    .question {
+        p {
+            font-size: var(--font-size-large);
+            font-family: var(--font-family-bold);
+        }
+    }
+
+    .alternatives {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    .alternative {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .question {
+        p {
+            width: 70%;
+        }
+    }
+}
