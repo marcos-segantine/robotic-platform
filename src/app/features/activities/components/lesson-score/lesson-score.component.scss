@@ -1,0 +1,29 @@
+.score {
+    color: var(--color-white);
+    font-weight: bold;
+
+    display: block;
+    
+    padding: .1em 1.5em;
+    margin: 1em auto;
+    width: max-content;
+
+    border-radius: var(--border-radius-small);
+}
+
+.default {
+    background-color: var(--color-secondary);
+}
+
+.green {
+    background-color: var(--color-green);
+}
+
+.orange {
+    background-color: var(--color-orange);
+    color: var(--color-black);
+}
+
+.red {
+    background-color: var(--color-red);
+}

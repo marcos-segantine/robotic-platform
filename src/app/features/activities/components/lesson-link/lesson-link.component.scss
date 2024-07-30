@@ -16,11 +16,15 @@
     background-color: var(--color-primary);
 }
 
-.image {
-    width: 12rem;
-    height: 100px;
+.image-score {
+    .image {
+        width: 6rem;
+        height: 6rem;
 
-    background-color: var(--color-secondary);
+        border-radius: var(--border-radius-large);
+
+        background-color: var(--color-secondary);
+    }
 }
 
 .info {
