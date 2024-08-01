@@ -29,7 +29,7 @@ export class StudentDashboardComponent implements OnInit {
           'May'],
         datasets: [{
           data: [5000, 7500, 8000, 6000, 9000],
-          tension: 0.4,
+          tension: 0.7,
           pointRadius: 0,
           backgroundColor: 'rgba(255, 181, 0, .5)',
           borderColor: '#FFB500',

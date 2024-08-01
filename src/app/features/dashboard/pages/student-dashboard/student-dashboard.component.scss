@@ -237,6 +237,10 @@ app-not-viewed {
     app-not-viewed {
         display: block;
     }
+
+    .chart {
+        width: 75%;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -268,6 +272,10 @@ app-not-viewed {
 
             background-color: var(--color-secondary);
         }
+    }
+
+    .chart {
+        width: calc(100% - 400px);
     }
 
     .trial {
