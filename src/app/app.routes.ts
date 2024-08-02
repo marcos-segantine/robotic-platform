@@ -9,6 +9,7 @@ import { StudentDashboardComponent } from './features/dashboard/pages/student-da
 import { StudentLessonsComponent } from './features/activities/pages/student-lessons/student-lessons.component';
 import { StudentLessonComponent } from './features/activities/pages/student-lesson/student-lesson.component';
 import { StudentQuizComponent } from './features/activities/pages/student-quiz/student-quiz.component';
+import { InstitutionDashboardComponent } from './features/dashboard/pages/institution-dashboard/institution-dashboard.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
@@ -31,7 +32,7 @@ export const routes: Routes = [
         component: MaintenanceComponent
     },
     {
-        path: "institutional-auth",
+        path: "institution-auth",
         component: MaintenanceComponent
     },
     {
@@ -66,6 +67,10 @@ export const routes: Routes = [
                 {
                     path: "professional/activity",
                     component: AddActivityComponent
+                },
+                {
+                    path: "institution/home",
+                    component: InstitutionDashboardComponent
                 },
             ]
     },
