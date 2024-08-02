@@ -1,0 +1,133 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    padding-bottom: 1em;
+}
+
+.column-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    width: 100%;
+    // height: min-content; SET THIS ONE AFTER PUT THE CONTENT
+
+    .row-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        div {
+            background-color: var(--color-ternary);
+
+            border-radius: var(--border-radius-small);
+
+            padding: 1em;
+            width: 100%;
+            height: 8rem // REMOVE AFTER PUT THE CONTENT;
+        }
+    }
+
+    .row-2 {
+        width: 100%;
+        height: 20rem; // REMOVE AFTER PUT THE CONTENT
+
+        background-color: var(--color-ternary);
+
+        border-radius: var(--border-radius-small);
+    }
+
+    .row-3 {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        div {
+            width: 100%;
+            height: 10rem;
+
+            background-color: var(--color-ternary);
+
+            border-radius: var(--border-radius-small);
+        }
+    }
+}
+
+.column-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    width: 100%;
+}
+
+.chart {
+    background-color: var(--color-ternary);
+
+    border-radius: var(--border-radius-small);
+    width: 100%;
+    height: 30%;
+}
+
+app-ranking {
+    height: 70%;
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+
+        height: 100%;
+        padding-bottom: 0;
+    }
+
+    .column-1 {
+        width: 70%;
+        height: 100%;
+
+        .row-1 {
+            flex-direction: row;
+            align-items: stretch;
+
+            height: 15%;
+
+            div {
+                width: calc(100% / 3);
+                height: 100%;
+            }
+        }
+
+        .row-2 {
+            height: 50%;
+        }
+
+        .row-3 {
+            height: 35%;
+            flex-direction: row;
+ 
+            div {
+                width: 50%;
+                height: 100%;
+            }
+        }
+    }
+
+    .column-2 {
+        width: 30%;
+        height: 100%;
+        
+        .column-2 {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        
+            width: 30%;
+            height: 100%;
+        }        
+    }
+}
