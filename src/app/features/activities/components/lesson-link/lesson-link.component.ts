@@ -4,6 +4,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 
 import { ButtonType } from '../../../auth/enum/button-type-enum';
 import { LessonScoreComponent } from "../lesson-score/lesson-score.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lesson-link',
@@ -14,4 +15,10 @@ import { LessonScoreComponent } from "../lesson-score/lesson-score.component";
 })
 export class LessonLinkComponent {
   buttonType = ButtonType
+
+  constructor(private router: Router) { }
+
+  navigateLessonPage() {
+    this.router.navigate([`/app/student/activity/lessons/lesson`])
+  }
 }

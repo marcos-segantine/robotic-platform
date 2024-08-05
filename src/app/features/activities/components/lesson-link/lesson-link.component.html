@@ -10,7 +10,7 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente praesentium deserunt ipsam quidem ullam quam quisquam voluptatum cumque alias reprehenderit.</p>
 
         <div>
-            <app-button width="max-content" [buttonType]="buttonType.Primary" text="Ver Lição" />
+            <app-button width="max-content" [buttonType]="buttonType.Primary" text="Ver Lição" (event)="navigateLessonPage()" />
             <div>
                 <span>Tarefas completas <span class="task-status green">1 / 1</span></span>
             </div>
