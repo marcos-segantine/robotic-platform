@@ -38,8 +38,14 @@ input::placeholder {
     width: 100%;
 }
 
-span {
+.margin {
     margin: 1em 0 .5em;
+
+    display: block;
+}
+
+.no-margin {
+    margin: 0;
 
     display: block;
 }
