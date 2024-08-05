@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './input.component.scss'
 })
 export class InputComponent {
+  @Input({ required: true }) size: "all" | "bigger" | "medium" | "small" = "medium";
+  @Input({ required: true }) mode: "mode-1" | "mode-2" = "mode-1";
   @Input() placeholder = "";
-  @Input({ required: true }) size: "bigger" | "medium" | "small" = "medium";
   @Input() text = "";
 }

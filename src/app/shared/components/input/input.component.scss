@@ -1,10 +1,6 @@
 input {
-    border: none;
     border-radius: var(--border-radius-small);
-
-    background-color: var(--color-ternary);
-
-    color: var(--color-text);
+    border: none;
 
     outline: none;
 
@@ -13,6 +9,20 @@ input {
 
 input::placeholder {
     font-size: var(--font-size-small);
+}
+
+.mode-1 {
+    background-color: var(--color-ternary);
+    color: var(--color-text);
+}
+
+.mode-2 {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+.all {
+    width: 100%;
 }
 
 .bigger {
@@ -29,8 +39,8 @@ input::placeholder {
 }
 
 span {
-    margin  : 1em 0 .5em;
- 
+    margin: 1em 0 .5em;
+
     display: block;
 }
 
@@ -39,12 +49,12 @@ span {
         width: 70%;
         max-width: 900px;
     }
-    
+
     .medium {
         width: 50%;
         max-width: 700px;
     }
-    
+
     .small {
         width: 35%;
         max-width: 500px;
