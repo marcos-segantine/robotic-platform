@@ -42,5 +42,21 @@ export class InstitutionDashboardComponent implements OnInit {
         }
       },
     })
+
+    new Chart("performace", {
+      type: "line",
+      data: {
+        labels: ["Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        datasets: [{
+          label: 'My First Dataset',
+          data: [65, 59, 80, 81, 56],
+          fill: true,
+          backgroundColor: "rgba(255, 181, 0, 0.5)",
+          borderColor: '#FFB500',
+          pointRadius: 0,
+          tension: 0.7
+        }]
+      },
+    })
   }
 }
