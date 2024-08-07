@@ -1,12 +1,84 @@
 <div class="container">
     <div class="row-1">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+            <h3>Frequência</h3>
+            <canvas id="frequency"></canvas>
+        </div>
+        <div>
+            <h3>Uso da plataforma</h3>
+            <div class="activity-indicator">
+                <canvas id="activity"></canvas>
+                <div>
+                    <div>
+                        <span style="background-color: orange;"></span>
+                        <p>Uso moderado da plataforma</p>
+                    </div>
+                    <div>
+                        <span style="background-color: orange;"></span>
+                        <p>Uso moderado da plataforma</p>
+                    </div>
+                    <div>
+                        <span style="background-color: orange;"></span>
+                        <p>Uso moderado da plataforma</p>
+                    </div>
+                    <div>
+                        <span style="background-color: orange;"></span>
+                        <p>Uso moderado da plataforma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Alunos com menor desempenho</h3>
+
+            <div class="low-performance">
+                <div>
+                    <span>Marcos Segantine</span>
+                    <span>Turma 1</span>
+                </div>
+                <div>
+                    <span>Marcos Segantine</span>
+                    <span>Turma 1</span>
+                </div>
+                <div>
+                    <span>Marcos Segantine</span>
+                    <span>Turma 1</span>
+                </div>
+                <div>
+                    <span>Marcos Segantine</span>
+                    <span>Turma 1</span>
+                </div>
+                <div>
+                    <span>Marcos Segantine</span>
+                    <span>Turma 1</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row-2">
-        <canvas id="performace" class="main-chart"></canvas>
+        <div class="main-chart">
+            <div>
+                <div>
+                    <span class="color-indicator" style="background-color: orange;"></span>
+                    <span>Turma 1</span>
+                </div>
+                <div>
+                    <span class="color-indicator" style="background-color: orange;"></span>
+                    <span>Turma 2</span>
+                </div>
+                <div>
+                    <span class="color-indicator" style="background-color: orange;"></span>
+                    <span>Turma 3</span>
+                </div>
+                <div>
+                    <span class="color-indicator" style="background-color: orange;"></span>
+                    <span>Turma 4</span>
+                </div>
+            </div>
+
+            <canvas id="performance"></canvas>
+        </div>
         <app-ranking mode="mode-2" />
     </div>
 </div>

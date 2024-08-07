@@ -21,6 +21,86 @@
 
         width: 100%;
         height: 10rem;
+
+        text-align: center;
+
+        overflow: scroll;
+
+        h3 {
+            margin: .5em 0;
+        }
+
+        .low-performance {
+            display: flex;
+            flex-direction: column;
+
+            width: 100%;
+            height: min-content;
+            padding: .5em;
+
+            div {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                padding: 1em;
+
+                cursor: pointer;
+            }
+
+            div:hover {
+                background-color: var(--color-primary);
+            }
+        }
+
+        .activity-indicator {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+
+            width: 100%;
+            height: calc(100% - 2em - 1em);
+
+            canvas {
+                max-height: 100%;
+                max-width: 50%;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+                width: 50%;
+                
+                div {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    gap: .5em;
+                    
+                    width: 100%;
+                    height: min-content;
+
+                    p {
+                        font-size: var(--font-size-very-tiny);
+                        text-align: start;
+
+                        width: 100%;
+                    }
+
+                    span {
+                        display: block;
+
+                        width: 30px;
+                        height: 12px;
+
+                        border-radius: var(--border-radius-small);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -28,20 +108,57 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
-    
+
     width: 100%;
 
     .main-chart {
         width: 100%;
+        height: min-content;
+        padding: 1em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         background-color: var(--color-ternary);
 
         border-radius: var(--border-radius-small);
+
+        div {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5em;
+
+            height: min-content;
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: .5em;
+
+                .color-indicator {
+                    display: block;
+
+                    border-radius: var(--border-radius-medium);
+
+                    width: 25px;
+                    height: 15px;
+                }
+
+                font-weight: bold;
+                font-size: var(--font-size-very-tiny);
+            }
+        }
     }
 
     app-ranking {
         width: 100%;
     }
+}
+
+canvas {
+    max-height: 85%;
 }
 
 @media screen and (min-width: 767px) {
@@ -67,7 +184,7 @@
         div {
             width: 32.7%;
             height: 100%;
-            
+
             flex-grow: 0;
         }
     }
@@ -77,12 +194,13 @@
         justify-content: space-between;
         gap: 0;
 
-        height: 75%;
-    
+        height: calc(75% - 1em);
+
         .main-chart {
             width: calc(100% - 33.7%);
+            height: 100%;
         }
-    
+
         app-ranking {
             width: 32.7%;
         }
