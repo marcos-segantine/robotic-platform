@@ -66,12 +66,13 @@ export class InstitutionDashboardComponent implements OnInit {
     };
 
     const activityData = {
-      labels: ["Turma 1", "Turma 2", "Turma 3", "Turma 4"],
+      labels: ["Uso frequente", "Uso regular", "Nunca acessou"],
       datasets: [
         {
-          data: [5, 2, 3, 4],
-          backgroundColor: "orange",
+          data: [5, 2, 3],
+          backgroundColor: ["#00BA4A", "#FFB500", "#C3331D"],
           yAxisID: 'y',
+          borderWidth: 0,
         },
       ]
     };
@@ -97,7 +98,7 @@ export class InstitutionDashboardComponent implements OnInit {
 
     new Chart("activity", {
       type: 'doughnut',
-      data: frequencyData,
+      data: activityData,
       options: {
         layout: {
           padding: 15
