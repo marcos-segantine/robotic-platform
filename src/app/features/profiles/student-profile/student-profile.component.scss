@@ -1,0 +1,151 @@
+.container {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+    border-radius: var(--border-radius-small);
+
+    background-color: var(--color-secondary);
+}
+
+.row-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2em;
+
+    padding: 1em;
+    width: 100%;
+
+    background-color: var(--color-ternary);
+}
+
+.statistics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: max-content;
+
+        h4 {
+            color: var(--color-orange);
+            font-size: var(--font-size-very-large);
+            text-align: center;
+        }
+    }
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8em;
+
+    .photo {
+        width: 120px;
+        height: 120px;
+
+        border-radius: var(--border-radius-large);
+
+        background-color: var(--color-secondary);
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.row-2 {
+    width: 100%;
+    padding: 3em 1em 1em;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        gap: 5em;
+
+        overflow-x: scroll;
+
+        margin-top: 1.5em;
+    }
+}
+
+.row-3 {
+    width: 100%;
+    padding: 3em 1em 1em;
+
+    background-color: var(--color-secondary);
+}
+
+.medal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+
+        background-color: var(--color-ternary);
+
+        border-radius: var(--border-radius-large);
+
+        padding: 1em;
+    }
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    img {
+        background-color: var(--color-orange-opacity);
+
+        padding: .3em;
+
+        border-radius: var(--border-radius-large);
+    }
+}
+
+.certificates {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5em;
+
+    padding: 0 5%;
+    margin-top: 2em;
+
+    .certificate {
+        background-color: var(--color-ternary);
+        width: 25rem;
+        height: 15rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .row-1 {
+        flex-direction: row;
+
+        padding: 1em 15%;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container {
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .statistics {
+        flex-direction: row;
+
+        gap: 5em;
+    }
+}
