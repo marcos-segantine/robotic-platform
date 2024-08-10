@@ -1,19 +1,25 @@
 <div class="container">
     <div class="image-score">
         <div class="image"></div>
-        <app-lesson-score />
+        @if (mode === 'student') {
+            <app-lesson-score />
+        }
     </div>
 
     <div class="info">
         <h2>Lorem ipsum dolor sit amet.</h2>
         <span>Marcos Segantine</span>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente praesentium deserunt ipsam quidem ullam quam quisquam voluptatum cumque alias reprehenderit.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente praesentium deserunt ipsam quidem ullam
+            quam quisquam voluptatum cumque alias reprehenderit.</p>
 
         <div>
-            <app-button width="max-content" [buttonType]="buttonType.Primary" text="Ver Lição" (event)="navigateLessonPage()" />
+            <app-button width="max-content" [buttonType]="buttonType.Primary" text="Ver Lição"
+                (event)="navigateLessonPage()" />
+            @if (mode === "student") {
             <div>
                 <span>Tarefas completas <span class="task-status green">1 / 1</span></span>
             </div>
+            }
         </div>
     </div>
 </div>

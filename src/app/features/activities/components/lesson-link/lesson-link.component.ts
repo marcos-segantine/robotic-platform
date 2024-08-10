@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
@@ -14,11 +14,18 @@ import { Router } from '@angular/router';
   styleUrl: './lesson-link.component.scss'
 })
 export class LessonLinkComponent {
+  @Input({ required: true }) mode: "student" | "institutional" = 'student'
+
   buttonType = ButtonType
 
   constructor(private router: Router) { }
 
   navigateLessonPage() {
-    this.router.navigate([`/app/student/activity/lessons/lesson`])
+    if(this.mode === 'student') {
+      this.router.navigate([`/app/student/activity/lessons/lesson`])
+    }
+    else {
+      this.router.navigate([`/app/institutional/activity/lesson`])
+    }
   }
 }

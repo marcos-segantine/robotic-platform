@@ -13,6 +13,7 @@ import { InstitutionDashboardComponent } from './features/dashboard/pages/instit
 import { StudentProfileComponent } from './features/profiles/pages/student-profile/student-profile.component';
 import { ProfessorAboutComponent } from './features/profiles/pages/professor-about/professor-about.component';
 import { InstitutionalActivityComponent } from './features/activities/pages/institutional-activity/institutional-activity.component';
+import { InstitutionalActivityDetailsComponent } from './features/activities/pages/institutional-activity-details/institutional-activity-details.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
@@ -87,6 +88,10 @@ export const routes: Routes = [
                 {
                     path: "institution/activity",
                     component: InstitutionalActivityComponent
+                },
+                {
+                    path: "institution/activity/lesson",
+                    component: InstitutionalActivityDetailsComponent
                 },
                 {
                     path: ":userType/support",
