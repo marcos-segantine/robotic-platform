@@ -1,0 +1,22 @@
+.lesson-description {
+    border-radius: var(--border-radius-small);
+
+    background-color: var(--color-ternary);
+
+    padding: 1em;
+
+    h4 {
+        margin: 2em 0 1em;
+    }
+
+    a {
+        margin-right: 1em;
+        padding: 1em;
+
+        display: inline-block;
+
+        background-color: var(--color-secondary);
+
+        border-radius: var(--border-radius-small);
+    }
+}

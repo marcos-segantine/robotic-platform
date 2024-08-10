@@ -6,13 +6,15 @@ import { LessonLinkComponent } from "../../components/lesson-link/lesson-link.co
 import { LessonScoreComponent } from "../../components/lesson-score/lesson-score.component";
 import { ButtonComponent } from "../../../../shared/components/button/button.component";
 
+import { LessonDescriptionComponent } from '../../components/lesson-description/lesson-description.component';
+
 import { ButtonType } from '../../../auth/enum/button-type-enum';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-lesson',
   standalone: true,
-  imports: [RankingComponent, LessonLinkComponent, LessonScoreComponent, ButtonComponent],
+  imports: [RankingComponent, LessonLinkComponent, LessonScoreComponent, ButtonComponent, LessonDescriptionComponent],
   templateUrl: './student-lesson.component.html',
   styleUrl: './student-lesson.component.scss'
 })

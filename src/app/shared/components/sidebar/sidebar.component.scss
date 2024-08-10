@@ -9,6 +9,7 @@ aside {
 nav {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
     padding: 2em 1em;
@@ -67,6 +68,7 @@ nav {
 
     nav {
         padding: 5em 1em 1em;
+        min-height: 70vh;
     }
 
     .menu-active {
