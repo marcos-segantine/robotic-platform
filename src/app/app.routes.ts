@@ -12,9 +12,11 @@ import { StudentQuizComponent } from './features/activities/pages/student-quiz/s
 import { InstitutionDashboardComponent } from './features/dashboard/pages/institution-dashboard/institution-dashboard.component';
 import { StudentProfileComponent } from './features/profiles/pages/student-profile/student-profile.component';
 import { ProfessorAboutComponent } from './features/profiles/pages/professor-about/professor-about.component';
+import { InstitutionalActivityComponent } from './features/activities/pages/institutional-activity/institutional-activity.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
+import { SupportComponent } from './shared/pages/support/support.component';
 
 export const routes: Routes = [
     {
@@ -81,6 +83,14 @@ export const routes: Routes = [
                 {
                     path: "institution/home",
                     component: InstitutionDashboardComponent
+                },
+                {
+                    path: "institution/activity",
+                    component: InstitutionalActivityComponent
+                },
+                {
+                    path: ":userType/support",
+                    component: SupportComponent
                 },
             ]
     },
