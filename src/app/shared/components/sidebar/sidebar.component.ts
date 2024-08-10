@@ -3,14 +3,16 @@ import { Router } from '@angular/router';
 
 import { HomeComponentIcon } from '../../../../../public/assets/icons/home/home.component';
 import { ActivityComponentIcon } from '../../../../../public/assets/icons/activity/activity.component';
+import { SupportComponentIcon } from '../../../../../public/assets/icons/sidebar/support/support.component';
 
 import { UserDataService } from '../../../core/services/user-data.service';
 import { UserDataModel } from '../../../core/models/user-data.model';
+import { StudentProfileComponent } from "../../../features/profiles/pages/student-profile/student-profile.component";
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [HomeComponentIcon, ActivityComponentIcon],
+  imports: [HomeComponentIcon, ActivityComponentIcon, StudentProfileComponent, SupportComponentIcon],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -32,6 +34,9 @@ export class SidebarComponent implements OnInit {
     else if (fullCurrentPath.includes("home")) {
       this.currentPage = "home"
     }
+    else if (fullCurrentPath.includes("support")) {
+      this.currentPage = "support"
+    }
 
     if (this.userData === null) {
       this.userData = null;
@@ -39,7 +44,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  route(path: "home" | "activity") {
+  route(path: "home" | "activity" | "support") {
     if (!this.userData?.userType) {
       throw new Error("Can't route because user data is null")
     }
