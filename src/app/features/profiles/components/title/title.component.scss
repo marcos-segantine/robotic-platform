@@ -1,0 +1,13 @@
+.title {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    img {
+        background-color: var(--color-orange-opacity);
+
+        padding: .3em;
+
+        border-radius: var(--border-radius-large);
+    }
+}

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
+import { TitleComponent } from '../../components/title/title.component';
+
 @Component({
   selector: 'app-student-profile',
   standalone: true,
-  imports: [],
+  imports: [TitleComponent],
   templateUrl: './student-profile.component.html',
   styleUrl: './student-profile.component.scss'
 })

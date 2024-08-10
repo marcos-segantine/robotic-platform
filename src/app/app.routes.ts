@@ -10,8 +10,8 @@ import { StudentLessonsComponent } from './features/activities/pages/student-les
 import { StudentLessonComponent } from './features/activities/pages/student-lesson/student-lesson.component';
 import { StudentQuizComponent } from './features/activities/pages/student-quiz/student-quiz.component';
 import { InstitutionDashboardComponent } from './features/dashboard/pages/institution-dashboard/institution-dashboard.component';
-import { StudentProfileComponent } from './features/profiles/student-profile/student-profile.component';
-import { ProfessorAboutComponent } from './features/profiles/professor-about/professor-about.component';
+import { StudentProfileComponent } from './features/profiles/pages/student-profile/student-profile.component';
+import { ProfessorAboutComponent } from './features/profiles/pages/professor-about/professor-about.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
