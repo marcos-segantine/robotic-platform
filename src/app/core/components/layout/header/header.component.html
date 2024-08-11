@@ -3,7 +3,7 @@
 
     @if(isLogged && isStudentOrProfessor) {
         <a class="photo" routerLink="app/profile"></a>
-    } @else if(isStudentOrProfessor) {
+    } @else if(isLogged === false) {
         <app-color-scheme />
     }
 </header>
