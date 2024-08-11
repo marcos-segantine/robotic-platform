@@ -7,3 +7,12 @@ header {
     justify-content: space-around;
     align-items: center;
 }
+
+.photo {
+    width: 80px;
+    height: 80px;
+
+    border-radius: var(--border-radius-large);
+
+    background-color: var(--color-ternary);
+}
