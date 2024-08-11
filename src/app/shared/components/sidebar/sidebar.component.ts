@@ -11,10 +11,12 @@ import { UserDataModel } from '../../../core/models/user-data.model';
 
 import { StudentProfileComponent } from "../../../features/profiles/pages/student-profile/student-profile.component";
 
+import { ColorSchemeComponent } from "../color-scheme/color-scheme.component";
+
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [HomeComponentIcon, ActivityComponentIcon, StudentProfileComponent, SupportComponentIcon, RankingIcon],
+  imports: [HomeComponentIcon, ActivityComponentIcon, StudentProfileComponent, SupportComponentIcon, RankingIcon, ColorSchemeComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

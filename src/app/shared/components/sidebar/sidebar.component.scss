@@ -49,6 +49,12 @@ nav {
     }
 }
 
+a:not(.active):hover {
+    background-color: var(--color-primary);
+
+    border-radius: var(--border-radius-small);
+}
+
 .mobile-button {
     display: none;
 }
