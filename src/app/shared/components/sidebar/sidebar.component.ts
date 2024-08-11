@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { HomeComponentIcon } from '../../../../../public/assets/icons/home/home.component';
-import { ActivityComponentIcon } from '../../../../../public/assets/icons/activity/activity.component';
+import { HomeComponentIcon } from '../../../../../public/assets/icons/sidebar/home/home.component';
+import { ActivityComponentIcon } from '../../../../../public/assets/icons/sidebar/activity/activity.component';
 import { SupportComponentIcon } from '../../../../../public/assets/icons/sidebar/support/support.component';
 import { RankingIcon } from '../../../../../public/assets/icons/sidebar/ranking/ranking.icon';
 
