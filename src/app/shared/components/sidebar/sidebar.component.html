@@ -28,13 +28,13 @@
         </ul>
 
         <ul>
-            <app-color-scheme />
-
             <li>
                 <a class="{{ currentPage == 'support' ? 'active' : 'deactivate' }}" (click)="route('support')">
                     <app-support-icon fillColor="{{ currentPage == 'support' ? '#000000' : '#FFFFFF' }}" />
                 </a>
             </li>
+
+            <app-color-scheme />
         </ul>
     </nav>
 </aside>
