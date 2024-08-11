@@ -14,6 +14,7 @@ import { StudentProfileComponent } from './features/profiles/pages/student-profi
 import { ProfessorAboutComponent } from './features/profiles/pages/professor-about/professor-about.component';
 import { InstitutionalActivityComponent } from './features/activities/pages/institutional-activity/institutional-activity.component';
 import { InstitutionalActivityDetailsComponent } from './features/activities/pages/institutional-activity-details/institutional-activity-details.component';
+import { GlobalRankingComponent } from './features/award/pages/global-ranking/global-ranking.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
@@ -96,6 +97,10 @@ export const routes: Routes = [
                 {
                     path: ":userType/support",
                     component: SupportComponent
+                },
+                {
+                    path: ":userType/ranking",
+                    component: GlobalRankingComponent
                 },
             ]
     },

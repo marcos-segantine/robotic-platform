@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { LessonLinkComponent } from '../../components/lesson-link/lesson-link.component';
-import { RankingComponent } from '../../../award/ranking/ranking.component';
+import { RankingComponent } from '../../../award/components/ranking/ranking.component';
 
 @Component({
   selector: 'app-student-lessons',

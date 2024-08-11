@@ -1,0 +1,183 @@
+.container {
+    min-height: 100%;
+
+    padding-bottom: 1.5em;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    padding: 0 1em
+}
+
+.top-student {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    width: calc(80% / 3);
+
+    .photo {
+        width: 5em;
+        height: 5em;
+
+        border-radius: var(--border-radius-large);
+        background-color: var(--color-ternary);
+    }
+
+    .name {
+        font-size: var(--font-size-small);
+    }
+
+    p {
+        margin-bottom: 1em;
+
+        font-size: var(--font-size-tiny);
+    }
+
+    .bar {
+        display: block;
+
+        width: 100%;
+
+        border-top-left-radius: var(--border-radius-small);
+        border-top-right-radius: var(--border-radius-small);
+
+        padding: .5em;
+
+        color: var(--color-ternary);
+        font-size: var(--font-size-very-large);
+        font-family: var(--font-family-bold);
+        text-align: center;
+
+        span {
+            display: block;
+
+            color: var(--color-ternary);
+            font-size: 1rem;
+            font-family: var(--font-family-bold);
+            text-align: center;
+        }
+    }
+}
+
+.bottom {
+    background-color: var(--color-ternary);
+
+    width: 100%;
+
+    border-spacing: 0 1em;
+    border-radius: var(--border-radius-small);
+
+    tr:hover {
+        background-color: var(--color-secondary);
+    }
+
+    td {
+        padding: .5em;
+
+        font-family: var(--font-family-bold);
+    }
+
+    .student {
+        display: flex;
+        align-items: center;
+    }
+
+    .position {
+        font-size: var(--font-size-medium);
+        font-family: var(--font-family-bold);
+    }
+
+    .photo {
+        width: 50px;
+        height: 50px;
+        margin: 0 .5em;
+
+        border-radius: var(--border-radius-large);
+
+        background-color: var(--color-secondary);
+    }
+
+    .medals {
+        display: none;
+    }
+
+    .medal {
+        width: 50px;
+        height: 50px;
+
+        background-color: var(--color-secondary);
+
+        border-radius: var(--border-radius-large);
+    }
+
+    .position,
+    .name,
+    .points,
+    .school {
+        font-size: var(--font-size-very-tiny);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .top-student {
+        width: calc(100% / 4);
+
+        .photo {
+            width: 8em;
+            height: 8em;
+        }
+
+        .name {
+            font-size: var(--font-size-medium);
+        }
+
+        .p {
+            font-size: var(--font-size-small);
+        }
+
+        .bar {
+            width: 100%;
+        }
+    }
+
+    .bottom {
+        padding: 1em;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .top {
+        justify-content: center;
+        gap: 8em;
+
+        .top-student {
+            width: 10%;
+            min-width: 100px;
+        }
+    }
+
+    .bottom {
+
+        .position,
+        .name,
+        .points,
+        .school {
+            font-size: var(--font-size-small);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .bottom {
+        .medals {
+            display: flex;
+            gap: 1em;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RankingComponent } from '../../../award/ranking/ranking.component';
+import { RankingComponent } from '../../../award/components/ranking/ranking.component';
 import { Chart } from 'chart.js';
 
 @Component({

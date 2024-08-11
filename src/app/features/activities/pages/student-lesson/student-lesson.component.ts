@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { RankingComponent } from '../../../award/ranking/ranking.component';
+import { RankingComponent } from '../../../award/components/ranking/ranking.component';
 
 import { LessonLinkComponent } from "../../components/lesson-link/lesson-link.component";
 import { LessonScoreComponent } from "../../components/lesson-score/lesson-score.component";
