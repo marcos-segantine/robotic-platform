@@ -94,16 +94,16 @@
     padding: 0 1em;
 
     height: 50%;
-    
+
     div {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
         padding: .5em 1.5em .5em .5em;
-        
+
         border-radius: var(--border-radius-small);
-        
+
         div {
             display: flex;
             gap: .5em;
@@ -119,6 +119,10 @@
 
             border-radius: var(--border-radius-large);
         }
+    }
+
+    .score {
+        padding: 0;
     }
 
     div:hover {

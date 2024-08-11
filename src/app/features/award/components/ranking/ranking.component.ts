@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
 
+import { PointsIcon } from '../../../../../../public/assets/icons/points/points.icon';
+
 @Component({
   selector: 'app-ranking',
   standalone: true,
-  imports: [],
+  imports: [PointsIcon],
   templateUrl: './ranking.component.html',
   styleUrl: './ranking.component.scss'
 })
