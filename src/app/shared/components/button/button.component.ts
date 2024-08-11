@@ -13,6 +13,8 @@ export class ButtonComponent {
   @Input({ required: true }) text = "";
   @Input({ required: true }) buttonType: ButtonType = ButtonType.Primary;
   @Input() width = "";
+  @Input() backgroundColor = "";
+  @Input() color = "";
   @Output() event = new EventEmitter();
 
   buttonTypeValue = ButtonType;

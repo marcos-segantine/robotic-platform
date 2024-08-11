@@ -1,1 +1,7 @@
-<button [style.width]="width" (click)="emitEvent()" class="{{ buttonType === buttonTypeValue.Primary ? 'primary' : 'secondary' }}">{{ text }}</button>
+<button 
+    [style.width]="width" 
+    (click)="emitEvent()"
+    class="{{ buttonType === buttonTypeValue.Primary ? 'primary' : 'secondary' }}"
+    [style.background]="backgroundColor != '' ? (backgroundColor || '#FFB500') : ''">
+    {{ text }}
+</button>
