@@ -15,6 +15,7 @@ import { ProfessorAboutComponent } from './features/profiles/pages/professor-abo
 import { InstitutionalActivityComponent } from './features/activities/pages/institutional-activity/institutional-activity.component';
 import { InstitutionalActivityDetailsComponent } from './features/activities/pages/institutional-activity-details/institutional-activity-details.component';
 import { GlobalRankingComponent } from './features/award/pages/global-ranking/global-ranking.component';
+import { StudentInfoComponent } from './features/student/student-info/student-info.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
@@ -83,6 +84,10 @@ export const routes: Routes = [
                     component: AddActivityComponent
                 },
                 {
+                    path: "professional/student-info",
+                    component: StudentInfoComponent
+                },
+                {
                     path: "institution/home",
                     component: InstitutionDashboardComponent
                 },
@@ -93,6 +98,10 @@ export const routes: Routes = [
                 {
                     path: "institution/activity/lesson",
                     component: InstitutionalActivityDetailsComponent
+                },
+                {
+                    path: "professional/student-info",
+                    component: StudentInfoComponent
                 },
                 {
                     path: ":userType/support",

@@ -5,6 +5,7 @@ import { HomeComponentIcon } from '../../../../../public/assets/icons/sidebar/ho
 import { ActivityComponentIcon } from '../../../../../public/assets/icons/sidebar/activity/activity.component';
 import { SupportComponentIcon } from '../../../../../public/assets/icons/sidebar/support/support.component';
 import { RankingIcon } from '../../../../../public/assets/icons/sidebar/ranking/ranking.icon';
+import { StudentIcon } from '../../../../../public/assets/icons/sidebar/student/student.icon';
 
 import { UserDataService } from '../../../core/services/user-data.service';
 import { UserDataModel } from '../../../core/models/user-data.model';
@@ -16,7 +17,15 @@ import { ColorSchemeComponent } from "../color-scheme/color-scheme.component";
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [HomeComponentIcon, ActivityComponentIcon, StudentProfileComponent, SupportComponentIcon, RankingIcon, ColorSchemeComponent],
+  imports: [
+    HomeComponentIcon, 
+    ActivityComponentIcon, 
+    StudentProfileComponent, 
+    SupportComponentIcon, 
+    RankingIcon, 
+    ColorSchemeComponent,
+    StudentIcon
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -44,6 +53,9 @@ export class SidebarComponent implements OnInit {
     else if (fullCurrentPath.includes("ranking")) {
       this.currentPage = "ranking"
     }
+    else if (fullCurrentPath.includes("student-info")) {
+      this.currentPage = "student-info"
+    }
 
     if (this.userData === null) {
       this.userData = null;
@@ -51,7 +63,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  route(path: "home" | "activity" | "support" | "ranking") {
+  route(path: "home" | "activity" | "support" | "ranking" | "student-info") {
     if (!this.userData?.userType) {
       throw new Error("Can't route because user data is null")
     }

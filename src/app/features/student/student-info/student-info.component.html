@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="tasks">
+        <app-button [buttonType]="buttonType.Secondary" text="Fazer Chamada" />
+        <app-button [buttonType]="buttonType.Secondary" text="Relatar Ocorrido" />
+    </div>
+    
+    <div class="search">
+        <h2>Pesquisar por aluno</h2>
+        <app-input mode="mode-1" placeholder="Nome do aluno" size="all" />
+        <app-button [buttonType]="buttonType.Primary" text="Confirmar" />
+    </div>
+
+    <div class="observations">
+        <h2>Observações</h2>
+        <div class="content">
+            <h3>Nada por enquanto</h3>
+        </div>
+    </div>
+</div>

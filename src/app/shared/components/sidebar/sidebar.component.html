@@ -25,6 +25,11 @@
                     <app-ranking-icon fillColor="{{ currentPage == 'ranking' ? '#000000' : '#FFFFFF' }}" />
                 </a>
             </li>
+            <li>
+                <a class="{{ currentPage == 'student-info' ? 'active' : 'deactivate' }}" (click)="route('student-info')">
+                    <app-student-icon fillColor="{{ currentPage == 'student-info' ? '#000000' : '#FFFFFF' }}" />
+                </a>
+            </li>
         </ul>
 
         <ul>

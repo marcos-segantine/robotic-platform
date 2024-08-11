@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0 1em;
+
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.tasks {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    width: 100%;
+    height: 20%;
+    margin-bottom: 2em;
+}
+
+h2 {
+    text-align: center;
+
+    width: 100%;
+    height: 3rem;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    width: 100%;
+
+    app-input {
+        width: 100%;
+    }
+}
+
+.observations {
+    width: 100%;
+    height: 30rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-ternary);
+
+    width: 100%;
+    height: calc(100% - 3rem - 1em);
+    margin-top: 1em;
+
+    border-radius: var(--border-radius-small);
+
+    h3 {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+
+        height: 100%;
+        padding-bottom: 0;
+    }
+
+    .tasks {
+        margin-bottom: 0;
+    }
+
+    .search {
+        width: 40%;
+        height: 80%;
+    }
+
+    .observations {
+        width: calc(100% - 55% - 1em);
+        height: 80%;
+    }
+}
