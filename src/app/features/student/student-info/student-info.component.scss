@@ -60,6 +60,31 @@ h2 {
     }
 }
 
+.create-observation {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    textarea {
+        resize: none;
+
+        border-radius: var(--border-radius-small);
+        border: none;
+
+        outline: none;
+
+        background-color: var(--color-ternary);
+
+        padding: 1em;
+        height: calc(100% - 3rem - 1em);
+    
+        font-family: var(--font-family-bold);
+        font-size: var(--font-size-medium);
+
+        color: var(--color-text);
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .container {
         flex-direction: row;
@@ -81,5 +106,9 @@ h2 {
     .observations {
         width: calc(100% - 55% - 1em);
         height: 80%;
+    }
+
+    .create-observation {
+        width: calc(100% - 55% - 1em);
     }
 }

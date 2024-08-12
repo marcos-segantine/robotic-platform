@@ -96,6 +96,10 @@ export const routes: Routes = [
                     component: InstitutionalActivityComponent
                 },
                 {
+                    path: "institution/student-info",
+                    component: StudentInfoComponent
+                },
+                {
                     path: "institution/activity/lesson",
                     component: InstitutionalActivityDetailsComponent
                 },

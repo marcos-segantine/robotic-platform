@@ -3,17 +3,28 @@
         <app-button [buttonType]="buttonType.Secondary" text="Fazer Chamada" />
         <app-button [buttonType]="buttonType.Secondary" text="Relatar Ocorrido" />
     </div>
-    
+
     <div class="search">
         <h2>Pesquisar por aluno</h2>
         <app-input mode="mode-1" placeholder="Nome do aluno" size="all" />
         <app-button [buttonType]="buttonType.Primary" text="Confirmar" />
     </div>
 
-    <div class="observations">
-        <h2>Observações</h2>
-        <div class="content">
-            <h3>Nada por enquanto</h3>
+    @if(userData?.userType == "professional") {
+        <div class="observations">
+            <h2>Observações</h2>
+            <div class="content">
+                <h3>Nada por enquanto</h3>
+            </div>
         </div>
-    </div>
-</div>
+    } @else {
+        <div class="create-observation">
+            <h2>Observação para o professor</h2>
+            <app-input mode="mode-1" size="all" text="Título" />
+            <app-input mode="mode-1" size="small" text="Referente ao aluno.. (opcional)" />
+            <textarea></textarea>
+
+            <app-button [buttonType]="buttonType.Primary" text="Confirmar" width="30%" />
+        </div>
+    }
+</div>%

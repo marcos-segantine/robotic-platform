@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { InputComponent } from '../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 import { ButtonType } from '../../auth/enum/button-type-enum';
+
+import { UserDataService } from '../../../core/services/user-data.service';
+import { UserDataModel } from '../../../core/models/user-data.model';
 
 @Component({
   selector: 'app-student-info',
@@ -12,6 +15,13 @@ import { ButtonType } from '../../auth/enum/button-type-enum';
   templateUrl: './student-info.component.html',
   styleUrl: './student-info.component.scss'
 })
-export class StudentInfoComponent {
+export class StudentInfoComponent implements OnInit {
   buttonType = ButtonType
+  userData: UserDataModel | null = null;
+
+  constructor(private userDataService: UserDataService) { }
+
+  ngOnInit(): void {
+    this.userData = this.userDataService.getUserData();
+  }
 }
