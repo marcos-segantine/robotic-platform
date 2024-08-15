@@ -19,6 +19,8 @@ export class StudentInfoComponent implements OnInit {
   buttonType = ButtonType
   userData: UserDataModel | null = null;
 
+  currentPage = "page-2"
+
   constructor(private userDataService: UserDataService) { }
 
   ngOnInit(): void {

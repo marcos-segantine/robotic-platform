@@ -1,30 +1,70 @@
 <div class="container">
-    <div class="tasks">
-        <app-button [buttonType]="buttonType.Secondary" text="Fazer Chamada" />
-        <app-button [buttonType]="buttonType.Secondary" text="Relatar Ocorrido" />
-    </div>
-
-    <div class="search">
-        <h2>Pesquisar por aluno</h2>
-        <app-input mode="mode-1" placeholder="Nome do aluno" size="all" />
-        <app-button [buttonType]="buttonType.Primary" text="Confirmar" />
+    <div class="links">
+        @if(userData?.userType == "professional") {
+        <app-button text="Chamada" [buttonType]="buttonType.Primary" width="max-content" />
+        }
+        <app-button text="Pesquisar por aluno" [buttonType]="buttonType.Secondary" width="max-content" />
     </div>
 
     @if(userData?.userType == "professional") {
-        <div class="observations">
-            <h2>Observações</h2>
-            <div class="content">
-                <h3>Nada por enquanto</h3>
+
+    @if(currentPage == "page-1") {
+    <div class="page page-1">
+        <div class="title">
+            <h1>Chamada</h1>
+            <img src="/assets/icons/reset.svg" alt="">
+        </div>
+
+
+        <div class="students">
+            <div class="class-info">
+                <h3>Djalma - Turma 1</h3>
+
+                <app-button text="Mudar Turma" [buttonType]="buttonType.Primary" width="max-content" />
+            </div>
+            <div class="student">
+                <h4>Marcos Segantine</h4>
+
+                <div>
+                    <span class="button green">Presente</span>
+                    <span class="button red">Ausente</span>
+                </div>
+            </div>
+            <div class="student">
+                <h4>Marcos Segantine</h4>
+
+                <div>
+                    <span class="button green">Presente</span>
+                    <span class="button red">Ausente</span>
+                </div>
+            </div>
+            <div class="student">
+                <h4>Marcos Segantine</h4>
+
+                <div>
+                    <span class="button green">Presente</span>
+                    <span class="button red">Ausente</span>
+                </div>
             </div>
         </div>
+    </div>
     } @else {
-        <div class="create-observation">
-            <h2>Observação para o professor</h2>
-            <app-input mode="mode-1" size="all" text="Título" />
-            <app-input mode="mode-1" size="small" text="Referente ao aluno.. (opcional)" />
-            <textarea></textarea>
+    <div class="page page-2 search-student">
+        <h1>Pesquisar por aluno</h1>
+        <app-input placeholder="Nome do aluno" mode="mode-1" size="all" />
 
-            <app-button [buttonType]="buttonType.Primary" text="Confirmar" width="30%" />
-        </div>
+        <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" />
+    </div>
     }
-</div>%
+
+    } @else if(userData?.userType == "institution") {
+    @if(currentPage == "page-1") {
+    <div class="page page-1 search-student">
+        <h1>Pesquisar por aluno</h1>
+        <app-input placeholder="Nome do aluno" mode="mode-1" size="all" />
+
+        <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" />
+    </div>
+    }
+    }
+</div>

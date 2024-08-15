@@ -16,6 +16,7 @@ $header-height: 6rem;
     --color-green-opacity: rgba(0, 186, 74, .5);
     --color-black: #292B2F;
     --color-dark: #37393F;
+    --color-gray: #808080;
 
     --header-height: #{$header-height};
     --sidebar-height: calc(100vh - 2em - 1rem - #{$header-height});
