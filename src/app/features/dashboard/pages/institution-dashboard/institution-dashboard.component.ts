@@ -3,10 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { RankingComponent } from '../../../award/components/ranking/ranking.component';
 import { Chart } from 'chart.js';
 
+import { FrequencyComponent } from '../../components/frequency/frequency.component';
+import { PlatformUseComponent } from '../../components/platform-use/platform-use.component';
+import { StudentsLowPerformanceComponent } from '../../components/students-low-performance/students-low-performance.component';
+
 @Component({
   selector: 'app-institution-dashboard',
   standalone: true,
-  imports: [RankingComponent],
+  imports: [RankingComponent, FrequencyComponent, PlatformUseComponent, StudentsLowPerformanceComponent],
   templateUrl: './institution-dashboard.component.html',
   styleUrl: './institution-dashboard.component.scss'
 })
@@ -53,67 +57,6 @@ export class InstitutionDashboardComponent implements OnInit {
         },
       ]
     };
-
-    const frequencyData = {
-      labels: ["Turma 1", "Turma 2", "Turma 3", "Turma 4"],
-      datasets: [
-        {
-          data: [5, 2, 3, 4],
-          backgroundColor: "orange",
-          yAxisID: 'y',
-        },
-      ]
-    };
-
-    const activityData = {
-      labels: ["Uso frequente", "Uso regular", "Nunca acessou"],
-      datasets: [
-        {
-          data: [5, 2, 3],
-          backgroundColor: ["#00BA4A", "#FFB500", "#C3331D"],
-          yAxisID: 'y',
-          borderWidth: 0,
-        },
-      ]
-    };
-
-    new Chart("frequency", {
-      type: 'bar',
-      data: frequencyData,
-      options: {
-        layout: {
-          padding: 15
-        },
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
-            display: false,
-          }
-        },
-      },
-    });
-
-    new Chart("activity", {
-      type: 'doughnut',
-      data: activityData,
-      options: {
-        layout: {
-          padding: 15
-        },
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
-            display: false,
-          }
-        },
-      },
-    });
 
     new Chart("performance", {
       type: 'line',

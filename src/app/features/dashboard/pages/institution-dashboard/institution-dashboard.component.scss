@@ -6,6 +6,11 @@
     height: 100%;
 }
 
+.row-1>* {
+    width: 100%;
+    height: 15rem;
+}
+
 .row-1 {
     display: flex;
     flex-direction: column;
@@ -31,57 +36,6 @@
 
         h3 {
             margin: .5em 0;
-        }
-
-        .activity-indicator {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            gap: 0;
-
-            width: 100%;
-            height: calc(100% - 2em - 1em);
-
-            canvas {
-                max-height: 100%;
-                max-width: 60%;
-            }
-
-            div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 1em;
-
-                width: 40%;
-                height: 100%;
-
-                div {
-                    display: flex;
-                    align-items: center;
-                    flex-direction: row;
-                    gap: .3em;
-
-                    width: 100%;
-                    height: min-content;
-
-                    p {
-                        font-size: var(--font-size-tiny);
-                        text-align: start;
-
-                        width: 100%;
-                    }
-
-                    span {
-                        display: block;
-
-                        width: 25px;
-                        height: 10px;
-
-                        border-radius: var(--border-radius-small);
-                    }
-                }
-            }
         }
 
         .low-performance {
@@ -189,6 +143,11 @@ canvas {
             width: 32.7%;
             height: 100%;
         }
+    }
+
+    .row-1>* {
+        width: calc(100% / 3 - 1em);
+        height: 100%;
     }
 
     .row-2 {

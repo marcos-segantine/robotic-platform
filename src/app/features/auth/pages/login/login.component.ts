@@ -22,7 +22,7 @@ export class LoginComponent {
 
   login() {
     // after introduce back-end logic, remove this line
-    const userData: UserDataModel | null = this.userDataService.setUserData({ name: "Marcos", userType: "professional" });
+    const userData: UserDataModel | null = this.userDataService.setUserData({ name: "Marcos", userType: "institution" });
 
     if (userData !== null) {
       this.router.navigate([`app/${userData.userType}/home`])
