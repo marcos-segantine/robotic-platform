@@ -21,6 +21,58 @@
     width: 100%;
 }
 
+.page-3 .content {
+    
+    h2 {
+        margin-top: 1em;    
+    }
+
+    span {
+        font-family: var(--font-family-medium);
+        font-size: var(--font-size-tiny);
+    
+        background-color: var(--color-ternary);
+    
+        padding: .5em;
+
+        border-radius: var(--border-radius-small);
+    }
+    
+    span.selected {
+        background-color: var(--color-orange);
+        color: var(--color-black);
+    }
+    
+    span:hover {
+        cursor: pointer;
+    }
+
+    .schools,
+    .schooling,
+    .schedule-class {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+
+        padding-top: 1em;
+    }
+    
+    .schooling {
+
+    }
+    
+    .schedule-class {
+
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: 1em;
+    
+    margin-top: 3em;
+}
+
 .search-student {
     align-items: end;
 

@@ -19,11 +19,16 @@ export class StudentInfoComponent implements OnInit {
   buttonType = ButtonType
   userData: UserDataModel | null = null;
 
-  currentPage = "page-2"
+  currentPage = "page-1"
 
   constructor(private userDataService: UserDataService) { }
 
   ngOnInit(): void {
     this.userData = this.userDataService.getUserData();
+  }
+
+  changeSection(section: "page-1" | "page-2" | "page-3")
+  {
+    this.currentPage = section
   }
 }

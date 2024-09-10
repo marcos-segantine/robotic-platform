@@ -1,9 +1,25 @@
 <div class="container">
     <div class="links">
         @if(userData?.userType == "professional") {
-        <app-button text="Chamada" [buttonType]="buttonType.Primary" width="max-content" />
+        <app-button 
+                text="Chamada" 
+                [buttonType]="currentPage == 'page-1' ? buttonType.Primary : buttonType.Secondary"
+                width="max-content" 
+                (event)="changeSection('page-1')" 
+            />
         }
-        <app-button text="Pesquisar por aluno" [buttonType]="buttonType.Secondary" width="max-content" />
+        <app-button
+            text="Pesquisar por aluno"
+            [buttonType]="currentPage == 'page-2' ? buttonType.Primary : buttonType.Secondary"
+            width="max-content" 
+            (event)="changeSection('page-2')"
+        />
+        <app-button
+            text="Cadastrar aluno"
+            [buttonType]="currentPage == 'page-3' ? buttonType.Primary : buttonType.Secondary"
+            width="max-content" 
+            (event)="changeSection('page-3')"
+        />
     </div>
 
     @if(userData?.userType == "professional") {
@@ -14,7 +30,6 @@
             <h1>Chamada</h1>
             <img src="/assets/icons/reset.svg" alt="">
         </div>
-
 
         <div class="students">
             <div class="class-info">
@@ -48,13 +63,48 @@
             </div>
         </div>
     </div>
-    } @else {
+    } @else if(currentPage == "page-2") {
     <div class="page page-2 search-student">
         <h1>Pesquisar por aluno</h1>
         <app-input placeholder="Nome do aluno" mode="mode-1" size="all" />
 
         <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" />
     </div>
+    }
+    @else {
+        <div class="page page-3">
+            <h1>Cadastrar aluno</h1>
+
+            <div class="content">
+                <app-input placeholder="Nome" mode="mode-1" size="medium" />
+                <h2>Escola: </h2>
+                <div class="schools">
+                    <span class="selected">Djalma</span>
+                    <span>M. Aparecida</span>
+                    <span>Teodoro</span>
+                    <span>Rosemir</span>
+                </div>
+
+                <h2>Escolaridade: </h2>
+                <div class="schooling">
+                    <span>Fundamental 1</span>
+                    <span>Fundamental 2</span>
+                </div>
+
+                <h2>Turma: </h2>
+                <div class="schedule-class">
+                    <span>Primeiro horário</span>
+                    <span>Segundo horário</span>
+                    <span>Terceiro horário</span>
+                    <span>Quarto horário</span>
+                </div>
+                
+                <div class="buttons">
+                    <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" />
+                    <app-button text="Cancelar" [buttonType]="buttonType.Secondary" width="max-content" />
+                </div>
+            </div>
+        </div>
     }
 
     } @else if(userData?.userType == "institution") {
