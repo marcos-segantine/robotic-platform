@@ -68,7 +68,7 @@
         <h1>Pesquisar por aluno</h1>
         <app-input placeholder="Nome do aluno" mode="mode-1" size="all" />
 
-        <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" />
+        <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" (event)="getStudentData()" />
     </div>
     }
     @else {
@@ -100,7 +100,7 @@
                 </div>
                 
                 <div class="buttons">
-                    <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" />
+                    <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" (event)="createStudent()" />
                     <app-button text="Cancelar" [buttonType]="buttonType.Secondary" width="max-content" />
                 </div>
             </div>

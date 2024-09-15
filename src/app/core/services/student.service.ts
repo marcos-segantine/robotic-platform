@@ -13,10 +13,11 @@ export class StudentService
     constructor(private _httpClient: HttpClient) { }
 
     getStudent(id: string) {
-        return this._httpClient.get<Student>(this.url + `/get-student/${id}`);
+        const idTest = "3fa85f64-5717-4562-b3fc-2c963f66afa1";
+        return this._httpClient.get<Student>(this.url + `get-student?id=${idTest}`);
     }
 
     createStudent(student: Student) {
-        return this._httpClient.post(this.url + '/create-student', student);
+        return this._httpClient.post(this.url + 'create-student', student);
     }
-}
+}   
