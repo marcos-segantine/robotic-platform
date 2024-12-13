@@ -22,47 +22,47 @@ export class ProfessionalDashboardComponent implements OnInit {
     const chart_2_Ref = document.getElementById("chart-2") as ChartItem;
 
     // Random data
-      const data = {
-        labels: ["labels", "labels", "labels", "labels", "labels"],
-        datasets: [
-          {
-            label: 'Escola 1',
-            tension: 0.7,
-            pointRadius: 0,
-            data: [1, 2, 3, 4, 5],
-            borderColor: "red",
-            backgroundColor: "red",
-            yAxisID: 'y',
-          },
-          {
-            label: 'Escola 2',
-            tension: 0.7,
-            pointRadius: 0,
-            data: [5, 4, 3, 2, 1],
-            borderColor: "green",
-            backgroundColor: "green",
-            yAxisID: 'y1',
-          },
-          {
-            label: 'Escola 3',
-            tension: 0.7,
-            pointRadius: 0,
-            data: [2, 4, 5, 2, 1],
-            borderColor: "pink",
-            backgroundColor: "pink",
-            yAxisID: 'y1',
-          },
-          {
-            label: 'Escola 4',
-            tension: 0.7,
-            pointRadius: 0,
-            data: [1, 4, 5, 3, 1],
-            borderColor: "purple",
-            backgroundColor: "purple  ",
-            yAxisID: 'y1',
-          },
-        ]
-      };
+    const data = {
+      labels: ["labels", "labels", "labels", "labels", "labels"],
+      datasets: [
+        {
+          label: 'Escola 1',
+          tension: 0.7,
+          pointRadius: 0,
+          data: [1, 2, 3, 4, 5],
+          borderColor: "red",
+          backgroundColor: "red",
+          yAxisID: 'y',
+        },
+        {
+          label: 'Escola 2',
+          tension: 0.7,
+          pointRadius: 0,
+          data: [5, 4, 3, 2, 1],
+          borderColor: "green",
+          backgroundColor: "green",
+          yAxisID: 'y1',
+        },
+        {
+          label: 'Escola 3',
+          tension: 0.7,
+          pointRadius: 0,
+          data: [2, 4, 5, 2, 1],
+          borderColor: "pink",
+          backgroundColor: "pink",
+          yAxisID: 'y1',
+        },
+        {
+          label: 'Escola 4',
+          tension: 0.7,
+          pointRadius: 0,
+          data: [1, 4, 5, 3, 1],
+          borderColor: "purple",
+          backgroundColor: "purple  ",
+          yAxisID: 'y1',
+        },
+      ]
+    };
 
     const frequency = {
       labels: ["Turma 1", "Turma 2", "Turma 3", "Turma 4"],

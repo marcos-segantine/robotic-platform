@@ -1,9 +1,6 @@
 <header>
-    <h1>Project Name</h1>
-
     @if(isLogged && isStudentOrProfessor) {
+        <h1>Project Name</h1>
         <a class="photo" routerLink="app/profile"></a>
-    } @else if(isLogged === false) {
-        <app-color-scheme />
     }
 </header>
