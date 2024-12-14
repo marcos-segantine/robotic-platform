@@ -1,7 +1,32 @@
-<div class="container">
-    <app-input mode="mode-1" placeholder="Título" size="all" />
+<div id="container">
+    <div class="content">
+        <div class="question" (click)="heandleClick(0)">
+            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, hic! lorem50</h4>
+            <div class="contains-arrow">
+                <app-arrow-icon fillColor="{{ theme === 'light' ? 'black' : 'white' }}" />
+            </div>
+        </div>
 
-    <textarea placeholder="Relate o ocorrido.."></textarea>
+        <div class="response">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium vero sapiente dolor voluptate at
+                nesciunt quisquam neque eaque minima distinctio.</p>
+        </div>
+    </div>
 
-    <app-button [buttonType]="buttonType.Primary" text="Confirmar" />
+    <div class="content">
+        <div class="question" (click)="heandleClick(1)">
+            <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quod impedit officia harum, nam dolore
+                ipsam hic eius corrupti tenetur, culpa ipsum autem voluptatibus recusandae adipisci delectus iusto
+                mollitia maiores? Numquam consectetur perferendis eaque porro. Reprehenderit, illo soluta cumque illum
+                ea praesentium quasi fuga excepturi tempore laborum provident, dignissimos commodi!</h4>
+            <div class="contains-arrow">
+                <app-arrow-icon fillColor="{{ theme === 'light' ? 'black' : 'white' }}" />
+            </div>
+        </div>
+
+        <div class="response">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium vero sapiente dolor voluptate at
+                nesciunt quisquam neque eaque minima distinctio.</p>
+        </div>
+    </div>
 </div>
