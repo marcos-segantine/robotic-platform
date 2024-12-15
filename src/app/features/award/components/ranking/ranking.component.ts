@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PointsIcon } from '../../../../../../public/assets/icons/sidebar/points/points.icon';
 
@@ -10,6 +10,4 @@ import { PointsIcon } from '../../../../../../public/assets/icons/sidebar/points
   styleUrl: './ranking.component.scss'
 })
 export class RankingComponent {
-  // mode-1 is for students page
-  @Input({ required: true }) mode: "mode-1" | "mode-2" = "mode-2"
 }

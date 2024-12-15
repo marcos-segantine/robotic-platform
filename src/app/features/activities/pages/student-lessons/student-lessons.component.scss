@@ -2,37 +2,14 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
-
-    padding-bottom: 1em;
 }
 
 .column-1 {
-    background-color: var(--color-secondary);
-
     border-radius: var(--border-radius-small);
 
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
-
-    background-color: var(--color-secondary);
-
-    padding: 1.5em;
-
-    overflow: scroll;
-}
-
-.column-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    flex-grow: 1;
-
-    height: 100%;
-}
-
-app-ranking {
-    height: 85%;
+    gap: 1rem;
 }
 
 .progress-container {
@@ -46,7 +23,7 @@ app-ranking {
     gap: .5em;
 
     padding: 1em;
-    height: 15%;
+    height: max-content;
 
     div div {
         display: flex;
@@ -66,20 +43,19 @@ app-ranking {
         display: block;
 
         height: 3px;
-
     }
 }
 
 @media screen and (min-width: 1024px) {
     .container {
         flex-direction: row;
-        
-        height: 100%;
-        
-        padding-bottom: 0;
     }
 
-    .column-1 {
-        width: 70%;
+    .column-2 {
+        width: 30%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
     }
 }

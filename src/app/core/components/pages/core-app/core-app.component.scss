@@ -3,8 +3,6 @@
     flex-direction: row;
     justify-content: flex-end;
     gap: 24px;
-
-    height: var(--sidebar-height);
 }
 
 app-sidebar {
@@ -31,7 +29,6 @@ app-sidebar {
     }
 
     .page {
-        padding-top: 3.5em;
         width: 100%;
     }
 }

@@ -1,8 +1,4 @@
 .container {
-    min-height: 100%;
-
-    padding-bottom: 1.5em;
-
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -228,13 +224,10 @@ app-not-viewed {
 
 @media screen and (min-width: 1200px) {
     .container {
-        height: 100%;
-
-        padding: 0;
+        height: calc(100vh - 6rem - 3rem);
     }
 
     .line-1 {
-        gap: 1em;
         height: 25%;
     }
 
@@ -243,7 +236,7 @@ app-not-viewed {
     }
 
     .line-3 {
-        height: max-content;
+        height: 20%;
 
         flex-direction: row;
         flex-wrap: wrap;
@@ -266,6 +259,7 @@ app-not-viewed {
 
     .trial {
         width: calc((100% - 2em) / 3);
+        height: 100%;
     }
 }
 
