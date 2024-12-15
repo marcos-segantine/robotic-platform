@@ -1,9 +1,7 @@
 <div class="container">
     <div class="image-score">
         <div class="image"></div>
-        @if (mode === 'student') {
-            <app-lesson-score />
-        }
+        <app-lesson-score />
     </div>
 
     <div class="info">
@@ -13,13 +11,10 @@
             quam quisquam voluptatum cumque alias reprehenderit.</p>
 
         <div>
-            <app-button width="max-content" buttonStyle="selected" text="Ver Lição"
-                (event)="navigateLessonPage()" />
-            @if (mode === "student") {
+            <app-button width="max-content" buttonStyle="selected" text="Ver Lição" (event)="navigateLessonPage()" />
             <div>
                 <span>Tarefas completas <span class="task-status green">1 / 1</span></span>
             </div>
-            }
         </div>
     </div>
 </div>

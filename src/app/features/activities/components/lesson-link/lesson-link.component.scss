@@ -13,7 +13,7 @@
 }
 
 .container:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
 }
 
 .image-score {
@@ -29,7 +29,7 @@
 
 .info {
     p {
-        border-bottom-color: var(--color-secondary);
+        border-bottom-color: var(--color-primary);
         border-bottom-width: 4px;
         border-bottom-style: solid;
 

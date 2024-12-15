@@ -7,7 +7,5 @@
     <a>Lorem, ipsum.</a>
     <a>Lorem, ipsum.</a>
 
-    @if(mode == "student") {
-        <app-button text="Questoẽs" buttonStyle="selected" width="35%" />
-    }
+    <app-button text="Questoẽs" buttonStyle="selected" width="35%" (event)="goToQuesationPage()" />
 </div>
