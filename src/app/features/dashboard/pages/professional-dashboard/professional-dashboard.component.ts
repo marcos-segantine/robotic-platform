@@ -7,6 +7,9 @@ import { StudentsLowPerformanceComponent } from '../../components/students-low-p
 import { Chart, ChartItem, registerables } from 'chart.js';
 import { PlatformUseComponent } from "../../components/platform-use/platform-use.component";
 
+import { dashDaskColors } from '../../../../core/enum/dashColors.enum';
+import { dashLightColors } from '../../../../core/enum/dashColors.enum';
+
 Chart.register(...registerables);
 
 @Component({
@@ -30,8 +33,8 @@ export class ProfessionalDashboardComponent implements OnInit {
           tension: 0.7,
           pointRadius: 0,
           data: [1, 2, 3, 4, 5],
-          borderColor: "red",
-          backgroundColor: "red",
+          borderColor: dashDaskColors.Color1,
+          backgroundColor: dashDaskColors.Color1,
           yAxisID: 'y',
         },
         {
@@ -39,8 +42,8 @@ export class ProfessionalDashboardComponent implements OnInit {
           tension: 0.7,
           pointRadius: 0,
           data: [5, 4, 3, 2, 1],
-          borderColor: "green",
-          backgroundColor: "green",
+          borderColor: dashDaskColors.Color2,
+          backgroundColor: dashDaskColors.Color2,
           yAxisID: 'y1',
         },
         {
@@ -48,8 +51,8 @@ export class ProfessionalDashboardComponent implements OnInit {
           tension: 0.7,
           pointRadius: 0,
           data: [2, 4, 5, 2, 1],
-          borderColor: "pink",
-          backgroundColor: "pink",
+          borderColor: dashDaskColors.Color3,
+          backgroundColor: dashDaskColors.Color3,
           yAxisID: 'y1',
         },
         {
@@ -57,8 +60,8 @@ export class ProfessionalDashboardComponent implements OnInit {
           tension: 0.7,
           pointRadius: 0,
           data: [1, 4, 5, 3, 1],
-          borderColor: "purple",
-          backgroundColor: "purple  ",
+          borderColor: dashDaskColors.Color4,
+          backgroundColor: dashDaskColors.Color4,
           yAxisID: 'y1',
         },
       ]
