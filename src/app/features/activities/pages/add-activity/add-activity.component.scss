@@ -5,29 +5,13 @@
     justify-content: start;
     gap: 2em;
 
-    min-height: 100%;
+    min-height: 500px;
+    height: 100%;
     width: 100%;
 }
 
-.options {
+app-menu {
     width: 100%;
-
-    a {
-        cursor: pointer;
-    }
-    
-    div {
-        display: flex;
-        gap: 1em;
-        width: max-content;
-    
-        padding: 1em;
-        margin: 0 auto;
-
-        background-color: var(--color-ternary);
-    
-        border-radius: var(--border-radius-small);
-    }
 }
 
 .forms {

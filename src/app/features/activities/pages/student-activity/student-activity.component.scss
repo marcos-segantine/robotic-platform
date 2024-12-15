@@ -9,26 +9,8 @@
     width: 100%;
 }
 
-.filter {
+app-menu {
     width: 100%;
-    margin-bottom: 2em;
-
-    div {
-        display: flex;
-        gap: 1em;
-
-        background-color: var(--color-ternary);
-
-        width: max-content;
-        padding: .5em;
-        margin: 0 auto;
-
-        border-radius: var(--border-radius-small);
-    }
-
-    span {
-        display: block;
-    }
 }
 
 .trails {

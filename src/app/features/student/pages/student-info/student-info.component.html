@@ -1,14 +1,5 @@
 <div class="container">
-    <div class="links">
-        <app-button text="Chamada" [buttonStyle]="currentPage == 'page-1' ? 'selected' : 'default'"
-            width="max-content" (event)="changeSection('page-1')" />
-        <app-button text="Pesquisar por aluno"
-            [buttonStyle]="currentPage == 'page-2' ? 'selected' : 'default'" width="max-content"
-            (event)="changeSection('page-2')" />
-        <app-button text="Cadastrar aluno"
-            [buttonStyle]="currentPage == 'page-3' ? 'selected' : 'default'" width="max-content"
-            (event)="changeSection('page-3')" />
-    </div>
+    <app-menu [data]="sectionsData" />
 
     @if(currentPage == "page-1") {
     <div class="page page-1">

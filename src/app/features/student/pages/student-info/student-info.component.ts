@@ -9,17 +9,38 @@ import { StudentService } from '../../../../core/services/student.service';
 
 import { Student } from "../../../../core/models/student.model";
 
+import { MenuComponent } from '../../../../shared/components/menu/menu.component';
+
 @Component({
   selector: 'app-student-info',
   standalone: true,
-  imports: [InputComponent, ButtonComponent],
+  imports: [InputComponent, ButtonComponent, MenuComponent],
   templateUrl: './student-info.component.html',
   styleUrl: './student-info.component.scss'
 })
 export class StudentInfoComponent implements OnInit {
   userData: UserDataModel | null = null;
-
-  currentPage = "page-1"
+  sectionsData = [
+    {
+      path: "page-1",
+      name: "Chamada",
+      method: () => this.changeSection("page-1"),
+      isSelected: true,
+    },
+    {
+      path: "page-2",
+      name: "Pesquisar por Aluno",
+      method: () => this.changeSection("page-2"),
+      isSelected: false,
+    },
+    {
+      path: "page-3",
+      name: "Cadastrar Aluno",
+      method: () => this.changeSection("page-3"),
+      isSelected: false,
+    },
+  ];
+  currentPage = "page-1";
 
   constructor(private userDataService: UserDataService, private studentService: StudentService) { }
 
@@ -30,6 +51,10 @@ export class StudentInfoComponent implements OnInit {
   changeSection(section: "page-1" | "page-2" | "page-3")
   {
     this.currentPage = section
+    const currentPageIndex = +section.split("-")[1] - 1;
+    this.sectionsData.map((item, index) => {
+      index === currentPageIndex ? item.isSelected = true : item.isSelected = false
+    })
   }
 
   getStudentData() {

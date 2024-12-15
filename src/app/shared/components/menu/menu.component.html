@@ -1,0 +1,6 @@
+<div class="options">
+    @for(op of data; track op) {
+        <app-button text="{{ op.name }}" [buttonStyle]="op.isSelected ? 'selected' : 'default'"
+        width="max-content" (event)="op.method()" />
+    }
+</div>
