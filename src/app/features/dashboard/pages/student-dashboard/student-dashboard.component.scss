@@ -116,21 +116,6 @@ app-not-viewed {
                 font-size: var(--font-size-very-tiny);
             }
         }
-
-        .orange {
-            color: var(--color-orange);
-            background-color: var(--color-orange-opacity);
-        }
-
-        .red {
-            color: var(--color-red);
-            background-color: var(--color-red-opacity);
-        }
-
-        .green {
-            color: var(--color-green);
-            background-color: var(--color-green-opacity);
-        }
     }
 }
 
@@ -189,18 +174,6 @@ app-not-viewed {
         display: block;
 
         height: 5px;
-    }
-
-    .orange {
-        background-color: var(--color-orange);
-    }
-
-    .red {
-        background-color: var(--color-red);
-    }
-
-    .green {
-        background-color: var(--color-green);
     }
 }
 

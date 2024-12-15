@@ -163,3 +163,36 @@ a {
 li {
     list-style: none;
 }
+
+.orange {
+    background-color: var(--color-orange);
+    color: var(--color-orange);
+    stroke: var(--color-orange);
+}
+
+.green {
+    background-color: var(--color-green);
+    color: var(--color-green);
+    stroke: var(--color-green);
+}
+
+.red {
+    background-color: var(--color-red);
+    color: var(--color-red);
+    stroke: var(--color-red);
+}
+
+.orange-opacity {
+    background-color: var(--color-orange-opacity);
+    color: var(--color-orange);
+}
+
+.green-opacity {
+    background-color: var(--color-green-opacity);
+    color: var(--color-green);
+}
+
+.red-opacity {
+    background-color: var(--color-red-opacity);
+    color: var(--color-red);
+}
