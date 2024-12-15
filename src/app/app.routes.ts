@@ -27,14 +27,6 @@ export const routes: Routes = [
         component: MaintenanceComponent
     },
     {
-        path: "matrix-auth",
-        component: MaintenanceComponent
-    },
-    {
-        path: "institution-auth",
-        component: MaintenanceComponent
-    },
-    {
         path: "app",
         component: CoreAppComponent,
         children:
@@ -77,10 +69,6 @@ export const routes: Routes = [
                 },
                 {
                     path: "professional/student-info",
-                    component: StudentInfoComponent
-                },
-                {
-                    path: "institution/student-info",
                     component: StudentInfoComponent
                 },
                 {
