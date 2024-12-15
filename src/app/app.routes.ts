@@ -13,7 +13,6 @@ import { ProfessorAboutComponent } from './features/profiles/pages/professor-abo
 import { GlobalRankingComponent } from './features/award/pages/global-ranking/global-ranking.component';
 import { StudentInfoComponent } from './features/student/pages/student-info/student-info.component';
 
-import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
 import { SupportComponent } from './shared/pages/support/support.component';
 
@@ -21,10 +20,6 @@ export const routes: Routes = [
     {
         path: "",
         component: LoginComponent
-    },
-    {
-        path: "professor-auth",
-        component: MaintenanceComponent
     },
     {
         path: "app",
