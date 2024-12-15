@@ -9,7 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent {
   @Input({ required: true }) text = "";
-  @Input({ required: true }) buttonStyle: "default" | "selected" = "default";
+  @Input({ required: true }) buttonStyle: "default" | "selected" | "disable" = "default";
   @Input() width = "";
   @Input() backgroundColor = "";
   @Input() color = "";

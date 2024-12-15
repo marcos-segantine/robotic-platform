@@ -1,7 +1,7 @@
 <button 
     [style.width]="width" 
     (click)="emitEvent()"
-    class="{{ buttonStyle === 'default' ? 'default' : 'selected' }}"
+    [class]="buttonStyle"
     [style.background]="backgroundColor != '' ? (backgroundColor || '#FFB500') : ''">
     {{ text }}
 </button>

@@ -20,6 +20,11 @@ button {
   background-color: var(--color-orange);
 }
 
-button:hover {
+.disable {
+    cursor: auto;
+    background-color: var(--color-orange-opacity);
+}
+
+button:not(.disable):hover {
     filter: brightness(1.1);
 }
