@@ -3,8 +3,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { InputComponent } from '../../components/input/input.component';
 import { ButtonComponent } from '../../components/button/button.component';
 
-import { ButtonType } from '../../../features/auth/enum/button-type-enum';
-
 import { ArrowComponentIcon } from '../../../../../public/assets/arrow/arrow.component';
 
 @Component({
@@ -16,7 +14,6 @@ import { ArrowComponentIcon } from '../../../../../public/assets/arrow/arrow.com
 })
 export class SupportComponent implements OnInit, OnDestroy {
   private observer: MutationObserver = {} as MutationObserver;
-  buttonType = ButtonType;
   theme = ""
 
   ngOnInit(): void {

@@ -1,7 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { ButtonType } from '../../../features/auth/enum/button-type-enum';
-
 @Component({
   selector: 'app-button',
   standalone: true,
@@ -11,13 +9,11 @@ import { ButtonType } from '../../../features/auth/enum/button-type-enum';
 })
 export class ButtonComponent {
   @Input({ required: true }) text = "";
-  @Input({ required: true }) buttonType: ButtonType = ButtonType.Primary;
+  @Input({ required: true }) buttonStyle: "default" | "selected" = "default";
   @Input() width = "";
   @Input() backgroundColor = "";
   @Input() color = "";
   @Output() event = new EventEmitter();
-
-  buttonTypeValue = ButtonType;
 
   emitEvent() {
     this.event.emit()

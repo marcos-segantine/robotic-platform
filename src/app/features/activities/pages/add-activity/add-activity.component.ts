@@ -5,8 +5,6 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 
 import { TrailComponent } from '../../components/trail/trail.component';
 
-import { ButtonType } from '../../../auth/enum/button-type-enum';
-
 @Component({
   selector: 'app-add-activity',
   standalone: true,
@@ -15,5 +13,4 @@ import { ButtonType } from '../../../auth/enum/button-type-enum';
   styleUrl: './add-activity.component.scss',
 })
 export class AddActivityComponent {
-  buttonType = ButtonType;
 }

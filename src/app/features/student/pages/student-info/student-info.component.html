@@ -1,12 +1,12 @@
 <div class="container">
     <div class="links">
-        <app-button text="Chamada" [buttonType]="currentPage == 'page-1' ? buttonType.Primary : buttonType.Secondary"
+        <app-button text="Chamada" [buttonStyle]="currentPage == 'page-1' ? 'selected' : 'default'"
             width="max-content" (event)="changeSection('page-1')" />
         <app-button text="Pesquisar por aluno"
-            [buttonType]="currentPage == 'page-2' ? buttonType.Primary : buttonType.Secondary" width="max-content"
+            [buttonStyle]="currentPage == 'page-2' ? 'selected' : 'default'" width="max-content"
             (event)="changeSection('page-2')" />
         <app-button text="Cadastrar aluno"
-            [buttonType]="currentPage == 'page-3' ? buttonType.Primary : buttonType.Secondary" width="max-content"
+            [buttonStyle]="currentPage == 'page-3' ? 'selected' : 'default'" width="max-content"
             (event)="changeSection('page-3')" />
     </div>
 
@@ -21,7 +21,7 @@
             <div class="class-info">
                 <h3>Djalma - Turma 1</h3>
 
-                <app-button text="Mudar Turma" [buttonType]="buttonType.Primary" width="max-content" />
+                <app-button text="Mudar Turma" buttonStyle="selected" width="max-content" />
             </div>
             <div class="student">
                 <h4>Marcos Segantine</h4>
@@ -54,7 +54,7 @@
         <h1>Pesquisar por aluno</h1>
         <app-input placeholder="Nome do aluno" mode="mode-1" size="all" />
 
-        <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content" (event)="getStudentData()" />
+        <app-button text="Confirmar" buttonStyle="selected" width="max-content" (event)="getStudentData()" />
     </div>
     }
     @else {
@@ -86,9 +86,9 @@
             </div>
 
             <div class="buttons">
-                <app-button text="Confirmar" [buttonType]="buttonType.Primary" width="max-content"
+                <app-button text="Confirmar" buttonStyle="selected" width="max-content"
                     (event)="createStudent()" />
-                <app-button text="Cancelar" [buttonType]="buttonType.Secondary" width="max-content" />
+                <app-button text="Cancelar" buttonStyle="default" width="max-content" />
             </div>
         </div>
     </div>

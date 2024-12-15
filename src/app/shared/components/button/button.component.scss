@@ -11,13 +11,13 @@ button {
     cursor: pointer;
 }
 
-.primary {
-  background-color: var(--color-orange);  
+.default {
+    background-color: var(--color-ternary);
+    color: var(--color-white);
 }
 
-.secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
+.selected {
+  background-color: var(--color-orange);
 }
 
 button:hover {

@@ -3,7 +3,6 @@ import { Router, RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angul
 
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
-import { ButtonType } from '../../enum/button-type-enum';
 
 import { UserDataService } from '../../../../core/services/user-data.service';
 import { UserDataModel } from '../../../../core/models/user-data.model';
@@ -16,8 +15,6 @@ import { UserDataModel } from '../../../../core/models/user-data.model';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  buttonType = ButtonType;
-
   constructor(private userDataService: UserDataService, private router: Router) { }
 
   login() {

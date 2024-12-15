@@ -8,7 +8,6 @@ import { ButtonComponent } from "../../../../shared/components/button/button.com
 
 import { LessonDescriptionComponent } from '../../components/lesson-description/lesson-description.component';
 
-import { ButtonType } from '../../../auth/enum/button-type-enum';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,8 +18,6 @@ import { Router } from '@angular/router';
   styleUrl: './student-lesson.component.scss'
 })
 export class StudentLessonComponent {
-  buttonType = ButtonType
-
   constructor(private router: Router) { }
 
   navigateToQuizPage() {

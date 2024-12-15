@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
-import { ButtonType } from '../../../auth/enum/button-type-enum';
 import { LessonScoreComponent } from "../lesson-score/lesson-score.component";
 import { Router } from '@angular/router';
 
@@ -15,8 +14,6 @@ import { Router } from '@angular/router';
 })
 export class LessonLinkComponent {
   @Input({ required: true }) mode: "student" | "institutional" = 'student'
-
-  buttonType = ButtonType
 
   constructor(private router: Router) { }
 
