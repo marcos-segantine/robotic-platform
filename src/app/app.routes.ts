@@ -11,7 +11,7 @@ import { StudentQuizComponent } from './features/activities/pages/student-quiz/s
 import { StudentProfileComponent } from './features/profiles/pages/student-profile/student-profile.component';
 import { ProfessorAboutComponent } from './features/profiles/pages/professor-about/professor-about.component';
 import { GlobalRankingComponent } from './features/award/pages/global-ranking/global-ranking.component';
-import { StudentInfoComponent } from './features/student/student-info/student-info.component';
+import { StudentInfoComponent } from './features/student/pages/student-info/student-info.component';
 
 import { MaintenanceComponent } from './core/components/pages/maintenance/maintenance.component';
 import { CoreAppComponent } from './core/components/pages/core-app/core-app.component';
