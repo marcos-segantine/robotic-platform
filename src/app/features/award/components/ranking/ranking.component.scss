@@ -5,8 +5,8 @@
     background-color: var(--color-ternary);
 
     border-radius: var(--border-radius-small);
-    
-    overflow: hidden;
+
+    overflow: scroll;
 }
 
 .title {
@@ -22,7 +22,7 @@
 
     overflow: scroll;
 
-    height: 90%;
+    height: 100%;
 }
 
 .top {
@@ -51,7 +51,6 @@
             margin: .5em 0 1em;
 
             border-radius: var(--border-radius-large);
-            border-color: var(--color-orange);
             border-width: 3px;
             border-style: solid;
 
@@ -70,7 +69,6 @@
                 justify-content: center;
                 align-items: center;
 
-                background-color: var(--color-orange);
                 color: var(--color-black);
 
                 font-weight: bold;

@@ -17,6 +17,9 @@ $header-height: 6rem;
     --color-black: #292B2F;
     --color-dark: #37393F;
     --color-gray: #808080;
+    --color-gold: #FFD700;
+    --color-silver: #C0C0C0;
+    --color-bronze: #CD7F32;
 
     --header-height: #{$header-height};
     --sidebar-height: calc(100vh - 2em - 1rem - #{$header-height});
@@ -199,4 +202,19 @@ li {
 .red-opacity {
     background-color: var(--color-red-opacity);
     color: var(--color-red);
+}
+
+.gold {
+    border-color: var(--color-gold);
+    background-color: var(--color-gold);
+}
+
+.silver {
+    border-color: var(--color-silver);
+    background-color: var(--color-silver);
+}
+
+.bronze {
+    border-color: var(--color-bronze);
+    background-color: var(--color-bronze);
 }

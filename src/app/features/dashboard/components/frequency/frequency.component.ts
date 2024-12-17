@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Chart } from 'chart.js';
+import { dashDaskColors } from '../../../../core/enum/dashColors.enum';
 
 @Component({
   selector: 'app-frequency',
@@ -17,7 +18,7 @@ export class FrequencyComponent implements OnInit {
       datasets: [
         {
           data: [5, 2, 3, 4],
-          backgroundColor: "orange",
+          backgroundColor: [dashDaskColors.Color1, dashDaskColors.Color2, dashDaskColors.Color3, dashDaskColors.Color4],
           yAxisID: 'y',
         },
       ]
