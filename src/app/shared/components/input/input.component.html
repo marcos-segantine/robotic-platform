@@ -1,2 +1,8 @@
 <span class="{{ additionalClasses }}">{{ text }}</span>
-<input class="{{ size }} {{ mode }}" type="text" placeholder="{{ placeholder }}">
+<input 
+    class="{{ size }} {{ mode }}" 
+    type="text" 
+    placeholder="{{ placeholder }}"
+    [value]="property" 
+    (input)="emitEvent($event)"
+>
