@@ -53,27 +53,28 @@
         <h1>Cadastrar aluno</h1>
 
         <div class="content">
-            <app-input placeholder="Nome" mode="mode-1" size="medium" />
+            <app-input placeholder="Nome" mode="mode-1" size="medium" [(property)]="newStudentInfo.name" />
+            
             <h2>Escola: </h2>
             <div class="schools">
-                <span class="selected">Djalma</span>
-                <span>M. Aparecida</span>
-                <span>Teodoro</span>
-                <span>Rosemir</span>
+                <span (click)="changeOption(0, 'schools')">Djalma</span>
+                <span (click)="changeOption(1, 'schools')">M. Aparecida</span>
+                <span (click)="changeOption(2, 'schools')">Teodoro</span>
+                <span (click)="changeOption(3, 'schools')">Rosemir</span>
             </div>
 
             <h2>Escolaridade: </h2>
             <div class="schooling">
-                <span>Fundamental 1</span>
-                <span>Fundamental 2</span>
+                <span (click)="changeOption(0, 'schooling')">Fundamental 1</span>
+                <span (click)="changeOption(1, 'schooling')">Fundamental 2</span>
             </div>
 
             <h2>Turma: </h2>
             <div class="schedule-class">
-                <span>Primeiro horário</span>
-                <span>Segundo horário</span>
-                <span>Terceiro horário</span>
-                <span>Quarto horário</span>
+                <span (click)="changeOption(0, 'schedule-class')">Primeiro horário</span>
+                <span (click)="changeOption(1, 'schedule-class')">Segundo horário</span>
+                <span (click)="changeOption(2, 'schedule-class')">Terceiro horário</span>
+                <span (click)="changeOption(3, 'schedule-class')">Quarto horário</span>
             </div>
 
             <div class="buttons">

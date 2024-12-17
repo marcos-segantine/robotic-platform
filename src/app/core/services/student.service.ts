@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Student } from "../models/student.model";
+import { StudentModel } from "../models/student.model";
 import { environment } from "../../../environments/environment";
 
 @Injectable({
@@ -14,10 +14,10 @@ export class StudentService
 
     getStudent(id: string) {
         const idTest = "3fa85f64-5717-4562-b3fc-2c963f66afa1";
-        return this._httpClient.get<Student>(this.url + `get-student?id=${idTest}`);
+        return this._httpClient.get<StudentModel>(this.url + `get-student?id=${idTest}`);
     }
 
-    createStudent(student: Student) {
+    createStudent(student: StudentModel) {
         return this._httpClient.post(this.url + 'create-student', student);
     }
-}   
+}

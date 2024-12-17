@@ -7,9 +7,14 @@ import { UserDataService } from '../../../../core/services/user-data.service';
 import { UserDataModel } from '../../../../core/models/user-data.model';
 import { StudentService } from '../../../../core/services/student.service';
 
-import { Student } from "../../../../core/models/student.model";
+import { StudentModel } from "../../../../core/models/student.model";
 
 import { MenuComponent } from '../../../../shared/components/menu/menu.component';
+
+import { v4 as uuidv4 } from 'uuid';
+
+import { validateIfNonNullOrUndefined } from '../../../../shared/validations/validateIfNonNull.validate';
+
 
 @Component({
   selector: 'app-student-info',
@@ -41,6 +46,20 @@ export class StudentInfoComponent implements OnInit {
     },
   ];
   currentPage = "page-1";
+  newStudentInfo: StudentModel = {
+    id: uuidv4(),
+    name: '',
+    school: null,
+    schooling: null,
+    scheduleClass: null,
+    photoPath: '',
+    points: 0,
+    certificates: {
+      done: [],
+      inProgress: [],
+      notStarted: []
+    }
+  };
 
   constructor(private userDataService: UserDataService, private studentService: StudentService) { }
 
@@ -48,8 +67,7 @@ export class StudentInfoComponent implements OnInit {
     this.userData = this.userDataService.getUserData();
   }
 
-  changeSection(section: "page-1" | "page-2" | "page-3")
-  {
+  changeSection(section: "page-1" | "page-2" | "page-3") {
     this.currentPage = section
     const currentPageIndex = +section.split("-")[1] - 1;
     this.sectionsData.map((item, index) => {
@@ -63,25 +81,37 @@ export class StudentInfoComponent implements OnInit {
     });
   }
 
+  changeOption(op: number, type: "schools" | "schooling" | "schedule-class") {
+    const father = document.getElementsByClassName(type)[0];
+    const children = father.querySelectorAll("span");
+    children.forEach((element, index) => {
+      element.classList.toggle("selected", index === op)
+    });
+
+    switch (type) {
+      case "schools":
+        this.newStudentInfo.school = op
+        break;
+      case "schooling":
+        this.newStudentInfo.schooling = op
+        break;
+      case "schedule-class":
+        this.newStudentInfo.scheduleClass = op
+        break;
+    }
+  }
+
   createStudent() {
-    const student: Student = {
-      id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      name: "John Doe",
-      certificates: {
-        done: [],
-        inProgress: [],
-        notStarted: [],
-      },
-      photoPath: "https://www.google.com",
-      points: 0,
-      schooling: 0,
-      school: 0,
-      scheduleClass: 0
-    };
+    if (validateIfNonNullOrUndefined({
+      data: this.newStudentInfo,
+      keys: ["name", "school", "schooling", "scheduleClass", ]
+    }) === false) {
+      console.log("DATA IS UNAVAILABLE");
+      return;
+    }
 
-    this.studentService.createStudent(student).subscribe((data) => {
+    this.studentService.createStudent(this.newStudentInfo).subscribe((data) => {
       console.log(data);
-
     });
   }
 }
