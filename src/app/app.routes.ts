@@ -47,7 +47,7 @@ export const routes: Routes = [
                     component: StudentQuizComponent
                 },
                 {
-                    path: "student/professor",
+                    path: "student/professional",
                     component: ProfessorAboutComponent
                 },
                 {

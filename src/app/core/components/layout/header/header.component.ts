@@ -12,5 +12,4 @@ import { ColorSchemeComponent } from '../../../../shared/components/color-scheme
 })
 export class HeaderComponent {
   @Input({ required: true }) isLogged = false;
-  @Input({ required: true }) isStudentOrProfessor = false;
 }
