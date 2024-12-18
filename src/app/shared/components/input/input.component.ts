@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputComponent {
   @Input({ required: true }) size: "all" | "bigger" | "medium" | "small" = "medium";
-  @Input({ required: true }) mode: "mode-1" | "mode-2" = "mode-1";
+  @Input({ required: true }) mode: "mode-1" | "mode-2" | "textarea" = "mode-1";
   @Input() property = ""; // For now, `property` is not required
   @Input() additionalClasses: "margin" | "no-margin" = "margin";
   @Input() placeholder = "";

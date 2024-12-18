@@ -4,7 +4,7 @@
     @if (currentSection === "create-trail") {
     <div class="forms">
         <app-input mode="mode-1" text="Nome da trilha" size="bigger" [(property)]="newTrailData.name" />
-        <app-input mode="mode-1" text="Resumo da trilha" size="bigger" [(property)]="newTrailData.resume" />
+        <app-input mode="textarea" text="Resumo da trilha" size="bigger" [(property)]="newTrailData.resume" />
 
         <h2>Dificuldade</h2>
         <div class="difficulty">

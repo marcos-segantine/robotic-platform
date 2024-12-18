@@ -1,8 +1,9 @@
+@if (mode !== 'textarea') {
 <span class="{{ additionalClasses }}">{{ text }}</span>
-<input 
-    class="{{ size }} {{ mode }}" 
-    type="text" 
-    placeholder="{{ placeholder }}"
-    [value]="property" 
-    (input)="emitEvent($event)"
->
+<input class="{{ size }} {{ mode }}" type="text" placeholder="{{ placeholder }}" [value]="property"
+(input)="emitEvent($event)">
+}
+@else {
+    <span class="{{ additionalClasses }}">{{ text }}</span>
+    <textarea class="{{ size }}"></textarea>
+}
