@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    gap: 2em;
+    gap: 1rem;
 
     min-height: 500px;
     height: 100%;
@@ -16,6 +16,37 @@ app-menu {
 
 .forms {
     width: 100%;
+}
+
+.options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+}
+
+.forms h2 {
+    margin: 2rem 0 1rem;
+}
+
+span {
+    font-family: var(--font-family-medium);
+    font-size: var(--font-size-tiny);
+
+    background-color: var(--color-ternary);
+
+    padding: .5em;
+
+    border-radius: var(--border-radius-small);
+}
+
+span.selected {
+    background-color: var(--color-orange);
+    color: var(--color-black);
+}
+
+span:hover {
+    cursor: pointer;
 }
 
 .activity {
@@ -42,6 +73,16 @@ app-menu {
 
 .trails {
     display: none;
+
+    background-color: var(--color-secondary);
+    
+    border-radius: var(--border-radius-small);
+    
+    padding: 1rem;
+}
+
+.alert {
+    margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 767px) {
@@ -66,9 +107,10 @@ app-menu {
     .content {
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: start;
 
         .forms {
-            width: calc(70% - 1em);
+            width: calc(70% - .5rem);
 
             .activity {
                 width: 100%;
@@ -76,8 +118,8 @@ app-menu {
         }
 
         .trails {
-            width: calc(30% - 1em);
-        
+            width: calc(30% - .5rem);
+
             h2 {
                 text-align: center;
             }

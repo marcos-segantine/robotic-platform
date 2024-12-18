@@ -5,8 +5,6 @@
 
     border-radius: var(--border-radius-small);
 
-    transition: all .2s;
-
     cursor: pointer;
 
     h3 {
@@ -34,5 +32,10 @@
 }
 
 .trail:hover {
-    transform: translateX(-2%);
+    background-color: var(--color-primary);
+}
+
+.selected {
+    border: solid 1px;
+    border-color: var(--color-orange);
 }

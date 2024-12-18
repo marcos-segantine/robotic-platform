@@ -18,14 +18,26 @@ import { IMenu } from '../../../../shared/interfaces/menu.interface';
 export class AddActivityComponent {
   sectionsData: Array<IMenu> = [
     {
-      method: () => { },
+      method: () => this.changeSection("create-trail"),
       name: "Criar Trilha",
       path: "create-trail",
+      isSelected: true
     },
     {
-      method: () => { },
+      method: () => this.changeSection("add-activity"),
       name: "Adicionar Atividade",
       path: "add-activity",
+      isSelected: false
     }
-  ]
+  ];
+  currentSection: "create-trail" | "add-activity" = "create-trail";
+
+  changeSection(section: "create-trail" | "add-activity") {
+    this.currentSection = section;
+
+    const currentPageIndex = section === "create-trail" ? 0 : 1;
+    this.sectionsData.map((item, index) => {
+      index === currentPageIndex ? item.isSelected = true : item.isSelected = false
+    })
+  }
 }

@@ -1,9 +1,33 @@
 <div class="content">
     <app-menu [data]="sectionsData" />
 
+    @if (currentSection === "create-trail") {
     <div class="forms">
         <app-input mode="mode-1" text="Nome da trilha" size="bigger" />
-        <app-input mode="mode-1" text="Nome do professor" size="medium" />
+
+        <h2>Dificuldade</h2>
+        <div class="options">
+            <span class="selected">Facil</span>
+            <span>Medio</span>
+            <span>Dificil</span>
+        </div>
+
+        <h2>Escolaridade Destinada</h2>
+        <div class="options">
+            <span class="selected">Fundamental 1</span>
+            <span>Fundamental 2</span>
+        </div>
+
+        <div class="buttons">
+            <app-button buttonStyle="default" text="Limpar" />
+            <app-button buttonStyle="disable" text="Confirmar" />
+        </div>
+    </div>
+    }
+    @else {
+    <div class="forms">
+        <p class="alert"><strong>Adicionar atividade para a trilha Tal</strong></p>
+        <app-input mode="mode-1" text="Nome da Atividade" size="bigger" />
 
         <div class="activity">
             <h3>Adicionar uma atividade à trilha</h3>
@@ -21,15 +45,17 @@
         </div>
 
         <div class="buttons">
-            <app-button buttonStyle="default" text="Resetar" />
-            <app-button buttonStyle="selected" text="Confirmar" />
+            <app-button buttonStyle="default" text="Limpar" />
+            <app-button buttonStyle="disable" text="Confirmar" />
         </div>
     </div>
 
     <div class="trails">
-        <h2>Trilhas Recentes</h2>
+        <h2>Escolha a Trilha</h2>
+        <app-input size="all" mode="mode-1" placeholder="Pesquisar" />
         <app-trail />
         <app-trail />
         <app-trail />
     </div>
+    }
 </div>
