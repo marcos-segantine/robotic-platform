@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { TrailModel } from '../../../../core/models/trail.model';
 
 @Component({
   selector: 'app-trail',
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './trail.component.scss'
 })
 export class TrailComponent {
-
+  @Input({ required: true }) trail!: TrailModel;
 }

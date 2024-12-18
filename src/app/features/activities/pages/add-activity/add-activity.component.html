@@ -55,14 +55,14 @@
     <div class="trails">
 
         @if (trailSelected !== null) {
-        <app-trail />
+        <app-trail [trail]="trailSelected" />
         }
         @else {
         @if (trails !== null) {
         <h2>Escolha a Trilha</h2>
         <app-input size="all" mode="mode-1" placeholder="Pesquisar" [(property)]="trailToSearch" />
         @for (trail of trails; track trail) {
-            <app-trail />
+            <app-trail [trail]="trail" />
         }
         }
         @else {
