@@ -1,4 +1,4 @@
-export enum school
+export enum School
 {
     Djalma,
     Aparecida,

@@ -9,12 +9,15 @@ import { StudentService } from '../../../../core/services/student.service';
 
 import { StudentModel } from "../../../../core/models/student.model";
 
+import { School } from '../../../../core/enum/school.enum';
+import { Schooling } from '../../../../core/enum/schooling.enum';
+import { ScheduleClass } from '../../../../core/enum/scheduleClass.enum';
+
 import { MenuComponent } from '../../../../shared/components/menu/menu.component';
 
 import { v4 as uuidv4 } from 'uuid';
 
 import { validateIfNonNullOrUndefined } from '../../../../shared/validations/validateIfNonNull.validate';
-
 
 @Component({
   selector: 'app-student-info',
@@ -60,6 +63,11 @@ export class StudentInfoComponent implements OnInit {
       notStarted: []
     }
   };
+  studentsNameToSearch = "";
+  studentsSearched: Array<StudentModel> | null = null;
+  Schooling = Schooling;
+  School = School;
+  ScheduleClass = ScheduleClass;
 
   constructor(private userDataService: UserDataService, private studentService: StudentService) { }
 
@@ -76,8 +84,9 @@ export class StudentInfoComponent implements OnInit {
   }
 
   getStudentData() {
-    this.studentService.getStudent("").subscribe((data) => {
-      console.log(data);
+    this.studentService.getStudentsByName(this.studentsNameToSearch).subscribe((data) => {
+      if (data === null) this.studentsSearched = null;
+      else this.studentsSearched = data;
     });
   }
 
@@ -104,7 +113,7 @@ export class StudentInfoComponent implements OnInit {
   createStudent() {
     if (validateIfNonNullOrUndefined({
       data: this.newStudentInfo,
-      keys: ["name", "school", "schooling", "scheduleClass", ]
+      keys: ["name", "school", "schooling", "scheduleClass",]
     }) === false) {
       console.log("DATA IS UNAVAILABLE");
       return;

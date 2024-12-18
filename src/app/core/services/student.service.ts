@@ -12,9 +12,12 @@ export class StudentService
 
     constructor(private _httpClient: HttpClient) { }
 
-    getStudent(id: string) {
-        const idTest = "3fa85f64-5717-4562-b3fc-2c963f66afa1";
-        return this._httpClient.get<StudentModel>(this.url + `get-student?id=${idTest}`);
+    getStudentByID(id: string) {
+        return this._httpClient.get<StudentModel>(this.url + `get-student?id=${id}`);
+    }
+
+    getStudentsByName(name: string) {
+        return this._httpClient.get<Array<StudentModel>>(this.url + `get-students-by-name?name=${name}`);
     }
 
     createStudent(student: StudentModel) {

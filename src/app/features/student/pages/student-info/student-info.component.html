@@ -43,9 +43,22 @@
     } @else if(currentPage == "page-2") {
     <div class="page page-2 search-student">
         <h1>Pesquisar por aluno</h1>
-        <app-input placeholder="Nome do aluno" mode="mode-1" size="all" />
+        <app-input placeholder="Nome do aluno" mode="mode-1" size="all" [(property)]="studentsNameToSearch" />
 
         <app-button text="Confirmar" buttonStyle="selected" width="max-content" (event)="getStudentData()" />
+        @if (studentsSearched !== null) {
+        @for (student of studentsSearched; track student.id) {
+        <div class="students-searched">
+            <div>
+                <h4>{{ student.name }}</h4>
+                <p><strong>Escola:</strong> {{ School[student.school || 0] }}</p>
+                <p><strong>Escolaridade:</strong> {{ Schooling[0].replace("_", " ") }}</p>
+                <p><strong>Horario:</strong> {{ student.scheduleClass }}&#186;</p>
+            </div>
+        </div>
+        }
+        }
+
     </div>
     }
     @else {
@@ -54,7 +67,7 @@
 
         <div class="content">
             <app-input placeholder="Nome" mode="mode-1" size="medium" [(property)]="newStudentInfo.name" />
-            
+
             <h2>Escola: </h2>
             <div class="schools">
                 <span (click)="changeOption(0, 'schools')">Djalma</span>
@@ -78,8 +91,7 @@
             </div>
 
             <div class="buttons">
-                <app-button text="Confirmar" buttonStyle="selected" width="max-content"
-                    (event)="createStudent()" />
+                <app-button text="Confirmar" buttonStyle="selected" width="max-content" (event)="createStudent()" />
                 <app-button text="Cancelar" buttonStyle="default" width="max-content" />
             </div>
         </div>

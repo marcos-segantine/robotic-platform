@@ -21,6 +21,30 @@
     width: 100%;
 }
 
+.students-searched {
+    width: 100%;
+}
+
+.students-searched > div {
+    background-color: var(--color-secondary);
+    
+    border-radius: var(--border-radius-small);
+
+    padding: 1rem;
+    width: 100%;
+    max-width: 700px;
+
+    h4 {
+        margin-bottom: 1rem;
+    }
+
+    p {
+        display: block;
+        
+        margin: .3rem 0;
+    }
+}
+
 .page-3 .content {
     
     h2 {

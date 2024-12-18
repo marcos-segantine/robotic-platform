@@ -1,11 +1,11 @@
-import { school } from "../enum/school.enum";
+import { School } from "../enum/school.enum";
 import { Schooling } from "../enum/schooling.enum";
 import { ScheduleClass } from "../enum/scheduleClass.enum";
 
 export interface StudentModel {
     id: string | null,
     name: string,
-    school: school | null,
+    school: School | null,
     schooling: Schooling | null,
     scheduleClass: ScheduleClass | null,
     photoPath: string | null,
