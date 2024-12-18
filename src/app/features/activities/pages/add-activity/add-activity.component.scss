@@ -18,7 +18,8 @@ app-menu {
     width: 100%;
 }
 
-.options {
+.difficulty,
+.schooling {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
@@ -75,9 +76,9 @@ span:hover {
     display: none;
 
     background-color: var(--color-secondary);
-    
+
     border-radius: var(--border-radius-small);
-    
+
     padding: 1rem;
 }
 

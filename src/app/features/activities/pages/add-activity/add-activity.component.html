@@ -3,24 +3,25 @@
 
     @if (currentSection === "create-trail") {
     <div class="forms">
-        <app-input mode="mode-1" text="Nome da trilha" size="bigger" />
+        <app-input mode="mode-1" text="Nome da trilha" size="bigger" [(property)]="newTrailData.name" />
+        <app-input mode="mode-1" text="Resumo da trilha" size="bigger" [(property)]="newTrailData.resume" />
 
         <h2>Dificuldade</h2>
-        <div class="options">
-            <span class="selected">Facil</span>
-            <span>Medio</span>
-            <span>Dificil</span>
+        <div class="difficulty">
+            <span (click)="changeOption(0, 'difficulty')">Facil</span>
+            <span (click)="changeOption(1, 'difficulty')">Medio</span>
+            <span (click)="changeOption(2, 'difficulty')">Dificil</span>
         </div>
 
         <h2>Escolaridade Destinada</h2>
-        <div class="options">
-            <span class="selected">Fundamental 1</span>
-            <span>Fundamental 2</span>
+        <div class="schooling">
+            <span (click)="changeOption(0, 'schooling')">Fundamental 1</span>
+            <span (click)="changeOption(1, 'schooling')">Fundamental 2</span>
         </div>
 
         <div class="buttons">
             <app-button buttonStyle="default" text="Limpar" />
-            <app-button buttonStyle="disable" text="Confirmar" />
+            <app-button buttonStyle="disable" text="Confirmar" (event)="createTrail()" />
         </div>
     </div>
     }
@@ -46,7 +47,7 @@
 
         <div class="buttons">
             <app-button buttonStyle="default" text="Limpar" />
-            <app-button buttonStyle="disable" text="Confirmar" />
+            <app-button buttonStyle="selected" text="Confirmar" />
         </div>
     </div>
 
