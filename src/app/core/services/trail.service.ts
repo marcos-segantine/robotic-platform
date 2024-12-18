@@ -15,4 +15,12 @@ export class TrailService {
   createTrail(trail: TrailModel) {
     return this._httpClient.post(this.url + 'create-trail', trail);
   }
+
+  getTrails() {
+    return this._httpClient.get<Array<TrailModel>>(this.url + 'get-trails');
+  }
+
+  saveActivity() {
+    
+  }
 }

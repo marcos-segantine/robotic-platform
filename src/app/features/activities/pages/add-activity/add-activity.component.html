@@ -37,6 +37,7 @@
                 <app-input mode="mode-1" placeholder="Lição n° ..." text="Título da lição" size="bigger" />
                 <app-input mode="mode-1" placeholder="Intuito dessa atividade é trabalhar..." text="Resumo da atividade"
                     size="bigger" />
+                <app-input mode="mode-1" text="Pontuacao da atividade" size="small" />
             </div>
 
             <div class="question-alternatives">
@@ -52,11 +53,22 @@
     </div>
 
     <div class="trails">
+
+        @if (trailSelected !== null) {
+        <app-trail />
+        }
+        @else {
+        @if (trails !== null) {
         <h2>Escolha a Trilha</h2>
-        <app-input size="all" mode="mode-1" placeholder="Pesquisar" />
-        <app-trail />
-        <app-trail />
-        <app-trail />
+        <app-input size="all" mode="mode-1" placeholder="Pesquisar" [(property)]="trailToSearch" />
+        @for (trail of trails; track trail) {
+            <app-trail />
+        }
+        }
+        @else {
+        <h2>Nenhuma Trilha Disponivel</h2>
+        }
+        }
     </div>
     }
 </div>

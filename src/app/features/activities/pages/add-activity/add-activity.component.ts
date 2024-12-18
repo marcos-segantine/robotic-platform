@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
@@ -9,9 +9,11 @@ import { MenuComponent } from '../../../../shared/components/menu/menu.component
 import { IMenu } from '../../../../shared/interfaces/menu.interface';
 
 import { TrailModel } from '../../../../core/models/trail.model';
+import { ActivityModel } from '../../../../core/models/activity.model';
+
 import { TrailService } from '../../../../core/services/trail.service';
 
-import { v4 as uuidv4 } from 'uuid';
+import { generateUUID } from '../../../../shared/utils/createUID.util';
 
 @Component({
   selector: 'app-add-activity',
@@ -36,24 +38,43 @@ export class AddActivityComponent {
     }
   ];
   currentSection: "create-trail" | "add-activity" = "create-trail";
+
   newTrailData: TrailModel = {
-    id: uuidv4(),
+    id: generateUUID(),
     name: '',
     resume: '',
     difficulty: null,
     activities: [],
     schooling: null
   }
+  trailToSearch = "";
+  trails: Array<TrailModel> | null = null;
+  trailSelected: TrailModel | null = null;
+
+  activity: ActivityModel = {
+    id: '',
+    title: '',
+    resume: '',
+    question: '',
+    alternatives: [],
+    points: null
+  }
 
   constructor(private trailService: TrailService) { }
 
   changeSection(section: "create-trail" | "add-activity") {
+    // navigation
     this.currentSection = section;
 
     const currentPageIndex = section === "create-trail" ? 0 : 1;
     this.sectionsData.map((item, index) => {
       index === currentPageIndex ? item.isSelected = true : item.isSelected = false
-    })
+    });
+
+    // getting data to section
+    if (section === 'add-activity') {
+      this.getTrails();
+    }
   }
 
   changeOption(op: number, type: "difficulty" | "schooling") {
@@ -75,7 +96,35 @@ export class AddActivityComponent {
 
   createTrail() {
     this.trailService.createTrail(this.newTrailData).subscribe((data) => {
-      console.log(data);
+      this.newTrailData = {
+        id: generateUUID(),
+        name: '',
+        resume: '',
+        difficulty: null,
+        activities: [],
+        schooling: null
+      }
+
+      const sections = ["difficulty", "schooling"];
+
+      for (const section of sections) {
+        const father = document.getElementsByClassName(section)[0];
+        const children = father.querySelectorAll("span");
+
+        children.forEach(element => {
+          element.classList.remove("selected")
+        });
+      }
+
+      // cleaning textarea element
+      const textareaRef = document.getElementsByTagName("textarea")[0];
+      textareaRef.value = "";
+    });
+  }
+
+  getTrails() {
+    this.trailService.getTrails().subscribe((data) => {
+      this.trails = data;
     });
   }
 }

@@ -15,9 +15,9 @@ import { ScheduleClass } from '../../../../core/enum/scheduleClass.enum';
 
 import { MenuComponent } from '../../../../shared/components/menu/menu.component';
 
-import { v4 as uuidv4 } from 'uuid';
-
 import { validateIfNonNullOrUndefined } from '../../../../shared/validations/validateIfNonNull.validate';
+
+import { generateUUID } from '../../../../shared/utils/createUID.util';
 
 @Component({
   selector: 'app-student-info',
@@ -50,7 +50,7 @@ export class StudentInfoComponent implements OnInit {
   ];
   currentPage = "page-1";
   newStudentInfo: StudentModel = {
-    id: uuidv4(),
+    id: generateUUID(),
     name: '',
     school: null,
     schooling: null,
