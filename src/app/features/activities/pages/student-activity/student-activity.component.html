@@ -2,13 +2,9 @@
     <app-menu [data]="options" />
 
     <div class="trails">
-        <app-trail-activities />
-        <app-trail-activities />
-        <app-trail-activities />
-        <app-trail-activities />
-        <app-trail-activities />
-        <app-trail-activities />
-        <app-trail-activities />
+        @for (trail of trails; track trail.id) {
+            <app-trail-activities [data]="trail" />
+        }
     </div>
 
     <div class="more-info">

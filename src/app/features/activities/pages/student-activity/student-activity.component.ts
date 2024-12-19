@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { TrailActivitiesComponent } from '../../components/trail-activities/trail-activities.component';
 import { LearningProgressComponent } from '../../../../shared/components/learning-progress/learning-progress.component';
@@ -7,6 +7,9 @@ import { MenuComponent } from '../../../../shared/components/menu/menu.component
 
 import { IMenu } from "../../../../shared/interfaces/menu.interface"
 
+import { TrailService } from '../../../../core/services/trail.service';
+import { TrailModel } from '../../../../core/models/trail.model';
+
 @Component({
   selector: 'app-student-activity',
   standalone: true,
@@ -14,7 +17,7 @@ import { IMenu } from "../../../../shared/interfaces/menu.interface"
   templateUrl: './student-activity.component.html',
   styleUrl: './student-activity.component.scss'
 })
-export class StudentActivityComponent {
+export class StudentActivityComponent implements OnInit {
   options: Array<IMenu> = [
     {
       method: () => {},
@@ -28,5 +31,15 @@ export class StudentActivityComponent {
       path: "completed",
       isSelected: false
     }
-  ]
+  ];
+  trails: Array<TrailModel> = [];
+
+  constructor (private trailService: TrailService) { }
+
+  ngOnInit(): void {
+    this.trailService.getTrails().subscribe(data => {
+      this.trails = data;
+      console.log(this.trails);
+    })
+  }
 }
