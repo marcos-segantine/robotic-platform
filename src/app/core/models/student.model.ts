@@ -15,6 +15,7 @@ export interface StudentModel {
         inProgress: InProgressCertificatesType[]
         notStarted: string[]
     },
+    statistics: Array<Record<string, number>>
 }
 
 interface InProgressCertificatesType {

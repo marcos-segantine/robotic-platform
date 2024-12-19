@@ -15,4 +15,8 @@ export class ActivityService {
     saveActivity(activity: ActivityModel) {
         return this._httpClient.post(this.url + 'create-activity', activity);
     }
+
+    getActivityByID(id: string) {
+        return this._httpClient.get<ActivityModel>(this.url + `get-activity?id=${id}`);
+    }
 }

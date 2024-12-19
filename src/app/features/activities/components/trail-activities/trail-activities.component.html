@@ -1,8 +1,6 @@
-<div class="trail">
+<div class="trail" routerLink="lessons" [queryParams]="{ id: data.id }">
     <div class="info">
-        <div class="img">
-
-        </div>
+        <div class="img"></div>
 
         <a routerLink="lessons">
             <h2>{{ data.name }}</h2>
@@ -12,7 +10,7 @@
     <div class="statistics">
         <div class="indicators">
             @for (activity of data.activities; track activity) {
-            <app-indicator color="red" />
+            <app-indicator color="red"  />
             }
         </div>
 

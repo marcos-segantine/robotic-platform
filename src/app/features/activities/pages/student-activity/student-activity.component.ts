@@ -39,7 +39,6 @@ export class StudentActivityComponent implements OnInit {
   ngOnInit(): void {
     this.trailService.getTrails().subscribe(data => {
       this.trails = data;
-      console.log(this.trails);
     })
   }
 }

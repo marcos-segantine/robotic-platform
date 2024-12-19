@@ -61,7 +61,8 @@ export class StudentInfoComponent implements OnInit {
       done: [],
       inProgress: [],
       notStarted: []
-    }
+    },
+    statistics: []
   };
   studentsNameToSearch = "";
   studentsSearched: Array<StudentModel> | null = null;

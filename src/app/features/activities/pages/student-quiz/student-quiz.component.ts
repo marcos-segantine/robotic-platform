@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-quiz',
@@ -9,5 +10,17 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   templateUrl: './student-quiz.component.html',
   styleUrl: './student-quiz.component.scss'
 })
-export class StudentQuizComponent {
+export class StudentQuizComponent implements OnInit {
+  data = {
+    question: "",
+    alternatives: []
+  }
+
+  constructor(private router: Router) {
+    this.data.question = this.router.getCurrentNavigation()?.extras?.state?.["data"].question;
+    this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
+  }
+
+  ngOnInit() {
+  }
 }

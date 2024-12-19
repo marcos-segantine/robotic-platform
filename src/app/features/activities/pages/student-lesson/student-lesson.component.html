@@ -1,32 +1,12 @@
 <div class="container">
     <div class="column-1">
         <div>
-            <h2>Lição 11: Lorem ipsum dolor sit.</h2>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi dolore corrupti tempore sapiente
-                architecto magnam!</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et molestiae animi modi, odit dolorum ullam rem
-                quas minima quidem repellat magni eum debitis pariatur non, ab dolorem sapiente nostrum dolor adipisci
-                perspiciatis! Explicabo quidem quaerat voluptas quas iusto aspernatur repellendus maxime quibusdam
-                error? Soluta enim culpa consequatur adipisci ipsa delectus?</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et molestiae animi modi, odit dicabo quidem
-                quaerat voluptas quas iusto aspernatur repellendus maxime quibusdam error? Soluta enim culpa consequatur
-                adipisci ipsa delectus?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis ad recusandae facere in debitis tempora
-                delectus cupiditate aliquid minus sequi id nulla necessitatibus, nihil doloremque.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, alias.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus labore id autem omnis quis, quasi
-                ad aspernatur quidem est fugiat aperiam ut quos? Quod, ab?</p>
+            <h2>{{ data?.title }}</h2>
+            <p>{{ data?.resume }}</p>
         </div>
 
-        <app-lesson-description mode="student" />
+        <app-lesson-description [data]="quizData" />
 
-        <app-lesson-link />
-        <app-lesson-link />
     </div>
 
     <div class="column-2">

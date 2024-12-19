@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonComponent } from "../../../../shared/components/button/button.component";
 import { Router } from '@angular/router';
 
@@ -10,10 +10,15 @@ import { Router } from '@angular/router';
   styleUrl: './lesson-description.component.scss'
 })
 export class LessonDescriptionComponent {
-
+  @Input({ required: true }) data = {
+    question: "",
+    alternatives: [""],
+  };
   constructor(private route: Router) { }
 
-  goToQuesationPage() {
-    this.route.navigate(["app/student/activity/lessons/lesson/quiz"])
+  goToQuestionPage() {
+    this.route.navigate(
+      ["app/student/activity/lessons/lesson/quiz"],
+      { state: { data: this.data } })
   }
 }

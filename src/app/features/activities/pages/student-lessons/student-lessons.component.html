@@ -1,12 +1,8 @@
 <div class="container">
     <div class="column-1">
-        <app-lesson-link mode="student" />
-        <app-lesson-link mode="student" />
-        <app-lesson-link mode="student" />
-        <app-lesson-link mode="student" />
-        <app-lesson-link mode="student" />
-        <app-lesson-link mode="student" />
-        <app-lesson-link mode="student" />
+        @for (lesson of activities; track lesson) {
+            <app-lesson-link [data]="lesson" />
+        }
     </div>
     <div class="column-2">
         <div class="progress-container">
