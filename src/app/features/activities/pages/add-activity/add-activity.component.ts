@@ -13,12 +13,15 @@ import { ActivityModel } from '../../../../core/models/activity.model';
 
 import { TrailService } from '../../../../core/services/trail.service';
 
-import { generateUUID } from '../../../../shared/utils/createUID.util';
+import { createUID } from '../../../../shared/utils/createUID.util';
+
+import { LeftArrowIcon } from '../../../../../../public/assets/icons/left-arrow/leftArrow.icon';
+import { ActivityService } from '../../../../core/services/activity.service';
 
 @Component({
   selector: 'app-add-activity',
   standalone: true,
-  imports: [InputComponent, ButtonComponent, TrailComponent, MenuComponent],
+  imports: [InputComponent, ButtonComponent, TrailComponent, MenuComponent, LeftArrowIcon],
   templateUrl: './add-activity.component.html',
   styleUrl: './add-activity.component.scss',
 })
@@ -37,10 +40,10 @@ export class AddActivityComponent {
       isSelected: false
     }
   ];
-  currentSection: "create-trail" | "add-activity" = "create-trail";
+  currentSection: "create-trail" | "add-activity" = "add-activity";
 
   newTrailData: TrailModel = {
-    id: generateUUID(),
+    id: createUID(),
     name: '',
     resume: '',
     difficulty: null,
@@ -59,8 +62,9 @@ export class AddActivityComponent {
     alternatives: [],
     points: null
   }
+  alternativesTemp: Array<string> = [];
 
-  constructor(private trailService: TrailService) { }
+  constructor(private trailService: TrailService, private activityService: ActivityService) { }
 
   changeSection(section: "create-trail" | "add-activity") {
     // navigation
@@ -97,7 +101,7 @@ export class AddActivityComponent {
   createTrail() {
     this.trailService.createTrail(this.newTrailData).subscribe((data) => {
       this.newTrailData = {
-        id: generateUUID(),
+        id: createUID(),
         name: '',
         resume: '',
         difficulty: null,
@@ -126,5 +130,39 @@ export class AddActivityComponent {
     this.trailService.getTrails().subscribe((data) => {
       this.trails = data;
     });
+  }
+
+  addAlternativesTemp() {
+    const father = document.getElementById("alternatives-container");
+    const inputRef = father?.getElementsByTagName("input")[0];
+
+    if(!inputRef) {
+      console.log("input ref error");
+      return;
+    }
+
+    const content = inputRef.value as string;
+    
+    this.alternativesTemp.push(content);
+
+    inputRef.value = "";
+  }
+
+  addDataToTrail() {
+    this.activity.alternatives = this.alternativesTemp;
+    this.activity.id = createUID();
+    this.activity.points = 0;
+
+    this.activityService.saveActivity(this.activity).subscribe(data => {
+      console.log(data);
+    });
+
+    this.trailService.addActivity(this.trailSelected?.id as string, [this.activity.id]).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  selectTrail(trail: TrailModel) {
+    this.trailSelected = trail;
   }
 }

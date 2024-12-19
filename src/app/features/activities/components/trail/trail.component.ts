@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { TrailModel } from '../../../../core/models/trail.model';
 
@@ -11,4 +11,10 @@ import { TrailModel } from '../../../../core/models/trail.model';
 })
 export class TrailComponent {
   @Input({ required: true }) trail!: TrailModel;
+  @Input({ required: true }) isSelected!: boolean;
+  @Output() event = new EventEmitter<TrailModel>();
+
+  handleClick() {
+    this.event.emit(this.trail);
+  }
 }

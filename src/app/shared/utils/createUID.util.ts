@@ -1,4 +1,4 @@
-export const generateUUID = (): string => {
+export const createUID = (): string => {
     const template = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
     return template.replace(/[xy]/g, (char) => {
         const random = (Math.random() * 16) | 0;

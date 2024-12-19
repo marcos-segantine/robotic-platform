@@ -17,7 +17,7 @@ import { MenuComponent } from '../../../../shared/components/menu/menu.component
 
 import { validateIfNonNullOrUndefined } from '../../../../shared/validations/validateIfNonNull.validate';
 
-import { generateUUID } from '../../../../shared/utils/createUID.util';
+import { createUID } from '../../../../shared/utils/createUID.util';
 
 @Component({
   selector: 'app-student-info',
@@ -50,7 +50,7 @@ export class StudentInfoComponent implements OnInit {
   ];
   currentPage = "page-1";
   newStudentInfo: StudentModel = {
-    id: generateUUID(),
+    id: createUID(),
     name: '',
     school: null,
     schooling: null,

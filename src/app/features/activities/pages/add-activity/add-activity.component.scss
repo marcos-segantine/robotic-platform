@@ -30,6 +30,27 @@ app-menu {
     margin: 2rem 0 1rem;
 }
 
+.alternatives {
+    display: flex;
+    flex-direction: column;
+
+    app-button {
+        margin-bottom: 2rem;
+        width: max-content;
+    }
+
+    span {
+        width: 70%;
+        margin: .3rem 0;
+
+        overflow: hidden;
+        
+        font-size: var(--font-size-tiny);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
 span {
     font-family: var(--font-family-medium);
     font-size: var(--font-size-tiny);
@@ -109,6 +130,8 @@ span:hover {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: start;
+
+        height: calc(100vh - 6rem - 3rem);
 
         .forms {
             width: calc(70% - .5rem);

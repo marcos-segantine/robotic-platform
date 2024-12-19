@@ -19,8 +19,8 @@ export class TrailService {
   getTrails() {
     return this._httpClient.get<Array<TrailModel>>(this.url + 'get-trails');
   }
-
-  saveActivity() {
-    
+  
+  addActivity(trailID: string, activitiesID: Array<string>) {
+    return this._httpClient.put(this.url + `add-activity?id=${trailID}`, activitiesID);
   }
 }
