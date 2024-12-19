@@ -40,7 +40,7 @@ export class AddActivityComponent {
       isSelected: false
     }
   ];
-  currentSection: "create-trail" | "add-activity" = "add-activity";
+  currentSection: "create-trail" | "add-activity" = "create-trail";
 
   newTrailData: TrailModel = {
     id: createUID(),
@@ -79,6 +79,12 @@ export class AddActivityComponent {
     if (section === 'add-activity') {
       this.getTrails();
     }
+
+    // cleaning state from property
+    this.newTrailData.name = "";
+    this.newTrailData.resume = "";
+    this.newTrailData.difficulty = null;
+    this.newTrailData.schooling = null;
   }
 
   changeOption(op: number, type: "difficulty" | "schooling") {
@@ -136,13 +142,18 @@ export class AddActivityComponent {
     const father = document.getElementById("alternatives-container");
     const inputRef = father?.getElementsByTagName("input")[0];
 
-    if(!inputRef) {
+    if (!inputRef) {
       console.log("input ref error");
       return;
     }
 
     const content = inputRef.value as string;
-    
+
+    if(content.trim() === "") {
+      inputRef.value = "";
+      return;
+    }
+
     this.alternativesTemp.push(content);
 
     inputRef.value = "";
@@ -160,6 +171,16 @@ export class AddActivityComponent {
     this.trailService.addActivity(this.trailSelected?.id as string, [this.activity.id]).subscribe(data => {
       console.log(data);
     });
+
+    // cleaning state form property to create a new activity
+    this.activity.alternatives = [];
+    this.activity.id = "";
+    this.activity.points = null;
+    this.activity.question = "";
+    this.activity.resume = "";
+    this.activity.title = "";
+
+    this.alternativesTemp = [];
   }
 
   selectTrail(trail: TrailModel) {
