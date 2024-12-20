@@ -20,9 +20,34 @@ export class ActivityService {
         return this._httpClient.get<ActivityModel>(this.url + `get-activity?id=${id}`);
     }
 
-    updateStatistic(path: Array<string>, field: string, value: number) {
-        console.log(path, field, value);
+    createStatistic(path: Array<string>) {
+        const key = JSON.stringify([...path]);
+        const data = JSON.stringify({
+            isCompleted: false,
+            points: 0,
+            viewed: false
+        });
+
+        localStorage.setItem(key, data);
+        console.log(key, data);
         
+        return this._httpClient.post(this.url + `create-statistic`, path);
+    }
+
+    updateStatistic(path: Array<string>, field: string, value: number) {
+        const key = JSON.stringify([...path]);
+        const localData = localStorage.getItem(key);
+
+        if(localData === null) {
+            console.log("ERROR WITH LOCAL DATA");
+            return;
+        }
+        
+        const data = JSON.parse(localData);
+        data[field] = value;
+
+        localStorage.setItem(key, JSON.stringify(data))
+
         return this._httpClient.put(this.url + `update-statistics?field=${field}&value=${value}`, path);
     }
 }

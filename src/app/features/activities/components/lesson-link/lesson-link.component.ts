@@ -34,14 +34,20 @@ export class LessonLinkComponent {
       return;
     }
 
-    this.activityService.updateStatistic([userID.id, this.currentTrailId, this.data.id], "viewed", Number(true)).subscribe(data => {
-      this.router.navigate(
-        [`/app/student/activity/lessons/lesson`],
-        {
-          queryParams: {
-            data: this.data.id
-          }
-        })
-    })
+    const path = [userID.id, this.currentTrailId, this.data.id]
+    const localData = localStorage.getItem(JSON.stringify(path));
+
+    if (localData === null) {
+      this.activityService.createStatistic(path).subscribe(data => {
+        this.router.navigate(
+          [`/app/student/activity/lessons/lesson`],
+          {
+            queryParams: {
+              data: this.data.id
+            }
+          })
+      })
+    }
+
   }
 }
