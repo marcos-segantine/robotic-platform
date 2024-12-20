@@ -12,6 +12,12 @@
     a {
         margin-right: 1em;
         padding: 1em;
+        max-width: 15rem;
+
+        overflow: hidden;
+        
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
         display: inline-block;
 

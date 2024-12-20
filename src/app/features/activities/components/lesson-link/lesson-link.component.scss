@@ -37,6 +37,13 @@
 
         padding-bottom: 2em;
         margin-bottom: 1em;
+
+        overflow: hidden;
+        
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        max-width: 90%;
     }
 
     div {
