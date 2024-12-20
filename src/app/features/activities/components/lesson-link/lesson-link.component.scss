@@ -53,13 +53,6 @@
     margin: .5em 0 1em;
 }
 
-.task-status {
-    padding: 0 .5em;
-    margin-left: .5em;
-
-    border-radius: var(--border-radius-tiny);
-}
-
 @media screen and (min-width: 1024px) {
     .container {
         flex-direction: row;
