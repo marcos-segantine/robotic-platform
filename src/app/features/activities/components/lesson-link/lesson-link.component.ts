@@ -48,6 +48,14 @@ export class LessonLinkComponent {
           })
       })
     }
-
+    else {
+      this.router.navigate(
+        [`/app/student/activity/lessons/lesson`],
+        {
+          queryParams: {
+            data: this.data.id
+          }
+        })
+    }
   }
 }
