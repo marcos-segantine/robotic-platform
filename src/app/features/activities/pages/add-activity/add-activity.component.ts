@@ -61,7 +61,8 @@ export class AddActivityComponent {
     question: '',
     alternatives: [],
     points: null,
-    resources: []
+    resources: [],
+    explanation: ''
   }
   alternativesTemp: Array<string> = [];
 

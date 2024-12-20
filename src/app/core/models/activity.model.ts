@@ -6,4 +6,5 @@ export interface ActivityModel {
   alternatives: Array<string>,
   points: number | null,
   resources: Array<string>,
+  explanation: string
 }
