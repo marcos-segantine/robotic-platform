@@ -1,7 +1,7 @@
 <div class="container">
     <div class="column-1">
         @for (lesson of activities; track lesson) {
-            <app-lesson-link [data]="lesson" />
+            <app-lesson-link [data]="lesson" [currentTrailId]="currentTrailId" />
         }
     </div>
     <div class="column-2">

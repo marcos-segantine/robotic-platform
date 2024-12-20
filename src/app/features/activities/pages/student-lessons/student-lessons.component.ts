@@ -15,7 +15,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './student-lessons.component.scss'
 })
 export class StudentLessonsComponent implements OnInit {
-  data: Array<ActivityModel> = []
+  data: Array<ActivityModel> = [];
+  currentTrailId = "";
   
   activities: Array<ActivityModel> = [];
 
@@ -23,9 +24,9 @@ export class StudentLessonsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      const id = params['id'];
+      this.currentTrailId = params['id'];
 
-      this.trailService.getAllActivities(id).subscribe(data => {
+      this.trailService.getAllActivities(this.currentTrailId).subscribe(data => {
         this.activities = data;    
       })
     });

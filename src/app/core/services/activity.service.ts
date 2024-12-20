@@ -19,4 +19,10 @@ export class ActivityService {
     getActivityByID(id: string) {
         return this._httpClient.get<ActivityModel>(this.url + `get-activity?id=${id}`);
     }
+
+    updateStatistic(path: Array<string>, field: string, value: number) {
+        console.log(path, field, value);
+        
+        return this._httpClient.put(this.url + `update-statistics?field=${field}&value=${value}`, path);
+    }
 }
