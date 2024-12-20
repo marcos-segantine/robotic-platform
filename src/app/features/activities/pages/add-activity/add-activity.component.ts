@@ -150,7 +150,7 @@ export class AddActivityComponent {
 
     const content = inputRef.value as string;
 
-    if(content.trim() === "") {
+    if (content.trim() === "") {
       inputRef.value = "";
       return;
     }
@@ -175,6 +175,7 @@ export class AddActivityComponent {
 
     // cleaning state form property to create a new activity
     this.activity.alternatives = [];
+    this.activity.resources = [];
     this.activity.id = "";
     this.activity.points = null;
     this.activity.question = "";
@@ -186,5 +187,26 @@ export class AddActivityComponent {
 
   selectTrail(trail: TrailModel) {
     this.trailSelected = trail;
+  }
+
+  addResources() {
+    const father = document.querySelector(".lesson-details");
+    const inputRef = father?.getElementsByTagName("input")?.[2];
+
+    if (!inputRef) {
+      console.log("input ref error");
+      return;
+    }
+
+    const content = inputRef.value as string;
+
+    if (content.trim() === "") {
+      inputRef.value = "";
+      return;
+    }
+
+    this.activity.resources.push(content);
+
+    inputRef.value = "";
   }
 }

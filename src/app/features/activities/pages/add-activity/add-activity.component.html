@@ -21,14 +21,11 @@
 
         <div class="buttons">
             <app-button buttonStyle="default" text="Limpar" />
-            <app-button 
-                [buttonStyle]="this.newTrailData.name !== '' && 
+            <app-button [buttonStyle]="this.newTrailData.name !== '' && 
                                 this.newTrailData.summarize !== '' &&
                                 this.newTrailData.difficulty !== null && 
-                                this.newTrailData.schooling !== null ? 'selected' : 'disable'"
-                text="Confirmar" 
-                (event)="createTrail()" 
-            />
+                                this.newTrailData.schooling !== null ? 'selected' : 'disable'" text="Confirmar"
+                (event)="createTrail()" />
         </div>
     </div>
     }
@@ -41,11 +38,19 @@
         <div class="activity">
             <h3>Adicionar uma atividade à trilha</h3>
 
-            <div>
+            <div class="lesson-details">
                 <app-input mode="mode-1" placeholder="Lição n° ..." text="Título da lição" size="bigger"
                     [(property)]="activity.title" />
                 <app-input mode="mode-1" placeholder="Intuito dessa atividade é trabalhar..." text="Resumo da atividade"
                     size="bigger" [(property)]="activity.summarize" />
+
+                <app-input mode="mode-1" placeholder="" text="Fontes para estudo" size="bigger" />
+                <app-button buttonStyle="selected" text="Adicionar" width="max-content" (event)="addResources()" />
+
+                @for (item of activity.resources; track item) {
+                <span class="list">{{ item }}</span>
+                }
+
                 <!-- <app-input mode="mode-1" text="Pontuacao da atividade" size="small" [(property)]="activity.points" /> -->
             </div>
 
@@ -54,15 +59,11 @@
                     [(property)]="activity.question" />
                 <div id="alternatives-container" class="alternatives">
                     <app-input mode="mode-1" placeholder="" text="Alternativas (no máximo 5)" size="bigger" />
-                    <app-button 
-                        buttonStyle="selected" 
-                        text="Adicionar" 
-                        width="max-content"
-                        (event)="addAlternativesTemp()" 
-                    />
+                    <app-button buttonStyle="selected" text="Adicionar" width="max-content"
+                        (event)="addAlternativesTemp()" />
 
                     @for (item of alternativesTemp; track item) {
-                    <span>{{ item }}</span>
+                    <span class="list">{{ item }}</span>
                     }
                 </div>
             </div>
