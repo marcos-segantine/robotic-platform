@@ -181,6 +181,7 @@ export class AddActivityComponent {
     this.activity.points = null;
     this.activity.question = "";
     this.activity.summarize = "";
+    this.activity.explanation = "";
     this.activity.title = "";
 
     this.alternativesTemp = [];

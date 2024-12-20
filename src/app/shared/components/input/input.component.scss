@@ -9,6 +9,10 @@ textarea {
     color: var(--color-text);
 }
 
+span {
+    width: max-content;
+}
+
 input::placeholder {
     font-size: var(--font-size-small);
 }

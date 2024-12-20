@@ -31,20 +31,40 @@
     }
     @else {
     <div class="forms">
-        @if (trailSelected !== null) {
-        <p class="alert"><strong>Adicionar atividade para a trilha {{ trailSelected?.name }}</strong></p>
-        }
+        <div class="trails">
+            @if (trailSelected !== null) {
+            <app-left-arrow-icon fillColor="#FFFFFF" />
+            <app-trail [isSelected]="true" [trail]="trailSelected" />
+            }
+            @else {
+            @if (trailSelected !== null) {
+            <app-trail [isSelected]="false" [trail]="trailSelected" />
+            }
+            @else {
+            @if (trails !== null) {
+            <h2>Escolha a Trilha</h2>
+            <app-input size="all" mode="mode-1" placeholder="Pesquisar" [(property)]="trailToSearch" />
+            @for (trail of trails; track trail) {
+            <app-trail [isSelected]="false" [trail]="trail" (event)="selectTrail($event)" />
+            }
+            }
+            @else {
+            <h2>Nenhuma Trilha Disponível</h2>
+            }
+            }
+            }
+        </div>
 
         <div class="activity">
             <h3>Adicionar uma atividade à trilha</h3>
 
             <div class="lesson-details">
-                <app-input mode="mode-1" placeholder="Lição n° ..." text="Título da lição" size="bigger"
+                <app-input mode="mode-1" placeholder="Lição n° ..." text="Título da lição" size="all"
                     [(property)]="activity.title" />
                 <app-input mode="mode-1" placeholder="Intuito dessa atividade é trabalhar..." text="Resumo da atividade"
-                    size="bigger" [(property)]="activity.summarize" />
+                    size="all" [(property)]="activity.summarize" />
 
-                <app-input mode="mode-1" placeholder="" text="Fontes para estudo" size="bigger" />
+                <app-input mode="mode-1" placeholder="" text="Fontes para estudo" size="all" />
                 <app-button buttonStyle="selected" text="Adicionar" width="max-content" (event)="addResources()" />
 
                 @for (item of activity.resources; track item) {
@@ -54,11 +74,20 @@
                 <!-- <app-input mode="mode-1" text="Pontuacao da atividade" size="small" [(property)]="activity.points" /> -->
             </div>
 
+            <div>
+                <app-input 
+                    mode="textarea"
+                    text="Explicacao da materia"
+                    size="all"
+                    [(property)]="activity.explanation" 
+                />
+            </div>
+
             <div class="question-alternatives">
-                <app-input mode="mode-1" placeholder="" text="Pergunta" size="bigger"
+                <app-input mode="mode-1" placeholder="" text="Pergunta" size="all"
                     [(property)]="activity.question" />
                 <div id="alternatives-container" class="alternatives">
-                    <app-input mode="mode-1" placeholder="" text="Alternativas (no máximo 5)" size="bigger" />
+                    <app-input mode="mode-1" placeholder="" text="Alternativas (no máximo 5)" size="all" />
                     <app-button buttonStyle="selected" text="Adicionar" width="max-content"
                         (event)="addAlternativesTemp()" />
 
@@ -73,30 +102,6 @@
             <app-button buttonStyle="default" text="Limpar" />
             <app-button buttonStyle="selected" text="Confirmar" (event)="addDataToTrail()" />
         </div>
-    </div>
-
-    <div class="trails">
-        @if (trailSelected !== null) {
-        <app-left-arrow-icon fillColor="#FFFFFF" />
-        <app-trail [isSelected]="true" [trail]="trailSelected" />
-        }
-        @else {
-        @if (trailSelected !== null) {
-        <app-trail [isSelected]="false" [trail]="trailSelected" />
-        }
-        @else {
-        @if (trails !== null) {
-        <h2>Escolha a Trilha</h2>
-        <app-input size="all" mode="mode-1" placeholder="Pesquisar" [(property)]="trailToSearch" />
-        @for (trail of trails; track trail) {
-        <app-trail [isSelected]="false" [trail]="trail" (event)="selectTrail($event)" />
-        }
-        }
-        @else {
-        <h2>Nenhuma Trilha Disp~onivel</h2>
-        }
-        }
-        }
     </div>
     }
 </div>

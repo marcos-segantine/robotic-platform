@@ -40,7 +40,7 @@ app-menu {
     }
 
     .list {
-        width: 70%;
+        width: max-content;
         margin: .3rem 0;
 
         overflow: hidden;
@@ -94,13 +94,28 @@ span:hover {
 }
 
 .trails {
-    display: none;
-
     background-color: var(--color-secondary);
 
     border-radius: var(--border-radius-small);
 
     padding: 1rem;
+    width: 100%;
+
+    h2 {
+        margin: 0;
+    }
+
+    app-input {
+        display: block;
+
+        margin-bottom: 1rem;
+        max-width: 650px;
+    }
+
+    app-trail {
+        display: block;
+        max-width: 30%;
+    }
 }
 
 .alert {
@@ -113,11 +128,13 @@ span:hover {
         justify-content: space-between;
         align-items: flex-start;
 
+        gap: 1rem;
+
         width: 100%;
     }
 
     .activity>div {
-        width: 50%;
+        width: calc(90% / 3);
     }
 
     .buttons {
@@ -135,28 +152,14 @@ span:hover {
 
         .forms {
             width: calc(70% - .5rem);
-
+        }
+        
+        .forms:has(.activity) {
+            width: 100%;
+            
             .activity {
                 width: 100%;
             }
         }
-
-        .trails {
-            width: calc(30% - .5rem);
-
-            h2 {
-                text-align: center;
-            }
-        }
-    }
-
-    .activity {
-        width: 70%;
-    }
-
-    .trails {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
     }
 }
