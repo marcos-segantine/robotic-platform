@@ -4,7 +4,7 @@ import { Schooling } from "../enum/schooling.enum";
 export interface TrailModel {
     id: string,
     name: string,
-    resume: string,
+    summarize: string,
     difficulty: difficulty | null,
     activities: Array<string>,
     schooling: Schooling | null

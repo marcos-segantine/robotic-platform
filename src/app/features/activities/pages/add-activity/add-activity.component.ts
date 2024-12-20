@@ -45,7 +45,7 @@ export class AddActivityComponent {
   newTrailData: TrailModel = {
     id: createUID(),
     name: '',
-    resume: '',
+    summarize: '',
     difficulty: null,
     activities: [],
     schooling: null
@@ -57,10 +57,11 @@ export class AddActivityComponent {
   activity: ActivityModel = {
     id: '',
     title: '',
-    resume: '',
+    summarize: '',
     question: '',
     alternatives: [],
-    points: null
+    points: null,
+    resources: []
   }
   alternativesTemp: Array<string> = [];
 
@@ -82,7 +83,7 @@ export class AddActivityComponent {
 
     // cleaning state from property
     this.newTrailData.name = "";
-    this.newTrailData.resume = "";
+    this.newTrailData.summarize = "";
     this.newTrailData.difficulty = null;
     this.newTrailData.schooling = null;
   }
@@ -109,7 +110,7 @@ export class AddActivityComponent {
       this.newTrailData = {
         id: createUID(),
         name: '',
-        resume: '',
+        summarize: '',
         difficulty: null,
         activities: [],
         schooling: null
@@ -177,7 +178,7 @@ export class AddActivityComponent {
     this.activity.id = "";
     this.activity.points = null;
     this.activity.question = "";
-    this.activity.resume = "";
+    this.activity.summarize = "";
     this.activity.title = "";
 
     this.alternativesTemp = [];

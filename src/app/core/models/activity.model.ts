@@ -1,8 +1,9 @@
 export interface ActivityModel {
   id: string,
   title: string,
-  resume: string,
+  summarize: string,
   question: string,
   alternatives: Array<string>,
-  points: number | null
+  points: number | null,
+  resources: Array<string>,
 }

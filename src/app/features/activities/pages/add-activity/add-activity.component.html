@@ -4,7 +4,7 @@
     @if (currentSection === "create-trail") {
     <div class="forms">
         <app-input mode="mode-1" text="Nome da trilha" size="bigger" [(property)]="newTrailData.name" />
-        <app-input mode="textarea" text="Resumo da trilha" size="bigger" [(property)]="newTrailData.resume" />
+        <app-input mode="textarea" text="Resumo da trilha" size="bigger" [(property)]="newTrailData.summarize" />
 
         <h2>Dificuldade</h2>
         <div class="difficulty">
@@ -23,7 +23,7 @@
             <app-button buttonStyle="default" text="Limpar" />
             <app-button 
                 [buttonStyle]="this.newTrailData.name !== '' && 
-                                this.newTrailData.resume !== '' &&
+                                this.newTrailData.summarize !== '' &&
                                 this.newTrailData.difficulty !== null && 
                                 this.newTrailData.schooling !== null ? 'selected' : 'disable'"
                 text="Confirmar" 
@@ -45,7 +45,7 @@
                 <app-input mode="mode-1" placeholder="Lição n° ..." text="Título da lição" size="bigger"
                     [(property)]="activity.title" />
                 <app-input mode="mode-1" placeholder="Intuito dessa atividade é trabalhar..." text="Resumo da atividade"
-                    size="bigger" [(property)]="activity.resume" />
+                    size="bigger" [(property)]="activity.summarize" />
                 <!-- <app-input mode="mode-1" text="Pontuacao da atividade" size="small" [(property)]="activity.points" /> -->
             </div>
 
