@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
   styleUrl: './lesson-description.component.scss'
 })
 export class LessonDescriptionComponent {
+  @Input({ required: true }) activityDetails = {
+    description: "",
+    resources: [""],
+  };
   @Input({ required: true }) data = {
     question: "",
     alternatives: [""],
