@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { UserDataModel } from '../models/user-data.model';
+import { StudentModel } from '../models/student.model';
+import { ProfessionalModel } from '../models/professional.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +25,7 @@ export class UserDataService {
     }
   }
 
-  setUserData(userData: UserDataModel) {
+  setUserData(userData: StudentModel | ProfessionalModel) {
     this.localStorage.setItem("user-data", JSON.stringify(userData));
     
     const userDataUpdated = this.getUserData();

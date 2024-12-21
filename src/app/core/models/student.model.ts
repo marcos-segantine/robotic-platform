@@ -16,6 +16,7 @@ export interface StudentModel {
         notStarted: string[]
     },
     statistics: Array<Record<string, number>>
+    userType: "student"
 }
 
 interface InProgressCertificatesType {
