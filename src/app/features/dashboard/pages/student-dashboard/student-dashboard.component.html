@@ -44,8 +44,11 @@
                 </div>
             </div>
         </div>
+        
+        @if (trailsID.length > 0) {
+            <app-not-viewed [trailsID]="trailsID" />
+        }
 
-        <app-not-viewed />
     </div>
 
     <div class="line-3">

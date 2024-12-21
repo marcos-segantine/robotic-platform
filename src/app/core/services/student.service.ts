@@ -6,8 +6,7 @@ import { environment } from "../../../environments/environment";
 @Injectable({
     providedIn: 'root'
 })
-export class StudentService
-{
+export class StudentService {
     private url = environment.api;
 
     constructor(private _httpClient: HttpClient) { }
@@ -22,5 +21,10 @@ export class StudentService
 
     createStudent(student: StudentModel) {
         return this._httpClient.post(this.url + 'create-student', student);
+    }
+
+    getActivitiesNotViewed(userID: string, trails: Array<string>) {
+        const trailsString = trails.join(',');
+        return this._httpClient.get(this.url + `get-activities-not-viewed?userID=${userID}&trailsID=${trailsString}`);
     }
 }

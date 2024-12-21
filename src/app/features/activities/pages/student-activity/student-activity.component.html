@@ -10,6 +10,8 @@
     <div class="more-info">
         <app-learning-progress />
 
-        <app-not-viewed />
+        @if (trailsID.length > 0) {
+            <app-not-viewed [trailsID]="trailsID" />
+        }
     </div>
 </div>

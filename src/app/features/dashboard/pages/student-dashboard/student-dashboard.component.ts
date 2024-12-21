@@ -21,6 +21,7 @@ Chart.register(...registerables);
 export class StudentDashboardComponent implements OnInit {
   chart: Chart | null = null;
   trails: Array<TrailModel> = [];
+  trailsID: Array<string> = [];
 
   constructor(private trailService: TrailService, private userData: UserDataService) { }
 
@@ -89,7 +90,7 @@ export class StudentDashboardComponent implements OnInit {
 
     this.trailService.getTrails(1).subscribe(data => {
       this.trails = data;
-      console.log(this.trails);
+      this.trailsID = this.trails.map(trail => trail.id);
     })
   }
 }

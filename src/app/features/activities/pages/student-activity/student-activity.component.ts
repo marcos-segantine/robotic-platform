@@ -33,12 +33,14 @@ export class StudentActivityComponent implements OnInit {
     }
   ];
   trails: Array<TrailModel> = [];
+  trailsID: Array<string> = [];
 
   constructor (private trailService: TrailService) { }
 
   ngOnInit(): void {
     this.trailService.getTrails().subscribe(data => {
       this.trails = data;
+      this.trailsID = this.trails.map(trail => trail.id);
     })
   }
 }

@@ -1,19 +1,12 @@
 <div class="not-viewed">
     <h3>Atividades não visualizadas</h3>
 
-    <div>
-        <h4>Lorem ipsum dolor</h4>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptatibus.</span>
-        <span>15 / 04</span>
-    </div>
-    <div>
-        <h4>Lorem ipsum dolor</h4>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptatibus.</span>
-        <span>15 / 04</span>
-    </div>
-    <div>
-        <h4>Lorem ipsum dolor</h4>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptatibus.</span>
-        <span>15 / 04</span>
-    </div>
+    @for (activity of activitiesNotViewed; track activity) {
+        <div (click)="navigateToActivity(activity.id)">
+            <h4>{{ activity.title }}</h4>
+            <span>{{ activity.summarize }}</span>
+            <span>15 / 04</span>
+        </div>
+    }
+
 </div>
