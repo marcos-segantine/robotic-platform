@@ -49,11 +49,12 @@
     </div>
 
     <div class="line-3">
+        @for (trail of trails; track trail) {
         <div class="trial">
             <div class="info">
                 <div class="image"></div>
                 <div>
-                    <h4>Lorem ipsum dolor sit.</h4>
+                    <h4>{{ trail.name }}</h4>
                     <span>Começou dia 20 / 11</span>
                 </div>
             </div>
@@ -64,35 +65,7 @@
                 </span>
             </div>
         </div>
-        <div class="trial">
-            <div class="info">
-                <div class="image"></div>
-                <div>
-                    <h4>Lorem ipsum dolor sit.</h4>
-                    <span>Começou dia 20 / 11</span>
-                </div>
-            </div>
-            <div class="indicators">
-                <span>Progresso</span>
-                <span class="bar">
-                    <span class="progress orange" style="width: 70%;"></span>
-                </span>
-            </div>
-        </div>
-        <div class="trial">
-            <div class="info">
-                <div class="image"></div>
-                <div>
-                    <h4>Lorem ipsum dolor sit.</h4>
-                    <span>Começou dia 20 / 11</span>
-                </div>
-            </div>
-            <div class="indicators">
-                <span>Progresso</span>
-                <span class="bar">
-                    <span class="progress orange" style="width: 70%;"></span>
-                </span>
-            </div>
-        </div>
+        }
+
     </div>
 </div>

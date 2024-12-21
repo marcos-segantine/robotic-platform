@@ -4,6 +4,11 @@ import { LearningProgressComponent } from '../../../../shared/components/learnin
 import { NotViewedComponent } from '../../../../shared/components/not-viewed/not-viewed.component';
 import { Chart, ChartItem, registerables } from 'chart.js';
 
+import { TrailService } from '../../../../core/services/trail.service';
+import { UserDataService } from '../../../../core/services/user-data.service';
+
+import { TrailModel } from '../../../../core/models/trail.model';
+
 Chart.register(...registerables);
 
 @Component({
@@ -15,6 +20,9 @@ Chart.register(...registerables);
 })
 export class StudentDashboardComponent implements OnInit {
   chart: Chart | null = null;
+  trails: Array<TrailModel> = [];
+
+  constructor(private trailService: TrailService, private userData: UserDataService) { }
 
   ngOnInit(): void {
     const ctx = document.getElementById('chart') as ChartItem;
@@ -78,5 +86,10 @@ export class StudentDashboardComponent implements OnInit {
         },
       },
     });
+
+    this.trailService.getTrails(1).subscribe(data => {
+      this.trails = data;
+      console.log(this.trails);
+    })
   }
 }
