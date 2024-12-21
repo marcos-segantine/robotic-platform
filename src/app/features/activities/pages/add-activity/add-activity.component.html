@@ -44,9 +44,11 @@
             @if (trails !== null) {
             <h2>Escolha a Trilha</h2>
             <app-input size="all" mode="mode-1" placeholder="Pesquisar" [(property)]="trailToSearch" />
-            @for (trail of trails; track trail) {
-            <app-trail [isSelected]="false" [trail]="trail" (event)="selectTrail($event)" />
-            }
+            <div class="contains-trails">
+                @for (trail of trails; track trail) {
+                <app-trail [isSelected]="false" [trail]="trail" (event)="selectTrail($event)" />
+                }
+            </div>
             }
             @else {
             <h2>Nenhuma Trilha Disponível</h2>
@@ -56,8 +58,6 @@
         </div>
 
         <div class="activity">
-            <h3>Adicionar uma atividade à trilha</h3>
-
             <div class="lesson-details">
                 <app-input mode="mode-1" placeholder="Lição n° ..." text="Título da lição" size="all"
                     [(property)]="activity.title" />
@@ -77,17 +77,12 @@
             </div>
 
             <div>
-                <app-input 
-                    mode="textarea"
-                    text="Explicacao da materia"
-                    size="all"
-                    [(property)]="activity.explanation" 
-                />
+                <app-input mode="textarea" text="Explicacao da materia" size="all"
+                    [(property)]="activity.explanation" />
             </div>
 
             <div class="question-alternatives">
-                <app-input mode="mode-1" placeholder="" text="Pergunta" size="all"
-                    [(property)]="activity.question" />
+                <app-input mode="mode-1" placeholder="" text="Pergunta" size="all" [(property)]="activity.question" />
                 <div id="alternatives-container" class="alternatives">
                     <app-input mode="mode-1" placeholder="" text="Alternativas (no máximo 5)" size="all" />
                     <app-button buttonStyle="small" text="Adicionar" width="max-content"

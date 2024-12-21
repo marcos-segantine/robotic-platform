@@ -98,8 +98,8 @@ span:hover {
 
     border-radius: var(--border-radius-small);
 
-    padding: 1rem;
     width: 100%;
+    padding: 1rem;
 
     h2 {
         margin: 0;
@@ -111,10 +111,23 @@ span:hover {
         margin-bottom: 1rem;
         max-width: 650px;
     }
+}
 
+.contains-trails {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    
     app-trail {
         display: block;
-        max-width: 30%;
+    
+        width: 100%;
+        height: max-content;
     }
 }
 
@@ -137,6 +150,12 @@ span:hover {
         width: calc(90% / 3);
     }
 
+    .contains-trails {
+        app-trail {
+            width: 45%;
+        }
+    }
+
     .buttons {
         justify-content: end;
         margin-right: 5%;
@@ -149,14 +168,19 @@ span:hover {
         flex-wrap: wrap;
         align-items: start;
 
-        height: calc(100vh - 6rem - 3rem);
-
         .forms {
             width: 100%;
 
             .activity {
                 width: 100%;
             }
+        }
+    }
+
+    .contains-trails {
+        app-trail {
+            width: 30%;
+            height: 5rem;
         }
     }
 }

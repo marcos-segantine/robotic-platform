@@ -2,13 +2,13 @@
     <div class="column-1">
         <div>
             <h2>{{ data?.title }}</h2>
-            <p>{{ data?.explanation }}</p>
+            <p>{{ data?.summarize }}</p>
         </div>
 
         <app-lesson-description 
             [data]="quizData" 
             [activityDetails]="{ 
-                description: data?.summarize || '',
+                description: data?.explanation || '',
                 resources: data?.resources || [''],
             }"
             />
