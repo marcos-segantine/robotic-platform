@@ -8,3 +8,10 @@ export interface ActivityModel {
   resources: Array<string>,
   explanation: string
 }
+
+export interface ActivityStatisticModel
+{
+  isCompleted: boolean,
+  viewed: boolean,
+  points: number
+}

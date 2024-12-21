@@ -2,7 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 import { environment } from "../../../environments/environment";
+
 import { ActivityModel } from "../models/activity.model";
+import { ActivityStatisticModel } from "../models/activity.model";
 
 @Injectable({
     providedIn: 'root'
@@ -49,5 +51,11 @@ export class ActivityService {
         localStorage.setItem(key, JSON.stringify(data))
 
         return this._httpClient.put(this.url + `update-statistics?field=${field}&value=${value}`, path);
+    }
+    
+    getStatistic(path: Array<string>)
+    {
+        const pathFormatted = path.join(",")
+        return this._httpClient.get<Array<ActivityStatisticModel>>(this.url + `get-statistic?path=${[pathFormatted]}`);
     }
 }

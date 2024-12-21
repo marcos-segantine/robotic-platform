@@ -9,8 +9,8 @@
 
     <div class="statistics">
         <div class="indicators">
-            @for (activity of data.activities; track activity) {
-            <app-indicator color="red"  />
+            @for (statisticColor of statistics; track statisticColor) {
+            <app-indicator [color]="statisticColor" />
             }
         </div>
 

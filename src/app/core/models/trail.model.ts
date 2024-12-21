@@ -1,4 +1,5 @@
 import { difficulty } from "../enum/difficulty.enum";
+
 import { Schooling } from "../enum/schooling.enum";
 
 export interface TrailModel {
