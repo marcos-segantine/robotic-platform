@@ -64,12 +64,14 @@
                 <app-input mode="mode-1" placeholder="Intuito dessa atividade é trabalhar..." text="Resumo da atividade"
                     size="all" [(property)]="activity.summarize" />
 
-                <app-input mode="mode-1" placeholder="" text="Fontes para estudo" size="all" />
-                <app-button buttonStyle="selected" text="Adicionar" width="max-content" (event)="addResources()" />
+                <div class="resources">
+                    <app-input mode="mode-1" placeholder="" text="Fontes para estudo" size="all" />
+                    <app-button buttonStyle="small" text="Adicionar" width="max-content" (event)="addResources()" />
 
-                @for (item of activity.resources; track item) {
-                <span class="list">{{ item }}</span>
-                }
+                    @for (item of activity.resources; track item) {
+                    <span class="list">{{ item }}</span>
+                    }
+                </div>
 
                 <!-- <app-input mode="mode-1" text="Pontuacao da atividade" size="small" [(property)]="activity.points" /> -->
             </div>
@@ -88,7 +90,7 @@
                     [(property)]="activity.question" />
                 <div id="alternatives-container" class="alternatives">
                     <app-input mode="mode-1" placeholder="" text="Alternativas (no máximo 5)" size="all" />
-                    <app-button buttonStyle="selected" text="Adicionar" width="max-content"
+                    <app-button buttonStyle="small" text="Adicionar" width="max-content"
                         (event)="addAlternativesTemp()" />
 
                     @for (item of alternativesTemp; track item) {
