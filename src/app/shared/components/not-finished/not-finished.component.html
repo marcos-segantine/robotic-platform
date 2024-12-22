@@ -1,7 +1,7 @@
-<div class="not-viewed">
+<div class="not-finished">
     <h3>Atividades não visualizadas</h3>
 
-    @for (activity of activitiesNotViewed; track activity) {
+    @for (activity of activitiesNotFinished; track activity) {
         <div (click)="navigateToActivity(activity.id)">
             <h4>{{ activity.title }}</h4>
             <span>{{ activity.summarize }}</span>

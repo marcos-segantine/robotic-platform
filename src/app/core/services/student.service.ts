@@ -23,8 +23,8 @@ export class StudentService {
         return this._httpClient.post(this.url + 'create-student', student);
     }
 
-    getActivitiesNotViewed(userID: string, trails: Array<string>) {
+    getActivitiesNotFinished(userID: string, trails: Array<string>) {
         const trailsString = trails.join(',');
-        return this._httpClient.get(this.url + `get-activities-not-viewed?userID=${userID}&trailsID=${trailsString}`);
+        return this._httpClient.get(this.url + `get-activities-not-finished?userID=${userID}&trailsID=${trailsString}`);
     }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LearningProgressComponent } from '../../../../shared/components/learning-progress/learning-progress.component';
-import { NotViewedComponent } from '../../../../shared/components/not-viewed/not-viewed.component';
+import { NotFinishedComponent } from '../../../../shared/components/not-finished/not-finished.component';
 import { Chart, ChartItem, registerables } from 'chart.js';
 
 import { TrailService } from '../../../../core/services/trail.service';
@@ -14,7 +14,7 @@ Chart.register(...registerables);
 @Component({
   selector: 'app-student-dashboard',
   standalone: true,
-  imports: [LearningProgressComponent, NotViewedComponent],
+  imports: [LearningProgressComponent, NotFinishedComponent],
   templateUrl: './student-dashboard.component.html',
   styleUrl: './student-dashboard.component.scss'
 })

@@ -5,7 +5,7 @@
 }
 
 app-learning-progress,
-app-not-viewed {
+app-not-finished {
     display: none;
 }
 
@@ -213,7 +213,7 @@ app-not-viewed {
 
 @media screen and (min-width: 1024px) {
     app-learning-progress,
-    app-not-viewed {
+    app-not-finished {
         display: block;
     }
 

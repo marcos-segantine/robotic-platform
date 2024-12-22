@@ -6,15 +6,15 @@ import { ActivityModel } from '../../../core/models/activity.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-not-viewed',
+  selector: 'app-not-finished',
   standalone: true,
   imports: [],
-  templateUrl: './not-viewed.component.html',
-  styleUrl: './not-viewed.component.scss'
+  templateUrl: './not-finished.component.html',
+  styleUrl: './not-finished.component.scss'
 })
-export class NotViewedComponent implements OnInit {
+export class NotFinishedComponent implements OnInit {
   @Input({ required: true }) trailsID!: Array<string>;
-  activitiesNotViewed: Array<ActivityModel> = [];
+  activitiesNotFinished: Array<ActivityModel> = [];
 
   constructor(
     private studentService: StudentService, 
@@ -30,8 +30,8 @@ export class NotViewedComponent implements OnInit {
       return;
     }
 
-    this.studentService.getActivitiesNotViewed(id, this.trailsID).subscribe((data: any) => {
-      this.activitiesNotViewed = data;
+    this.studentService.getActivitiesNotFinished(id, this.trailsID).subscribe((data: any) => {
+      this.activitiesNotFinished = data;
     });
   }
 
