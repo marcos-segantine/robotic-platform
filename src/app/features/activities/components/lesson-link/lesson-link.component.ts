@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 import { LessonScoreComponent } from "../lesson-score/lesson-score.component";
 import { Router } from '@angular/router';
-import { ActivityModel } from '../../../../core/models/activity.model';
+import { ActivityModel, ActivityStatisticModel } from '../../../../core/models/activity.model';
 
 import { ActivityService } from '../../../../core/services/activity.service';
 import { UserDataService } from '../../../../core/services/user-data.service';
@@ -16,9 +16,11 @@ import { UserDataService } from '../../../../core/services/user-data.service';
   templateUrl: './lesson-link.component.html',
   styleUrl: './lesson-link.component.scss'
 })
-export class LessonLinkComponent {
+export class LessonLinkComponent implements OnInit {
   @Input({ required: true }) data!: ActivityModel;
   @Input({ required: true }) currentTrailId!: string;
+  currentUserId: string | undefined = undefined;
+  activityStatistic!: ActivityStatisticModel;
 
   constructor(
     private router: Router,
@@ -26,15 +28,28 @@ export class LessonLinkComponent {
     private userDataService: UserDataService
   ) { }
 
-  navigateLessonPage() {
-    const userID = this.userDataService.getUserData();
+  ngOnInit(): void {
+    this.currentUserId = this.userDataService.getUserData()?.id;
 
-    if (userID === null) {
+    if (!this.currentUserId) {
       console.log("ERROR OCCURED!");
       return;
     }
 
-    const path = [userID.id, this.currentTrailId, this.data.id]
+    this.activityService.getStatistic(
+      [this.currentUserId, this.currentTrailId, this.data.id])
+      .subscribe(data => {
+        this.activityStatistic = data[0];
+      })
+  }
+
+  navigateLessonPage() {
+    if (!this.currentUserId) {
+      console.log("ERROR OCCURED!");
+      return;
+    }
+
+    const path = [this.currentUserId, this.currentTrailId, this.data.id]
     const localData = localStorage.getItem(JSON.stringify(path));
 
     if (localData === null) {

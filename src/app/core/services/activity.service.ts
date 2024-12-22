@@ -31,7 +31,6 @@ export class ActivityService {
         });
 
         localStorage.setItem(key, data);
-        console.log(key, data);
         
         return this._httpClient.post(this.url + `create-statistic`, path);
     }
