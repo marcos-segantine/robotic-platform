@@ -57,4 +57,8 @@ export class ActivityService {
         const pathFormatted = path.join(",")
         return this._httpClient.get<Array<ActivityStatisticModel>>(this.url + `get-statistic?path=${[pathFormatted]}`);
     }
+    
+    getLearningProgress(studentID: string)  {
+        return this._httpClient.get<Record<string, any>>(this.url + `get-learning-process?studentID=${studentID}`);
+    }
 }

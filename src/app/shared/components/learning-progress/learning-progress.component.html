@@ -5,21 +5,30 @@
         <div>
             <span class="label">Tarefas Concluidas</span>
             <span class="bar">
-                <span class="progress red" style="width: 70%;"></span>
+                <span 
+                    class="progress {{ dataFormatted.activitiesCompletedColorIndicator }}" 
+                    [style.width.%]="dataFormatted.activitiesCompletedPercentage"
+                    ></span>
             </span>
         </div>
-
+        
         <div>
             <span class="label">Lições Visualizadas</span>
             <span class="bar">
-                <span class="progress orange" style="width: 60%;"></span>
+                <span 
+                    class="progress {{ dataFormatted.activitiesViewedColorIndicator }}" 
+                    [style.width.%]="dataFormatted.activitiesViewedPercentage"
+                    ></span>
             </span>
         </div>
-
+        
         <div>
             <span class="label">Trilhas Completadas</span>
             <span class="bar">
-                <span class="progress green" style="width: 50%;"></span>
+                <span 
+                    class="progress {{ dataFormatted.trailsCompletedColorIndicator }}" 
+                    [style.width.%]="dataFormatted.trailsCompletedPercentage"
+                    ></span>
             </span>
         </div>
     </div>
