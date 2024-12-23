@@ -18,7 +18,7 @@
 
     <div class="statistics-indicator">
         @if (activityStatistic['weight'] !== null) {
-            <app-statistic [value]="activityStatistic['completed'].toString()" text="Tarefas Concluídas" />
+            <app-statistic [value]="activityStatistic['completed'] / activityStatistic['count'] * 100" text="Tarefas Concluídas" />
             <app-statistic [value]="activityStatistic['weight']" text="Índice de Aproveitamento" />
         }    
     </div>
