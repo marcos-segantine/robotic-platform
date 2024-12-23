@@ -5,9 +5,11 @@ import { NotFinishedComponent } from '../../../../shared/components/not-finished
 import { Chart, ChartItem, registerables } from 'chart.js';
 
 import { TrailService } from '../../../../core/services/trail.service';
-import { UserDataService } from '../../../../core/services/user-data.service';
 
 import { TrailModel } from '../../../../core/models/trail.model';
+import { Router } from '@angular/router';
+import { ActivityService } from '../../../../core/services/activity.service';
+import { UserDataService } from '../../../../core/services/user-data.service';
 
 Chart.register(...registerables);
 
@@ -22,8 +24,14 @@ export class StudentDashboardComponent implements OnInit {
   chart: Chart | null = null;
   trails: Array<TrailModel> = [];
   trailsID: Array<string> = [];
+  trailProcess: Record<string, number>= {};
 
-  constructor(private trailService: TrailService, private userData: UserDataService) { }
+  constructor(
+    private trailService: TrailService,
+    private route: Router,
+    private activityService: ActivityService,
+    private userDataService: UserDataService
+  ) { }
 
   ngOnInit(): void {
     const ctx = document.getElementById('chart') as ChartItem;
@@ -88,9 +96,41 @@ export class StudentDashboardComponent implements OnInit {
       },
     });
 
-    this.trailService.getTrails(1).subscribe(data => {
+    this.trailService.getTrails().subscribe(data => {
       this.trails = data;
       this.trailsID = this.trails.map(trail => trail.id);
+
+      const userID = this.userDataService.getUserData()?.id;
+
+      if (!userID) {
+        console.log("ERROR WITH USER ID");
+        return;
+      }
+
+      for (const id of this.trailsID) {
+        this.activityService.getStatistic([userID, id]).subscribe(data => {
+          const activitiesCount = data.length;
+          const activitiesCompleted = data.filter(activity => activity.isCompleted).length;
+          
+          this.trailProcess[id] = (activitiesCompleted / activitiesCount * 100);
+        })
+      }
     })
+  }
+
+  navigateToLessons(id: string): void {
+    this.route.navigate(
+      ["app/student/activity/lessons"],
+      { queryParams: { id: id } });
+  }
+
+  getColorIndicator(value: number): string {
+    if (value > 70) {
+      return 'green';
+    } else if (value > 50) {      
+      return 'oranger';
+    } else {
+      return 'red';
+    }
   }
 }

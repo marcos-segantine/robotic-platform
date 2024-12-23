@@ -44,16 +44,16 @@
                 </div>
             </div>
         </div>
-        
+
         @if (trailsID.length > 0) {
-            <app-not-finished [trailsID]="trailsID" />
+        <app-not-finished [trailsID]="trailsID" />
         }
 
     </div>
 
     <div class="line-3">
         @for (trail of trails; track trail) {
-        <div class="trial">
+        <div class="trial" (click)="navigateToLessons(trail.id)">
             <div class="info">
                 <div class="image"></div>
                 <div>
@@ -64,11 +64,11 @@
             <div class="indicators">
                 <span>Progresso</span>
                 <span class="bar">
-                    <span class="progress orange" style="width: 70%;"></span>
+                    <span class="progress {{ getColorIndicator(trailProcess[trail.id]) }}"
+                        [style.width.%]="trailProcess[trail.id]"></span>
                 </span>
             </div>
         </div>
         }
-
     </div>
 </div>
