@@ -19,6 +19,9 @@ export class StudentLessonsComponent implements OnInit {
   currentTrailId = "";
   
   activities: Array<ActivityModel> = [];
+  activitiesCounter: number = 0;
+  colorIndicator = "";
+  numberIndicator = 0;
 
   constructor (private trailService: TrailService, private route: ActivatedRoute) { }
 
@@ -30,5 +33,14 @@ export class StudentLessonsComponent implements OnInit {
         this.activities = data;    
       })
     });
+  }
+
+  activitiesCompletedCounter() {
+    this.activitiesCounter++;
+    this.numberIndicator = this.activitiesCounter / this.activities.length * 100;
+  
+    if(this.numberIndicator > 70) this.colorIndicator = "green";
+    else if(this.numberIndicator > 50) this.colorIndicator = "orange";
+    else this.colorIndicator = "red";
   }
 }

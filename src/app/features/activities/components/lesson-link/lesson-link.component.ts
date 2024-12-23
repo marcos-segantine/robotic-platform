@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
@@ -19,6 +19,7 @@ import { UserDataService } from '../../../../core/services/user-data.service';
 export class LessonLinkComponent implements OnInit {
   @Input({ required: true }) data!: ActivityModel;
   @Input({ required: true }) currentTrailId!: string;
+  @Output() event = new EventEmitter();
   currentUserId: string | undefined = undefined;
   activityStatistic!: ActivityStatisticModel;
 
@@ -40,6 +41,9 @@ export class LessonLinkComponent implements OnInit {
       [this.currentUserId, this.currentTrailId, this.data.id])
       .subscribe(data => {
         this.activityStatistic = data[0];
+        if (this.activityStatistic.isCompleted) {
+          this.event.emit();
+        }
       })
   }
 

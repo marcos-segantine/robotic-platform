@@ -1,7 +1,7 @@
 <div class="container">
     <div class="column-1">
         @for (lesson of activities; track lesson) {
-            <app-lesson-link [data]="lesson" [currentTrailId]="currentTrailId" />
+            <app-lesson-link [data]="lesson" [currentTrailId]="currentTrailId" (event)="activitiesCompletedCounter()" />
         }
     </div>
     <div class="column-2">
@@ -9,20 +9,10 @@
             <div>
                 <div>
                     <span>Completos</span>
-                    <span>70%</span>
+                    <span>{{ numberIndicator }}%</span>
                 </div>
                 <span class="bar">
-                    <span class="progress orange" style="width: 70%;"></span>
-                </span>
-            </div>
-
-            <div>
-                <div>
-                    <span>Completos</span>
-                    <span>70%</span>
-                </div>
-                <span class="bar">
-                    <span class="progress orange" style="width: 70%;"></span>
+                    <span class="progress {{ colorIndicator }}" [style.width.%]="numberIndicator"></span>
                 </span>
             </div>
         </div>
