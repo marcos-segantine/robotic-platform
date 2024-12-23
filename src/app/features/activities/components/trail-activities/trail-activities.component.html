@@ -17,9 +17,9 @@
     </div>
 
     <div class="statistics-indicator">
-        <app-statistic value="80" text="Indice de Acerto" />
-        <app-statistic value="55" text="Indice de Acerto" />
-        <app-statistic value="23" text="Indice de Acerto" />
-        <app-statistic value="100" text="Indice de Acerto" />
+        @if (activityStatistic['weight'] !== null) {
+            <app-statistic [value]="activityStatistic['completed'].toString()" text="Tarefas Concluídas" />
+            <app-statistic [value]="activityStatistic['weight']" text="Índice de Aproveitamento" />
+        }    
     </div>
 </div>

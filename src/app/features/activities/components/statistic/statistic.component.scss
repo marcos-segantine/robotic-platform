@@ -9,31 +9,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.progress-circle {
-    transform: rotate(-90deg);
-}
+    padding: 1.5rem;
 
-.progress-background {
-    fill: none;
-    stroke: var(--color-secondary);
-    stroke-width: 6;
-}
-
-.progress-bar {
-    fill: none;
-    stroke-width: 6;
-    stroke-dasharray: 283;
-    stroke-dashoffset: 283;
-    transition: stroke-dashoffset 1s;
-    stroke-dashoffset: 100;
+    border-radius: var(--border-radius-large);
 }
 
 .progress-value {
     position: absolute;
+
     font-size: var(--font-size-small);
     font-family: "Manrope-Bold";
+    color: var(--color-text);
 
     background-color: transparent;
 }
