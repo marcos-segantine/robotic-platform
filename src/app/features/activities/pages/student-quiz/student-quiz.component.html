@@ -4,7 +4,7 @@
             <p>{{ data.question }}</p>
         </div>
         
-        <span class="timer green-opacity">2:00</span>
+        <span class="timer green-opacity">{{ convertSecondsToMinutes(timer) }}</span>
     </div>
 
     <div class="alternatives">
