@@ -62,9 +62,11 @@ export class AddActivityComponent {
     alternatives: [],
     points: 0,
     resources: [],
-    explanation: ''
+    explanation: '',
+    rightResponse: ''
   }
   alternativesTemp: Array<string> = [];
+  rightResponse = "";
 
   constructor(private trailService: TrailService, private activityService: ActivityService) { }
 
@@ -163,8 +165,8 @@ export class AddActivityComponent {
 
   addDataToTrail() {
     this.activity.alternatives = this.alternativesTemp;
+    this.activity.rightResponse = this.rightResponse;
     this.activity.id = createUID();
-    this.activity.points = 0;
 
     this.activityService.saveActivity(this.activity).subscribe(data => {
       console.log(data);
@@ -210,5 +212,26 @@ export class AddActivityComponent {
     this.activity.resources.push(content);
 
     inputRef.value = "";
+  }
+
+  handleRightResponse(index: number) {
+    const father = document.getElementById("alternatives-container");
+    const children = father?.querySelectorAll(".handle-right-response");
+
+    if (!children || children.length === 0) {
+      console.log("children error");
+      return;
+    }
+
+    this.rightResponse = this.alternativesTemp[index];
+
+    for (const item of Array.from(children)) {
+      if (children[index] === item) {
+        item.classList.add("right-response");
+        continue;
+      }
+
+      item.classList.remove("right-response");
+    }
   }
 }

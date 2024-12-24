@@ -6,7 +6,8 @@ export interface ActivityModel {
   alternatives: Array<string>,
   points: number,
   resources: Array<string>,
-  explanation: string
+  explanation: string,
+  rightResponse: string
 }
 
 export interface ActivityStatisticModel

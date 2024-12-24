@@ -33,6 +33,34 @@ app-menu {
 .list {
     width: max-content;
     margin: .3rem 0;
+}
+
+.contains-alternatives {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.handle-right-response {
+    background-color: var(--color-ternary);
+
+    display: block;
+
+    border-radius: none;
+
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.handle-right-response.right-response {
+    background-color: var(--color-green);
+    border: none;
+}
+
+.alternative {
+    max-width: 90%;
+    padding: .5rem;
 
     overflow: hidden;
 
@@ -51,7 +79,7 @@ app-menu {
     }
 }
 
-span {
+.option {
     font-family: var(--font-family-medium);
     font-size: var(--font-size-tiny);
 
@@ -62,7 +90,7 @@ span {
     border-radius: var(--border-radius-small);
 }
 
-span.selected {
+.option.selected {
     background-color: var(--color-orange);
     color: var(--color-black);
 }
@@ -122,10 +150,10 @@ span:hover {
     height: 100%;
 
     overflow: hidden;
-    
+
     app-trail {
         display: block;
-    
+
         width: 100%;
         height: max-content;
     }

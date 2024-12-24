@@ -8,15 +8,15 @@
 
         <h2>Dificuldade</h2>
         <div class="difficulty">
-            <span (click)="changeOption(0, 'difficulty')">Facil</span>
-            <span (click)="changeOption(1, 'difficulty')">Medio</span>
-            <span (click)="changeOption(2, 'difficulty')">Dificil</span>
+            <span class="option" (click)="changeOption(0, 'difficulty')">Facil</span>
+            <span class="option" (click)="changeOption(1, 'difficulty')">Medio</span>
+            <span class="option" (click)="changeOption(2, 'difficulty')">Dificil</span>
         </div>
 
         <h2>Escolaridade Destinada</h2>
         <div class="schooling">
-            <span (click)="changeOption(0, 'schooling')">Fundamental 1</span>
-            <span (click)="changeOption(1, 'schooling')">Fundamental 2</span>
+            <span class="option" (click)="changeOption(0, 'schooling')">Fundamental 1</span>
+            <span class="option" (click)="changeOption(1, 'schooling')">Fundamental 2</span>
         </div>
 
         <div class="buttons">
@@ -89,8 +89,12 @@
                         (event)="addAlternativesTemp()" />
 
                     @for (item of alternativesTemp; track item) {
-                    <span class="list">{{ item }}</span>
+                    <div class="contains-alternatives">
+                        <span class="handle-right-response" (click)="handleRightResponse(alternativesTemp.indexOf(item))"></span>
+                        <span class="alternative right-response">{{ item }}</span>
+                    </div>
                     }
+
                 </div>
             </div>
         </div>
