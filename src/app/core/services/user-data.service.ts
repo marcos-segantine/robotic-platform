@@ -14,20 +14,20 @@ export class UserDataService {
     this.localStorage = window.localStorage;
   }
 
-  getUserData(): UserDataModel | null {
+  getUserData(): StudentModel | ProfessionalModel | null {
     const data = JSON.parse(this.localStorage.getItem("user-data") as string);
 
     if (data == "null") {
       return null
     }
     else {
-      return data
+      return data['userType'] === "student" ? data as StudentModel : data as ProfessionalModel;
     }
   }
 
   setUserData(userData: StudentModel | ProfessionalModel) {
     this.localStorage.setItem("user-data", JSON.stringify(userData));
-    
+
     const userDataUpdated = this.getUserData();
     return userDataUpdated;
   }

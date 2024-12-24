@@ -26,8 +26,7 @@ import { createUID } from '../../../../shared/utils/createUID.util';
   templateUrl: './student-info.component.html',
   styleUrl: './student-info.component.scss'
 })
-export class StudentInfoComponent implements OnInit {
-  userData: UserDataModel | null = null;
+export class StudentInfoComponent {
   sectionsData = [
     {
       path: "page-1",
@@ -72,10 +71,6 @@ export class StudentInfoComponent implements OnInit {
   ScheduleClass = ScheduleClass;
 
   constructor(private userDataService: UserDataService, private studentService: StudentService) { }
-
-  ngOnInit(): void {
-    this.userData = this.userDataService.getUserData();
-  }
 
   changeSection(section: "page-1" | "page-2" | "page-3") {
     this.currentPage = section

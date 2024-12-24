@@ -11,6 +11,8 @@ import { UserDataService } from '../../../core/services/user-data.service';
 import { UserDataModel } from '../../../core/models/user-data.model';
 
 import { ColorSchemeComponent } from "../color-scheme/color-scheme.component";
+import { ProfessionalModel } from '../../../core/models/professional.model';
+import { StudentModel } from '../../../core/models/student.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -30,7 +32,7 @@ export class SidebarComponent implements OnInit {
   currentPage = "home";
   isToShowMenu = false;
 
-  userData: UserDataModel | null = null
+  userData: ProfessionalModel | StudentModel | null = null
 
   constructor(private router: Router, private userDataService: UserDataService) { }
 

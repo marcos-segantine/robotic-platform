@@ -30,7 +30,13 @@ export class LessonLinkComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.currentUserId = this.userDataService.getUserData()?.id;
+    const userData = this.userDataService.getUserData();
+
+    if (userData?.id) this.currentUserId = userData.id;
+    else {
+      console.log("ERROR OCCURED!");
+      return;
+    }
 
     if (!this.currentUserId) {
       console.log("ERROR OCCURED!");

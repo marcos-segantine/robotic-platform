@@ -44,7 +44,13 @@ export class StudentQuizComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userID = this.userDataService.getUserData()?.id;
+    const userData = this.userDataService.getUserData();
+
+    if(userData?.id) this.userID;
+    else {
+      console.log("User data not available");
+      return;
+    }
 
     if (!this.data.question && !this.data.alternatives) {
       console.log("redirecting user");
