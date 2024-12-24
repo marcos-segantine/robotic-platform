@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ActivityService } from '../../../../core/services/activity.service';
 import { UserDataService } from '../../../../core/services/user-data.service';
+import { ActivityModel } from '../../../../core/models/activity.model';
 
 @Component({
   selector: 'app-student-quiz',
@@ -22,10 +23,14 @@ export class StudentQuizComponent implements OnInit {
   currentTrailAndActivity = {
     activityId: "",
     trailID: "",
-  }
+  };
+  activity!: ActivityModel;
+  activityFinished: boolean = false;
+  userID: string | undefined = "";
+  alternativeSelected: number = -1;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private location: Location,
     private activityService: ActivityService,
     private userDataService: UserDataService,
@@ -33,12 +38,14 @@ export class StudentQuizComponent implements OnInit {
     this.data.question = this.router.getCurrentNavigation()?.extras?.state?.["data"].question;
     this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
     this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
-    
+
     this.currentTrailAndActivity.activityId = this.router.getCurrentNavigation()?.extras?.state?.["data"].activityId;
     this.currentTrailAndActivity.trailID = this.router.getCurrentNavigation()?.extras?.state?.["data"].trailID;
   }
 
   ngOnInit() {
+    this.userID = this.userDataService.getUserData()?.id;
+
     if (!this.data.question && !this.data.alternatives) {
       console.log("redirecting user");
       this.router.navigate(['app/student/activity']);
@@ -46,6 +53,10 @@ export class StudentQuizComponent implements OnInit {
     }
 
     this.updateTimer();
+
+    this.activityService.getActivityByID(this.currentTrailAndActivity.activityId).subscribe(data => {
+      this.activity = data;
+    })
   }
 
   async updateTimer() {
@@ -55,14 +66,17 @@ export class StudentQuizComponent implements OnInit {
       this.updateTimer();
     }
     else {
-      const userID = this.userDataService.getUserData()?.id;
-
-      if(!userID) {
+      if (!this.userID) {
         console.log("User data not available");
         return;
       }
 
-      this.activityService.markActivityAsDone(0, [userID, this.currentTrailAndActivity.trailID, this.currentTrailAndActivity.activityId]);
+      if (this.activityFinished) {
+        console.log("Activity already finished");
+        return;
+      }
+
+      this.activityService.markActivityAsDone(0, [this.userID, this.currentTrailAndActivity.trailID, this.currentTrailAndActivity.activityId]);
 
       console.log("redirecting user");
       this.location.back();
@@ -77,5 +91,26 @@ export class StudentQuizComponent implements OnInit {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes} : ${remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds}`;
+  }
+
+  handleAlternative(index: number) {
+    this.activityFinished = true;
+
+    this.alternativeSelected = index;
+  }
+
+  confirmResponse() {
+    const pontuation = this.activity.rightResponse === this.activity.alternatives[this.alternativeSelected] ?
+      this.activity.points * this.timer : 0;
+
+    if (this.userID) {
+      this.activityService.markActivityAsDone(
+        pontuation,
+        [this.userID, this.currentTrailAndActivity.trailID, this.currentTrailAndActivity.activityId]
+      ).subscribe(data => {
+        console.log(data);
+        this.router.navigate(['app/student/activity']);
+      });
+    }
   }
 }

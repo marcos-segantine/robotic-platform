@@ -40,7 +40,7 @@ export class AddActivityComponent {
       isSelected: false
     }
   ];
-  currentSection: "create-trail" | "add-activity" = "add-activity";
+  currentSection: "create-trail" | "add-activity" = "create-trail";
 
   newTrailData: TrailModel = {
     id: createUID(),
