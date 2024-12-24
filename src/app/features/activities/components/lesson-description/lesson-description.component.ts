@@ -18,9 +18,15 @@ export class LessonDescriptionComponent {
     question: "",
     alternatives: [""],
   };
+  @Input({ required: true }) isCompleted = false;
+
   constructor(private route: Router) { }
 
   goToQuestionPage() {
+    if(this.isCompleted) {
+      return;
+    }
+
     this.route.navigate(
       ["app/student/activity/lessons/lesson/quiz"],
       { state: { data: this.data } })

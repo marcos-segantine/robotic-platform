@@ -9,7 +9,7 @@
 
     <app-button
         text="Questoẽs" 
-        buttonStyle="selected" 
+        [buttonStyle]="isCompleted ? 'disable' : 'selected'" 
         width="35%" 
         (event)="goToQuestionPage()"
     />

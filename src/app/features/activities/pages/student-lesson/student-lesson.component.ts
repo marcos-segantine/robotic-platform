@@ -10,6 +10,7 @@ import { LessonDescriptionComponent } from '../../components/lesson-description/
 import { ActivatedRoute, Router } from '@angular/router';
 import { ActivityModel } from '../../../../core/models/activity.model';
 import { ActivityService } from '../../../../core/services/activity.service';
+import { UserDataService } from '../../../../core/services/user-data.service';
 
 @Component({
   selector: 'app-student-lesson',
@@ -24,11 +25,13 @@ export class StudentLessonComponent implements OnInit {
     question: "",
     alternatives: [""],
   }
+  isCompleted = false;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private activityService: ActivityService
+    private activityService: ActivityService,
+    private userDataService: UserDataService
   ) { }
 
   navigateToQuizPage() {
@@ -37,13 +40,28 @@ export class StudentLessonComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      const id = params['data'];
+      const activityID = params['data'];
+      const traildID = params['trail'];
 
-      this.activityService.getActivityByID(id).subscribe(data => {
-        this.data = data;
-        this.quizData.question = this.data.question;
-        this.quizData.alternatives = this.data.alternatives;
-      });
+      const userID = this.userDataService.getUserData()?.id;
+
+      if (!userID) {
+        console.log("User not found");
+        return;
+      }
+
+      this.activityService.getStatistic([userID, traildID, activityID]).subscribe(data => {
+        this.isCompleted = data[0].isCompleted;
+
+        if (this.isCompleted) return;
+
+        this.activityService.getActivityByID(activityID).subscribe(data => {
+          this.data = data;
+          this.quizData.question = this.data.question;
+          this.quizData.alternatives = this.data.alternatives;
+        });
+      })
+
     });
   }
 }

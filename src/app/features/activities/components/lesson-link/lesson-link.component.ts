@@ -72,7 +72,8 @@ export class LessonLinkComponent implements OnInit {
         [`/app/student/activity/lessons/lesson`],
         {
           queryParams: {
-            data: this.data.id
+            data: this.data.id,
+            trail: this.currentTrailId
           }
         })
     }
