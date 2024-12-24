@@ -19,7 +19,7 @@ export class TrailActivitiesComponent implements OnInit {
   @Input({ required: true }) data!: TrailModel;
   statistics: Array<"default" | "red" | "orange" | "green" | "white"> = [];
   activityStatistic: Record<string, any> = {
-    count: 0,
+    count: 1,
     completed: 0,
     weight: null
   }
@@ -72,8 +72,6 @@ export class TrailActivitiesComponent implements OnInit {
 
       this.activityStatistic["weight"] = averagePerformance;
       this.statistics = dataFormatted;
-    });
+    });    
   }
-
-
 }
