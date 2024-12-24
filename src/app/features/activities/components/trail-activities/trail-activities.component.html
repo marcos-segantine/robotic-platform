@@ -1,4 +1,4 @@
-<div class="trail" routerLink="lessons" [queryParams]="{ id: data.id }">
+<div class="trail {{ !noActivities && 'cursor' }}" (click)="navigateToLessonPage()">
     <div class="info">
         <div class="img"></div>
 
@@ -18,8 +18,16 @@
 
     <div class="statistics-indicator">
         @if (activityStatistic['weight'] !== null) {
-            <app-statistic [value]="activityStatistic['completed'] / activityStatistic['count'] * 100" text="Tarefas Concluídas" />
-            <app-statistic [value]="activityStatistic['weight']" text="Índice de Aproveitamento" />
+            <app-statistic 
+                [value]="activityStatistic['completed'] / activityStatistic['count'] * 100" 
+                text="Tarefas Concluídas"
+                [disabled]="noActivities ? true : false"
+            />
+            <app-statistic 
+                [value]="activityStatistic['weight']" 
+                text="Índice de Aproveitamento"
+                [disabled]="noActivities ? true : false"
+            />
         }    
     </div>
 </div>

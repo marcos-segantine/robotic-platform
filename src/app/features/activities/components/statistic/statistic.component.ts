@@ -10,6 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class StatisticComponent implements OnInit {
   @Input({ required: true }) value = 0;
   @Input({ required: true }) text = "";
+  @Input({ required: true }) disabled = false;
 
   color: "red" | "orange" | "green" = "orange";
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { IndicatorComponent } from "../indicator/indicator.component";
 import { StatisticComponent } from "../statistic/statistic.component";
@@ -23,8 +23,13 @@ export class TrailActivitiesComponent implements OnInit {
     completed: 0,
     weight: null
   }
+  noActivities = false;
 
-  constructor(private userDataService: UserDataService, private activityService: ActivityService) { }
+  constructor(
+    private userDataService: UserDataService,
+    private activityService: ActivityService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     const userId = this.userDataService.getUserData()?.id;
@@ -72,6 +77,17 @@ export class TrailActivitiesComponent implements OnInit {
 
       this.activityStatistic["weight"] = averagePerformance;
       this.statistics = dataFormatted;
-    });    
+
+      this.noActivities = this.activityStatistic['count'] === 1;
+    });
+  }
+
+  navigateToLessonPage() {
+    if (this.activityStatistic["count"] > 1) {
+      this.router.navigate(['app/student/activity/lessons'], { queryParams: { id: this.data.id } });
+    }
+    else {
+      console.log("There is no activities!!");
+    }
   }
 }
