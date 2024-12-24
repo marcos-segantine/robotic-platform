@@ -9,9 +9,17 @@
 
     <div class="alternatives">
         @for (alternative of data.alternatives; track alternative) {
-            <p class="alternative" (click)="handleAlternative(data.alternatives.indexOf(alternative))">{{ alternative }}</p>
+            <p 
+                class="alternative {{ data.alternatives.indexOf(alternative) === alternativeSelected && 'selected' }}" 
+                (click)="handleAlternative(data.alternatives.indexOf(alternative))"
+            >{{ alternative }}</p>
         }
     </div>
 
-    <app-button text="Confirmar" buttonStyle="disable" width="10rem" (event)="confirmResponse()" />
+    <app-button 
+        text="Confirmar" 
+        [buttonStyle]="alternativeSelected === -1 ? 'disable' : 'selected'" 
+        width="10rem" 
+        (event)="confirmResponse()" 
+    />
 </div>

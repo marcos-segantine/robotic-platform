@@ -3,8 +3,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 5em;
-
-    // padding-top: 10em;
 }
 
 .question {
@@ -47,13 +45,18 @@
     padding: 1em;
 
     border-radius: var(--border-radius-small);
+    border: 1px solid;
+    border-color: var(--color-gray);
 
     cursor: pointer;
 }
 
+.selected {
+    border-color: var(--color-orange);
+}
+
 .alternative:hover {
     background-color: var(--color-secondary);
-
 }
 
 @media screen and (min-width: 767px) {

@@ -22,6 +22,7 @@ export class StudentLessonComponent implements OnInit {
     question: "",
     alternatives: [""],
     trailID: "",
+    activityID: "",
   }
   isCompleted = false;
 
@@ -58,9 +59,9 @@ export class StudentLessonComponent implements OnInit {
           this.quizData.question = this.data.question;
           this.quizData.alternatives = this.data.alternatives;
           this.quizData.trailID = traildID;
+          this.quizData.activityID = activityID;
         });
       })
-
     });
   }
 }

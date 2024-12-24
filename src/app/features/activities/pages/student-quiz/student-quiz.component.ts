@@ -22,6 +22,7 @@ export class StudentQuizComponent implements OnInit {
   timer: number = 120;
   currentTrailAndActivity = {
     trailID: "",
+    activityID: "",
   };
   activity!: ActivityModel;
   activityFinished: boolean = false;
@@ -39,6 +40,7 @@ export class StudentQuizComponent implements OnInit {
     this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
 
     this.currentTrailAndActivity.trailID = this.router.getCurrentNavigation()?.extras?.state?.["data"].trailID;
+    this.currentTrailAndActivity.activityID = this.router.getCurrentNavigation()?.extras?.state?.["data"].activityID;
   }
 
   ngOnInit() {
@@ -52,7 +54,7 @@ export class StudentQuizComponent implements OnInit {
 
     this.updateTimer();
 
-    this.activityService.getActivityByID(this.activity.id).subscribe(data => {
+    this.activityService.getActivityByID(this.currentTrailAndActivity.activityID).subscribe(data => {
       this.activity = data;
     })
   }
@@ -98,6 +100,10 @@ export class StudentQuizComponent implements OnInit {
   }
 
   confirmResponse() {
+    if (this.alternativeSelected === -1) {
+      return;
+    }
+
     const pontuation = this.activity.rightResponse === this.activity.alternatives[this.alternativeSelected] ?
       this.activity.points * this.timer : 0;
 
