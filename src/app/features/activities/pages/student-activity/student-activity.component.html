@@ -1,6 +1,4 @@
 <div class="container">
-    <app-menu [data]="options" />
-
     <div class="trails">
         @for (trail of trails; track trail.id) {
             <app-trail-activities [data]="trail" />
