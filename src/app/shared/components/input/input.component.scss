@@ -2,9 +2,9 @@ input,
 textarea {
     border: none;
     border-radius: var(--border-radius-small);
-    
+
     outline: none;
-    
+
     padding: 0.5em 1em;
     color: var(--color-text);
 }
@@ -27,11 +27,15 @@ input::placeholder {
 
 textarea {
     background-color: var(--color-ternary);
-    
+
     height: 10rem;
     padding: 1rem;
 
     resize: none;
+}
+
+input[type="number"] {
+    background-color: var(--color-ternary);
 }
 
 .all {

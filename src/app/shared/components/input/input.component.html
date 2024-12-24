@@ -1,10 +1,15 @@
-@if (mode !== 'textarea') {
+@if (mode === 'textarea') {
 <span class="{{ additionalClasses }}">{{ text }}</span>
-<input class="{{ size }} {{ mode }}" type="text" placeholder="{{ placeholder }}" [value]="property"
-(input)="emitEvent($event)">
+<textarea class="{{ size }}" [value]="property" (input)="emitEvent($event)"></textarea>
+}
+@else if(mode === 'number') {
+    <span class="{{ additionalClasses }}">{{ text }}</span>
+    <input class="{{ size }} {{ mode }} custom-spinner" type="number" [value]="property" min="0" max="100"
+        (input)="emitEvent($event)">
 }
 @else {
-    <span class="{{ additionalClasses }}">{{ text }}</span>
-    <textarea class="{{ size }}" [value]="property"
-    (input)="emitEvent($event)"></textarea>
+<span class="{{ additionalClasses }}">{{ text }}</span>
+<input class="{{ size }} {{ mode }}" type="text" placeholder="{{ placeholder }}" [value]="property"
+    (input)="emitEvent($event)">
+
 }

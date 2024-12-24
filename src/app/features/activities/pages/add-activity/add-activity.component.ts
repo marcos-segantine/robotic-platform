@@ -40,7 +40,7 @@ export class AddActivityComponent {
       isSelected: false
     }
   ];
-  currentSection: "create-trail" | "add-activity" = "create-trail";
+  currentSection: "create-trail" | "add-activity" = "add-activity";
 
   newTrailData: TrailModel = {
     id: createUID(),
@@ -60,7 +60,7 @@ export class AddActivityComponent {
     summarize: '',
     question: '',
     alternatives: [],
-    points: null,
+    points: 0,
     resources: [],
     explanation: ''
   }
@@ -178,7 +178,7 @@ export class AddActivityComponent {
     this.activity.alternatives = [];
     this.activity.resources = [];
     this.activity.id = "";
-    this.activity.points = null;
+    this.activity.points = 0;
     this.activity.question = "";
     this.activity.summarize = "";
     this.activity.explanation = "";

@@ -72,8 +72,6 @@
                     <span class="list">{{ item }}</span>
                     }
                 </div>
-
-                <!-- <app-input mode="mode-1" text="Pontuacao da atividade" size="small" [(property)]="activity.points" /> -->
             </div>
 
             <div>
@@ -82,6 +80,8 @@
             </div>
 
             <div class="question-alternatives">
+                <app-input mode="number" text="Pontuacao da atividade" size="small" [(property)]="activity.points" />
+
                 <app-input mode="mode-1" placeholder="" text="Pergunta" size="all" [(property)]="activity.question" />
                 <div id="alternatives-container" class="alternatives">
                     <app-input mode="mode-1" placeholder="" text="Alternativas (no máximo 5)" size="all" />
