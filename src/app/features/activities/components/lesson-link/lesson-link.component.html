@@ -2,7 +2,7 @@
     <div class="image-score">
         <div class="image"></div>
         @if (activityStatistic) {
-            <app-lesson-score [statistic]="activityStatistic" />
+            <app-lesson-score [statistic]="activityStatistic" [activityWeight]="data.weight" />
         }
     </div>
 

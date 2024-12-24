@@ -60,7 +60,7 @@ export class AddActivityComponent {
     summarize: '',
     question: '',
     alternatives: [],
-    points: 0,
+    weight: 0,
     resources: [],
     explanation: '',
     rightResponse: ''
@@ -180,7 +180,7 @@ export class AddActivityComponent {
     this.activity.alternatives = [];
     this.activity.resources = [];
     this.activity.id = "";
-    this.activity.points = 0;
+    this.activity.weight = 0;
     this.activity.question = "";
     this.activity.summarize = "";
     this.activity.explanation = "";

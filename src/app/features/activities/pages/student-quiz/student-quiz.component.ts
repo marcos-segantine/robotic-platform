@@ -105,7 +105,7 @@ export class StudentQuizComponent implements OnInit {
     }
 
     const pontuation = this.activity.rightResponse === this.activity.alternatives[this.alternativeSelected] ?
-      this.activity.points * this.timer : 0;
+      this.activity.weight * this.timer : 0;
 
     if (this.userID) {
       this.activityService.markActivityAsDone(

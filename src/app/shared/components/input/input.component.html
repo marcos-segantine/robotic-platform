@@ -4,7 +4,7 @@
 }
 @else if(mode === 'number') {
     <span class="{{ additionalClasses }}">{{ text }}</span>
-    <input class="{{ size }} {{ mode }} custom-spinner" type="number" [value]="property" min="0" max="100"
+    <input class="{{ size }} {{ mode }} custom-spinner" type="number" [value]="property" min="0" max="10"
         (input)="emitEvent($event)">
 }
 @else {

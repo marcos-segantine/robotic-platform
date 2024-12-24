@@ -4,7 +4,7 @@ export interface ActivityModel {
   summarize: string,
   question: string,
   alternatives: Array<string>,
-  points: number,
+  weight: number,
   resources: Array<string>,
   explanation: string,
   rightResponse: string
