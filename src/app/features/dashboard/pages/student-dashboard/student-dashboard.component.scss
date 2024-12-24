@@ -214,9 +214,14 @@ app-not-finished {
 }
 
 @media screen and (min-width: 1024px) {
+
     app-learning-progress,
     app-not-finished {
         display: block;
+    }
+
+    app-not-finished {
+        width: 25%;
     }
 
     .chart {
@@ -254,10 +259,6 @@ app-not-finished {
 
             background-color: var(--color-secondary);
         }
-    }
-
-    .chart {
-        width: calc(100% - 400px);
     }
 
     .trial {

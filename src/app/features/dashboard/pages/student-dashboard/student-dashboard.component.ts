@@ -112,7 +112,7 @@ export class StudentDashboardComponent implements OnInit {
           const activitiesCount = data.length;
           const activitiesCompleted = data.filter(activity => activity.isCompleted).length;
           
-          this.trailProcess[id] = (activitiesCompleted / activitiesCount * 100);
+          this.trailProcess[id] = (activitiesCompleted / activitiesCount * 100) || 0;  
         })
       }
     })

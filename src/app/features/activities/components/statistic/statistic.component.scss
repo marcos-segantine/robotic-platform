@@ -2,6 +2,12 @@
     display: flex;
     align-items: center;
     gap: .5em;
+
+    width: max-content;
+}
+
+p {
+    font-size: var(--font-size-very-tiny);
 }
 
 .progress-container {
@@ -10,7 +16,7 @@
     justify-content: center;
     align-items: center;
 
-    padding: 1.5rem;
+    padding: 1.3rem;
 
     border-radius: var(--border-radius-large);
 }
@@ -18,7 +24,7 @@
 .progress-value {
     position: absolute;
 
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-very-tiny);
     font-family: "Manrope-Bold";
     color: var(--color-text);
 
@@ -27,4 +33,16 @@
 
 .disable {
     background-color: var(--color-secondary);
+}
+
+@media (min-width: 768px) {
+    p {
+        font-size: var(--font-size-small);
+    }
+    
+    .progress-value {
+        padding: 1.5rem;
+
+        font-size: var(--font-size-small);
+    }
 }
