@@ -10,8 +10,6 @@ import { StudentIcon } from '../../../../../public/assets/icons/sidebar/student/
 import { UserDataService } from '../../../core/services/user-data.service';
 import { UserDataModel } from '../../../core/models/user-data.model';
 
-import { StudentProfileComponent } from "../../../features/profiles/pages/student-profile/student-profile.component";
-
 import { ColorSchemeComponent } from "../color-scheme/color-scheme.component";
 
 @Component({
@@ -20,7 +18,6 @@ import { ColorSchemeComponent } from "../color-scheme/color-scheme.component";
   imports: [
     HomeComponentIcon, 
     ActivityComponentIcon, 
-    StudentProfileComponent, 
     SupportComponentIcon, 
     RankingIcon, 
     ColorSchemeComponent,

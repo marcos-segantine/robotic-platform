@@ -19,7 +19,7 @@ export class TrailActivitiesComponent implements OnInit {
   @Input({ required: true }) data!: TrailModel;
   statistics: Array<"default" | "red" | "orange" | "green" | "white"> = [];
   activityStatistic: Record<string, any> = {
-    count: 1,
+    count: 0,
     completed: 0,
     weight: null
   }
@@ -78,12 +78,12 @@ export class TrailActivitiesComponent implements OnInit {
       this.activityStatistic["weight"] = averagePerformance;
       this.statistics = dataFormatted;
 
-      this.noActivities = this.activityStatistic['count'] === 1;
+      this.noActivities = this.activityStatistic['count'] === 0;
     });
   }
 
   navigateToLessonPage() {
-    if (this.activityStatistic["count"] > 1) {
+    if (this.activityStatistic["count"] > 0) {
       this.router.navigate(['app/student/activity/lessons'], { queryParams: { id: this.data.id } });
     }
     else {

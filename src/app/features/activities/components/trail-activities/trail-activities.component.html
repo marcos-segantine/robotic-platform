@@ -18,8 +18,14 @@
 
     <div class="statistics-indicator">
         @if (activityStatistic['weight'] !== null) {
+        @if (activityStatistic['count'] > 0) {
+        <app-statistic [value]="activityStatistic['completed'] / activityStatistic['count'] * 100"
+            text="Tarefas Concluídas" [disabled]="noActivities ? true : false" />
+        <app-statistic [value]="activityStatistic['weight']" text="Índice de Aproveitamento"
+            [disabled]="noActivities ? true : false" />
+        } @else {
             <app-statistic 
-                [value]="activityStatistic['completed'] / activityStatistic['count'] * 100" 
+                [value]="0" 
                 text="Tarefas Concluídas"
                 [disabled]="noActivities ? true : false"
             />
@@ -28,6 +34,7 @@
                 text="Índice de Aproveitamento"
                 [disabled]="noActivities ? true : false"
             />
-        }    
+        }
+        }
     </div>
 </div>
