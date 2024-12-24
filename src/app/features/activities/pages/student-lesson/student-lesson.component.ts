@@ -21,7 +21,6 @@ export class StudentLessonComponent implements OnInit {
   quizData = {
     question: "",
     alternatives: [""],
-    activityId: "",
     trailID: "",
   }
   isCompleted = false;
@@ -58,7 +57,6 @@ export class StudentLessonComponent implements OnInit {
           this.data = data;
           this.quizData.question = this.data.question;
           this.quizData.alternatives = this.data.alternatives;
-          this.quizData.activityId = activityID;
           this.quizData.trailID = traildID;
         });
       })

@@ -21,7 +21,6 @@ export class StudentQuizComponent implements OnInit {
   }
   timer: number = 120;
   currentTrailAndActivity = {
-    activityId: "",
     trailID: "",
   };
   activity!: ActivityModel;
@@ -39,7 +38,6 @@ export class StudentQuizComponent implements OnInit {
     this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
     this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
 
-    this.currentTrailAndActivity.activityId = this.router.getCurrentNavigation()?.extras?.state?.["data"].activityId;
     this.currentTrailAndActivity.trailID = this.router.getCurrentNavigation()?.extras?.state?.["data"].trailID;
   }
 
@@ -54,7 +52,7 @@ export class StudentQuizComponent implements OnInit {
 
     this.updateTimer();
 
-    this.activityService.getActivityByID(this.currentTrailAndActivity.activityId).subscribe(data => {
+    this.activityService.getActivityByID(this.activity.id).subscribe(data => {
       this.activity = data;
     })
   }
@@ -76,7 +74,7 @@ export class StudentQuizComponent implements OnInit {
         return;
       }
 
-      this.activityService.markActivityAsDone(0, [this.userID, this.currentTrailAndActivity.trailID, this.currentTrailAndActivity.activityId]);
+      this.activityService.markActivityAsDone(0, [this.userID, this.currentTrailAndActivity.trailID, this.activity.id]);
 
       console.log("redirecting user");
       this.location.back();
@@ -106,7 +104,7 @@ export class StudentQuizComponent implements OnInit {
     if (this.userID) {
       this.activityService.markActivityAsDone(
         pontuation,
-        [this.userID, this.currentTrailAndActivity.trailID, this.currentTrailAndActivity.activityId]
+        [this.userID, this.currentTrailAndActivity.trailID, this.activity.id]
       ).subscribe(data => {
         console.log(data);
         this.router.navigate(['app/student/activity']);
