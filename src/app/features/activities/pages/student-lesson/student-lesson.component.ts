@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { RankingComponent } from '../../../award/components/ranking/ranking.component';
 
-import { LessonScoreComponent } from "../../components/lesson-score/lesson-score.component";
-import { ButtonComponent } from "../../../../shared/components/button/button.component";
-
 import { LessonDescriptionComponent } from '../../components/lesson-description/lesson-description.component';
 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,7 +12,7 @@ import { UserDataService } from '../../../../core/services/user-data.service';
 @Component({
   selector: 'app-student-lesson',
   standalone: true,
-  imports: [RankingComponent, LessonScoreComponent, ButtonComponent, LessonDescriptionComponent],
+  imports: [RankingComponent, LessonDescriptionComponent],
   templateUrl: './student-lesson.component.html',
   styleUrl: './student-lesson.component.scss'
 })
@@ -24,6 +21,8 @@ export class StudentLessonComponent implements OnInit {
   quizData = {
     question: "",
     alternatives: [""],
+    activityId: "",
+    trailID: "",
   }
   isCompleted = false;
 
@@ -59,6 +58,8 @@ export class StudentLessonComponent implements OnInit {
           this.data = data;
           this.quizData.question = this.data.question;
           this.quizData.alternatives = this.data.alternatives;
+          this.quizData.activityId = activityID;
+          this.quizData.trailID = traildID;
         });
       })
 

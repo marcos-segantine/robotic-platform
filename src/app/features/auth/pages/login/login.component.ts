@@ -23,29 +23,29 @@ export class LoginComponent {
   login() {
     // after introduce auth back-end logic, remove this line
 
-    // const userData: StudentModel = {
-    //   id: "545f2587-dbff-4953-a905-956ef7ce17cf",
-    //   name: "Marcos",
-    //   userType: "student",
-    //   school: null,
-    //   schooling: null,
-    //   scheduleClass: null,
-    //   photoPath: null,
-    //   points: 0,
-    //   certificates: {
-    //     done: [],
-    //     inProgress: [],
-    //     notStarted: []
-    //   },
-    //   statistics: []
-    // }
-
-    const userData: ProfessionalModel = {
+    const userData: StudentModel = {
       id: "545f2587-dbff-4953-a905-956ef7ce17cf",
       name: "Marcos",
-      photoPath: "",
-      userType: "professional",
+      userType: "student",
+      school: null,
+      schooling: null,
+      scheduleClass: null,
+      photoPath: null,
+      points: 0,
+      certificates: {
+        done: [],
+        inProgress: [],
+        notStarted: []
+      },
+      statistics: []
     }
+
+    // const userData: ProfessionalModel = {
+    //   id: "545f2587-dbff-4953-a905-956ef7ce17cf",
+    //   name: "Marcos",
+    //   photoPath: "",
+    //   userType: "professional",
+    // }
 
     this.userDataService.setUserData(userData);
 

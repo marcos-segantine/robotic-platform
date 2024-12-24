@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ActivityService } from '../../../../core/services/activity.service';
+import { UserDataService } from '../../../../core/services/user-data.service';
 
 @Component({
   selector: 'app-student-quiz',
@@ -17,10 +19,23 @@ export class StudentQuizComponent implements OnInit {
     alternatives: []
   }
   timer: number = 120;
+  currentTrailAndActivity = {
+    activityId: "",
+    trailID: "",
+  }
 
-  constructor(private router: Router, private location: Location) {
+  constructor(
+    private router: Router, 
+    private location: Location,
+    private activityService: ActivityService,
+    private userDataService: UserDataService,
+  ) {
     this.data.question = this.router.getCurrentNavigation()?.extras?.state?.["data"].question;
     this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
+    this.data.alternatives = this.router.getCurrentNavigation()?.extras?.state?.["data"].alternatives;
+    
+    this.currentTrailAndActivity.activityId = this.router.getCurrentNavigation()?.extras?.state?.["data"].activityId;
+    this.currentTrailAndActivity.trailID = this.router.getCurrentNavigation()?.extras?.state?.["data"].trailID;
   }
 
   ngOnInit() {
@@ -40,6 +55,15 @@ export class StudentQuizComponent implements OnInit {
       this.updateTimer();
     }
     else {
+      const userID = this.userDataService.getUserData()?.id;
+
+      if(!userID) {
+        console.log("User data not available");
+        return;
+      }
+
+      this.activityService.markActivityAsDone(0, [userID, this.currentTrailAndActivity.trailID, this.currentTrailAndActivity.activityId]);
+
       console.log("redirecting user");
       this.location.back();
     }

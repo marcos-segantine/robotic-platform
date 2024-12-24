@@ -61,4 +61,8 @@ export class ActivityService {
     getLearningProgress(studentID: string)  {
         return this._httpClient.get<Record<string, any>>(this.url + `get-learning-process?studentID=${studentID}`);
     }
+    
+    markActivityAsDone(points: number, path: Array<string>) {
+        return this._httpClient.put(this.url + `mark-activity-as-done?points=${points}`, path);
+    }
 }
