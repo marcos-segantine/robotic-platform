@@ -4,293 +4,57 @@
     </div>
 
     <div class="ranking">
+        @if (topRanking.length > 0) {
         <div class="top">
             <div>
                 <span class="score">
                     <app-points-icon color="gold" width="25" />
-                    1500
+                    {{ topRanking[1].points }}
                 </span>
                 <div class="photo silver">
                     <span class="classification silver">2</span>
                 </div>
-                <p class="name">Marcos<br>Segantine</p>
+                <p class="name">{{ topRanking[1].name.split(" ")[0] }}<br>{{ topRanking[1].name.split(" ")[1] }}</p>
             </div>
             <div class="top-1">
                 <span class="score">
                     <app-points-icon color="gold" width="25" />
-                    1500
+                    {{ topRanking[0].points }}
                 </span>
                 <div class="photo gold">
                     <span class="classification gold">1</span>
                 </div>
-                <p class="name">Marcos<br>Segantine</p>
+                <p class="name">{{ topRanking[0].name.split(" ")[0] }}<br>{{ topRanking[0].name.split(" ")[1] }}</p>
             </div>
             <div>
                 <span class="score">
                     <app-points-icon color="gold" width="25" />
-                    1500
+                    {{ topRanking[2].points }}
                 </span>
                 <div class="photo bronze">
                     <span class="classification bronze">3</span>
                 </div>
-                <p class="name">Marcos<br>Segantine</p>
+                <p class="name">{{ topRanking[2].name.split(" ")[0] }}<br>{{ topRanking[2].name.split(" ")[1] }}</p>
             </div>
         </div>
+        }
 
+        @if (bottomRanking.length > 0) {
         <div class="bottom">
+            @for (student of bottomRanking; track student) {
             <div>
                 <div>
                     <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
+                    <span class="classification">{{ bottomRanking.indexOf(student) + 4 }}</span>
+                    <span class="name">{{ student.name }}</span>
                 </div>
                 <div class="score">
                     <app-points-icon color="white" width="30" />
-                    <span>1000</span>
+                    <span>{{ student.points }}</span>
                 </div>
             </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div class="photo"></div>
-                    <span class="classification">4</span>
-                    <span class="name">Marcos Segantine</span>
-                </div>
-                <div class="score">
-                    <app-points-icon color="white" width="30" />
-                    <span>1000</span>
-                </div>
-            </div>
+            }
         </div>
+        }
     </div>
 </div>
