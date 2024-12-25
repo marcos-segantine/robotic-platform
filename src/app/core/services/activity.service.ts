@@ -5,6 +5,7 @@ import { environment } from "../../../environments/environment";
 
 import { ActivityModel } from "../models/activity.model";
 import { ActivityStatisticModel } from "../models/activity.model";
+import { RankingModel } from "../models/ranking.model";
 
 @Injectable({
     providedIn: 'root'
@@ -64,5 +65,9 @@ export class ActivityService {
     
     markActivityAsDone(points: number, path: Array<string>) {
         return this._httpClient.put(this.url + `mark-activity-as-done?points=${points}`, path);
+    }
+    
+    getRanking() {
+        return this._httpClient.get<Array<RankingModel>>(this.url + `get-ranking`);
     }
 }

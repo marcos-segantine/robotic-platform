@@ -2,51 +2,52 @@
     <div class="top">
         <div class="top-student">
             <div class="photo"></div>
-            <h2 class="name">Marcos Segantine</h2>
-            <p>Teodoro</p>
+            <h2 class="name">{{ top3[1].name }}</h2>
+            <p>{{ getSchoolName(top3[1].school) }}</p>
             <span class="bar silver" style="height: 6.5em;">
                 2
                 <span>
                     <app-points-icon color="black" />
-                    1500
+                    {{ top3[1].points }}
                 </span>
             </span>
         </div>
 
         <div class="top-student">
             <div class="photo"></div>
-            <h2 class="name">Marcos Segantine</h2>
-            <p>Teodoro</p>
+            <h2 class="name">{{ top3[0].name }}</h2>
+            <p>{{ getSchoolName(top3[0].school) }}</p>
             <span class="bar gold" style="height: 10em;">
                 1
                 <span>
                     <app-points-icon color="black" />
-                    1500
+                    {{ top3[0].points }}
                 </span>
             </span>
         </div>
 
         <div class="top-student">
             <div class="photo"></div>
-            <h2 class="name">Marcos Segantine</h2>
-            <p>Teodoro</p>
+            <h2 class="name">{{ top3[2].name }}</h2>
+            <p>{{ getSchoolName(top3[2].school) }}</p>
             <span class="bar bronze" style="height: 3.5em;">
                 3
                 <span>
                     <app-points-icon color="black" />
-                    1500
+                    {{ top3[2].points }}
                 </span>
             </span>
         </div>
     </div>
 
     <table class="bottom">
+        @for (student of bottomStudents; track student) {
         <tr>
             <td>
                 <div class="student">
-                    <span class="position">4</span>
+                    <span class="position">{{ bottomStudents.indexOf(student) + 4 }}</span>
                     <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
+                    <h4 class="name">{{ student.name }}</h4>
                 </div>
             </td>
             <td class="medals">
@@ -56,161 +57,10 @@
             </td>
             <td class="points">
                 <app-points-icon color="white" />
-                2000
+                {{ student.points }}
             </td>
-            <td class="school">M. Aparecida</td>
+            <td class="school">{{ getSchoolName(student.school) }}</td>
         </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">M. Aparecida</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">Teodoro</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">M. Aparecida</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">Djalma</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">M. Aparecida</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">M. Aparecida</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">M. Aparecida</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="student">
-                    <span class="position">4</span>
-                    <div class="photo"></div>
-                    <h4 class="name">Marcos Segantine</h4>
-                </div>
-            </td>
-            <td class="medals">
-                <div class="medal"></div>
-                <div class="medal"></div>
-                <div class="medal"></div>
-            </td>
-            <td class="points">
-                <app-points-icon color="white" />
-                2000
-            </td>
-            <td class="school">Rosemir</td>
-        </tr>
+        }
     </table>
 </div>

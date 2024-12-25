@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 import { UserDataService } from '../../../../core/services/user-data.service';
-import { UserDataModel } from '../../../../core/models/user-data.model';
 import { StudentService } from '../../../../core/services/student.service';
 
 import { StudentModel } from "../../../../core/models/student.model";
@@ -49,7 +48,7 @@ export class StudentInfoComponent {
   ];
   currentPage = "page-1";
   newStudentInfo: StudentModel = {
-    id: createUID(),
+    id: "",
     name: '',
     school: null,
     schooling: null,
@@ -70,7 +69,7 @@ export class StudentInfoComponent {
   School = School;
   ScheduleClass = ScheduleClass;
 
-  constructor(private userDataService: UserDataService, private studentService: StudentService) { }
+  constructor(private studentService: StudentService) { }
 
   changeSection(section: "page-1" | "page-2" | "page-3") {
     this.currentPage = section
@@ -115,6 +114,8 @@ export class StudentInfoComponent {
       console.log("DATA IS UNAVAILABLE");
       return;
     }
+
+    this.newStudentInfo.id = createUID();
 
     this.studentService.createStudent(this.newStudentInfo).subscribe((data) => {
       console.log(data);

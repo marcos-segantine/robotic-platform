@@ -51,11 +51,11 @@ export class StudentDashboardComponent implements OnInit {
     this.chart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['January',
-          'February',
-          'March',
-          'April',
-          'May'],
+        labels: ['',
+          '',
+          '',
+          '',
+          ''],
         datasets: [{
           data: [5000, 7500, 8000, 6000, 9000],
           tension: 0.7,
