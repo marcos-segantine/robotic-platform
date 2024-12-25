@@ -2,17 +2,14 @@
     <h3>Alunos com menor desempenho</h3>
 
     <div class="content">
-        <div>
-            <p>Marcos Segantine</p>
-            <p>Turma 1</p>
-        </div>
-        <div>
-            <p>Marcos Segantine</p>
-            <p>Turma 1</p>
-        </div>
-        <div>
-            <p>Marcos Segantine</p>
-            <p>Turma 1</p>
-        </div>
+
+        @if (data.length > 0) {
+            @for (student of data; track student) {
+                <div>
+                    <p>{{ student.name }}</p>
+                    <p>{{ getSchoolName(student.school) }}</p>
+                </div>
+            }
+        }
     </div>
 </div>

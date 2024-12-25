@@ -32,7 +32,7 @@ export class ActivityService {
         });
 
         localStorage.setItem(key, data);
-        
+
         return this._httpClient.post(this.url + `create-statistic`, path);
     }
 
@@ -40,11 +40,11 @@ export class ActivityService {
         const key = JSON.stringify([...path]);
         const localData = localStorage.getItem(key);
 
-        if(localData === null) {
+        if (localData === null) {
             console.log("ERROR WITH LOCAL DATA");
             return;
         }
-        
+
         const data = JSON.parse(localData);
         data[field] = value;
 
@@ -52,22 +52,25 @@ export class ActivityService {
 
         return this._httpClient.put(this.url + `update-statistics?field=${field}&value=${value}`, path);
     }
-    
-    getStatistic(path: Array<string>)
-    {
+
+    getStatistic(path: Array<string>) {
         const pathFormatted = path.join(",")
         return this._httpClient.get<Array<ActivityStatisticModel>>(this.url + `get-statistic?path=${[pathFormatted]}`);
     }
-    
-    getLearningProgress(studentID: string)  {
+
+    getLearningProgress(studentID: string) {
         return this._httpClient.get<Record<string, any>>(this.url + `get-learning-process?studentID=${studentID}`);
     }
-    
+
     markActivityAsDone(points: number, path: Array<string>) {
         return this._httpClient.put(this.url + `mark-activity-as-done?points=${points}`, path);
     }
-    
+
     getRanking() {
         return this._httpClient.get<Array<RankingModel>>(this.url + `get-ranking`);
+    }
+
+    getStudentLLowerPerformance() {
+        return this._httpClient.get<Array<RankingModel>>(this.url + "get-students-lower-performance");
     }
 }

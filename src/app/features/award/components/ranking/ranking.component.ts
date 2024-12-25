@@ -22,10 +22,6 @@ export class RankingComponent implements OnInit {
     this.activityService.getRanking().subscribe((ranking: RankingModel[]) => {
       this.topRanking = ranking.slice(0, 3);
       this.bottomRanking = ranking.slice(3);
-
-      console.log(this.bottomRanking);
-      console.log(this.topRanking);
-
     });
   }
 }
