@@ -10,6 +10,11 @@ import { PlatformUseComponent } from "../../components/platform-use/platform-use
 import { dashDaskColors } from '../../../../core/enum/dashColors.enum';
 import { dashLightColors } from '../../../../core/enum/dashColors.enum';
 
+import { ActivityService } from '../../../../core/services/activity.service';
+
+import { School } from '../../../../core/enum/school.enum';
+import { MonthlyData } from '../../../../core/models/professionalDash.model';
+
 Chart.register(...registerables);
 
 @Component({
@@ -20,141 +25,86 @@ Chart.register(...registerables);
   styleUrl: './professional-dashboard.component.scss'
 })
 export class ProfessionalDashboardComponent implements OnInit {
+  dates: string[] = [];
+
+  constructor(private activityService: ActivityService) { }
+
   ngOnInit(): void {
     const chart_1_Ref = document.getElementById("chart-1") as ChartItem;
-    const chart_2_Ref = document.getElementById("chart-2") as ChartItem;
 
-    // Random data
-    const data = {
-      labels: ["labels", "labels", "labels", "labels", "labels"],
-      datasets: [
-        {
-          label: 'Escola 1',
+    this.activityService.getProfessionalDataDash().subscribe((data) => {
+      const keys = Object.keys(data);
+
+      this.dates = keys.map(date => date.split("-").reverse().join("/"));
+
+      // Inicializando o objeto dataDash com o tipo correto
+      const dataDash = {
+        labels: this.dates,
+        datasets: [] as {
+          label: string;
+          tension: number;
+          pointRadius: number;
+          data: number[];
+          borderColor: string;
+          backgroundColor: string;
+          yAxisID: string;
+        }[] // Array de objetos do tipo Dataset
+      };
+
+      // Lista de escolas
+      const schools: (keyof MonthlyData)[] = ["djalma", "aparecida", "rosemir", "teodoro"];  // Tipando as escolas corretamente
+
+      // Itera sobre as escolas e cria o dataset para cada uma
+      schools.forEach((school, index) => {
+        const schoolData = keys.map(key => data[key][school as keyof MonthlyData]); // Utilizando type assertion
+
+        // Adiciona o dataset para cada escola
+        dataDash.datasets.push({
+          label: School[index], // Nome da escola
           tension: 0.7,
           pointRadius: 0,
-          data: [1, 2, 3, 4, 5],
-          borderColor: dashDaskColors.Color1,
-          backgroundColor: dashDaskColors.Color1,
-          yAxisID: 'y',
-        },
-        {
-          label: 'Escola 2',
-          tension: 0.7,
-          pointRadius: 0,
-          data: [5, 4, 3, 2, 1],
-          borderColor: dashDaskColors.Color2,
-          backgroundColor: dashDaskColors.Color2,
-          yAxisID: 'y1',
-        },
-        {
-          label: 'Escola 3',
-          tension: 0.7,
-          pointRadius: 0,
-          data: [2, 4, 5, 2, 1],
-          borderColor: dashDaskColors.Color3,
-          backgroundColor: dashDaskColors.Color3,
-          yAxisID: 'y1',
-        },
-        {
-          label: 'Escola 4',
-          tension: 0.7,
-          pointRadius: 0,
-          data: [1, 4, 5, 3, 1],
-          borderColor: dashDaskColors.Color4,
-          backgroundColor: dashDaskColors.Color4,
-          yAxisID: 'y1',
-        },
-      ]
-    };
+          data: schoolData,  // Dados da escola
+          borderColor: dashDaskColors[`Color${index + 1}` as keyof typeof dashDaskColors], // Acesso correto usando type assertion
+          backgroundColor: dashDaskColors[`Color${index + 1}` as keyof typeof dashDaskColors], // Acesso correto usando type assertion
+          yAxisID: index === 0 ? 'y' : 'y1', // Eixo Y alternado
+        });
+      });
 
-    const frequency = {
-      labels: ["Turma 1", "Turma 2", "Turma 3", "Turma 4"],
-      datasets: [
-        {
-          data: [5, 2, 3, 4],
-          backgroundColor: "orange",
-          yAxisID: 'y',
-          borderWidth: 0
-        },
-      ]
-    };
-
-    const appUses = {
-      datasets: [
-        {
-          data: [5, 2, 3],
-          backgroundColor: ["#00BA4A", "#FFB500", "#C3331D"],
-          yAxisID: 'y',
-          borderWidth: 0,
-        },
-      ]
-    };
-
-    new Chart(chart_1_Ref, {
-      type: 'line',
-      data: data,
-      options: {
-        responsive: true,
-        interaction: {
-          mode: 'index',
-          intersect: false,
-        },
-        plugins: {
-          legend: {
-            display: true,
-            labels: {
-              boxWidth: 30,
-            }
+      // Criando o gráfico com os dados dinâmicos
+      new Chart(chart_1_Ref, {
+        type: 'line',
+        data: dataDash,
+        options: {
+          responsive: true,
+          interaction: {
+            mode: 'index',
+            intersect: false,
           },
-          title: {
-            display: false,
+          plugins: {
+            legend: {
+              display: true,
+              labels: {
+                boxWidth: 30,
+              }
+            },
+            title: {
+              display: false,
+            },
           },
-        },
-        scales: {
-          y: {
-            type: 'linear',
-            display: true,
-            position: 'left',
-          },
-          y1: {
-            type: 'linear',
-            display: true,
-            position: 'right',
-          },
-        }
-      },
-    });
-
-    new Chart(chart_2_Ref, {
-      type: 'bar',
-      data: frequency,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false,
-          },
-          title: {
-            display: false,
+          scales: {
+            y: {
+              type: 'linear',
+              display: true,
+              position: 'left',
+            },
+            y1: {
+              type: 'linear',
+              display: true,
+              position: 'right',
+            },
           }
         },
-      },
-    });
-
-    new Chart("app-uses", {
-      type: 'doughnut',
-      data: appUses,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          title: {
-            display: false,
-          }
-        },
-      },
+      });
     });
   }
 }

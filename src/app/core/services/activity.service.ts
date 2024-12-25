@@ -6,6 +6,7 @@ import { environment } from "../../../environments/environment";
 import { ActivityModel } from "../models/activity.model";
 import { ActivityStatisticModel } from "../models/activity.model";
 import { RankingModel } from "../models/ranking.model";
+import { ProfessionalDash } from "../models/professionalDash.model";
 
 @Injectable({
     providedIn: 'root'
@@ -72,5 +73,9 @@ export class ActivityService {
 
     getStudentLLowerPerformance() {
         return this._httpClient.get<Array<RankingModel>>(this.url + "get-students-lower-performance");
+    }
+    
+    getProfessionalDataDash() {
+        return this._httpClient.get<ProfessionalDash>(this.url + "get-professionals-dash-data");
     }
 }

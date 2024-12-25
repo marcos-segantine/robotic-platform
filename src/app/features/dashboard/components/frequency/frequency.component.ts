@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Chart } from 'chart.js';
 import { dashDaskColors } from '../../../../core/enum/dashColors.enum';
+import { School } from '../../../../core/enum/school.enum';
 
 @Component({
   selector: 'app-frequency',
@@ -14,10 +15,10 @@ export class FrequencyComponent implements OnInit {
 
   ngOnInit(): void {
     const frequencyData = {
-      labels: ["Turma 1", "Turma 2", "Turma 3", "Turma 4"],
+      labels: [School[0], School[1], School[2], School[3]],
       datasets: [
         {
-          data: [5, 2, 3, 4],
+          data: [3.8, 4.5, 3, 4],
           backgroundColor: [dashDaskColors.Color1, dashDaskColors.Color2, dashDaskColors.Color3, dashDaskColors.Color4],
           yAxisID: 'y',
         },

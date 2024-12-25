@@ -15,7 +15,7 @@ export class PlatformUseComponent implements OnInit {
       labels: ["Uso frequente", "Uso regular", "Nunca acessou"],
       datasets: [
         {
-          data: [5, 2, 3],
+          data: [7, 1, 3],
           backgroundColor: ["#00BA4A", "#FFB500", "#C3331D"],
           yAxisID: 'y',
           borderWidth: 0,
