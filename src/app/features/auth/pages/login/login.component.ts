@@ -5,7 +5,6 @@ import { InputComponent } from '../../../../shared/components/input/input.compon
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 import { UserDataService } from '../../../../core/services/user-data.service';
-import { UserDataModel } from '../../../../core/models/user-data.model';
 
 import { StudentModel } from '../../../../core/models/student.model';
 import { ProfessionalModel } from '../../../../core/models/professional.model';

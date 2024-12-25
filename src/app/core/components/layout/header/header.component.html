@@ -1,4 +1,6 @@
 <header>
     <h1>Robotizando</h1>
-    <a class="photo" routerLink="app/student/profile"></a>
+    @if (isLogged) {
+        <a class="photo" routerLink="app/student/profile"></a>
+    }
 </header>
