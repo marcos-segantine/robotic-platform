@@ -21,8 +21,7 @@ app-not-finished {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1;
-    gap: 2em;
+    gap: 2rem;
 
     padding: 1em;
     width: 100%;
@@ -212,14 +211,14 @@ app-not-finished {
 }
 
 @media screen and (min-width: 1024px) {
+    .greeting {
+        width: 75%;
+    }
 
     app-learning-progress,
     app-not-finished {
         display: block;
-    }
-
-    app-not-finished {
-        width: 25%;
+        width: 25%;   
     }
 
     .chart {

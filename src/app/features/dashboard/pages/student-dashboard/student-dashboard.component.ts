@@ -10,6 +10,8 @@ import { TrailModel } from '../../../../core/models/trail.model';
 import { Router } from '@angular/router';
 import { ActivityService } from '../../../../core/services/activity.service';
 import { UserDataService } from '../../../../core/services/user-data.service';
+import { StudentModel } from '../../../../core/models/student.model';
+import { ProfessionalModel } from '../../../../core/models/professional.model';
 
 Chart.register(...registerables);
 
@@ -25,6 +27,7 @@ export class StudentDashboardComponent implements OnInit {
   trails: Array<TrailModel> = [];
   trailsID: Array<string> = [];
   trailProcess: Record<string, number>= {};
+  userData: StudentModel | ProfessionalModel | null = null;
 
   constructor(
     private trailService: TrailService,
@@ -35,6 +38,15 @@ export class StudentDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     const ctx = document.getElementById('chart') as ChartItem;
+
+    const userData = this.userDataService.getUserData();
+
+    if (!userData) {
+      console.log("ERROR WITH USER DATA");
+      return;
+    }
+
+    this.userData = userData;
 
     this.chart = new Chart(ctx, {
       type: 'line',
